@@ -68,4 +68,15 @@ function updateView(){
     }
 }
 
-//End -EyesOfTheSerpent
+updateView();
+
+//Om dere ønsker å skifte fra en view til en annen, har en funksjon blitt laget for å forenkle det.
+//Alt som må skrives er hva view/page heter i changeView.
+//Eksempel: changeView('loginPage');
+
+function changeView(view){
+    model.app.currentView = view.toString();
+    updateView();
+}
+
+//End

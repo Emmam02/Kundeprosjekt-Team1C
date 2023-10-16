@@ -1,4 +1,27 @@
 /*Start*/
 
+#registerBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#regInputUser{
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+#regInputPass{
+    text-align: left;
+}
+
+#linkLoginP{
+    cursor: pointer;
+}
+
+#linkLoginP:hover{
+    color:#9e2828;
+}
 
 /*End*/

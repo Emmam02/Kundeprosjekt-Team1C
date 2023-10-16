@@ -3,12 +3,12 @@
 
 //Model
 const defaultView = "mainPage";
-let currentView = model.app.currentView;
+const app = document.getElementById("app");
 
 const model = {
     app: {
         currentView: defaultView,
-        language: "no",
+        language: "en",
         isDarkMode: false,
         modeID:0,
     },
@@ -334,5 +334,7 @@ const model = {
         ],
     },
 }
+
+let currentView = model.app.currentView;
 
 //End
