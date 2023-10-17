@@ -12,53 +12,53 @@
 function updateView() {
     switch (model.app.currentView) {
         //Main Page
-        case "mainPage":
+        case "mainView":
             mainView();
             break;
         //Quiz Page kategorier
-        case "matQuizPage":
+        case "matQuizView":
             matQuizView();
             break;
-        case "dyrQuizPage":
+        case "dyrQuizView":
             matQuizView();
             break;
-        case "sportQuizPage":
+        case "sportQuizView":
             matQuizView();
             break;
-        case "bilQuizPage":
+        case "bilQuizView":
             matQuizView();
             break;
-        case "spillQuizPage":
+        case "spillQuizView":
             matQuizView();
             break;
-        case "annetQuizPage":
+        case "annetQuizView":
             annetQuizView();
             break;
         //Profil
-        case "editProfilePage":
+        case "editProfileView":
             editProfileView();
             break;
-        case "myProfilePage":
+        case "myProfileView":
             profileView();
             break;
-        case "loginPage":
+        case "loginView":
             loginView();
             break;
-        case "registerPage":
+        case "registerView":
             registerView();
             break;
         //Quiz
         case "createQuizView":
             createQuizView();
             break;
-        case "myQuizPage":
+        case "myQuizView":
             myQuizView();
             break;
-        case "quizPage":
+        case "quizView":
             quizView();
             break;
         //Resultat
-        case "myResultsPage":
+        case "myResultsView":
             myResultsView();
             break;
         //Default hvis ingen blir funnet
