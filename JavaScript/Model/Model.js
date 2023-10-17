@@ -7,10 +7,10 @@ const app = document.getElementById("app");
 
 const model = {
     app: {
-        currentView: defaultView,
+        currentView: "createQuizView",
         language: "en",
         isDarkMode: false,
-        modeID:0,
+        modeID: 0,
     },
     input: {
         searchBar: "",
@@ -18,31 +18,36 @@ const model = {
             username: "",
             password: "",
         },
-        createAccount: { //registerView
+        createAccount: {
+            //registerView
             username: "",
             password: "",
         },
-        profileView: { //profileView
+        profileView: {
+            //profileView
             bilde: "", //URL Lenke i string (eller eksisterende importert bilde til nettsiden)
             navn: "",
             land: "",
             changePassword: "",
         },
-        quizView: { //quizView
+        quizView: {
+            //quizView
             id: null, //<--- Generer en ny id for quizen
             creator: "", //getUsername();
             title: "", // quiz navn
-            bilde: "",  // main quizbilde
+            bilde: "", // main quizbilde
             theme: "", //Legg til theme
             rating: 0, //Hvor høyt den har blitt rangert
             popularitet: 0, // Hvor mange som har tatt quizen
             date: "", //getCurrentDate();
-            questions: [//Liste med spørsmål
+            questions: [
+                //Liste med spørsmål
                 {
                     questionID: 0, //id for hver spørsmål
                     theQuestion: "", //Teksten / hva spørsmålet er
                     bilde: "",
-                    answers: [//Maks 4 svar <-- Liste med svar innenfor spørsmålet.
+                    answers: [
+                        //Maks 4 svar <-- Liste med svar innenfor spørsmålet.
                         {
                             answerID: 0,
                             answerText: "",
@@ -82,27 +87,23 @@ const model = {
         },
     },
     data: {
-        newestQuiz: [ //getQuizByDate();
-
-
+        newestQuiz: [
+            //getQuizByDate();
         ],
 
-        mostPopularQuiz: [ //getQuizByPopularity();
-
-
+        mostPopularQuiz: [
+            //getQuizByPopularity();
         ],
-        highestRatedQuiz: [ //getQuizByRating();
-            {
-
-
-            }
+        highestRatedQuiz: [
+            //getQuizByRating();
+            {},
         ],
         //Lage en eksempelquiz i allQuizes
         allQuizes: [
             {
                 id: 0,
                 title: "Hvilken slange er du?",
-                creator: 'Team1C',
+                creator: "Team1C",
                 bilde: "https://i.redd.it/arabian-sand-boa-v0-94vq475nbhj91.jpg?width=425&format=pjpg&auto=webp&s=7b2a3834082baa57d6d10af92315ac45836ed5cd", //quiz hoved bilde
                 theme: "Dyr",
                 date: "05.10.2023",
@@ -174,22 +175,23 @@ const model = {
                     {
                         id: 2,
                         result: "Hvor slem kan du være? Du er en kobra!",
-                        resultbilde: "https://www.cdn.tv2.no/images?imageId=7193313&x=19.148936170213&y=4.7872340425532&cropw=74.666666666667&croph=52.127659574468&panox=19.148936170213&panoy=4.7872340425532&panow=74.666666666667&panoh=52.127659574468&width=1200&height=630",
+                        resultbilde:
+                            "https://www.cdn.tv2.no/images?imageId=7193313&x=19.148936170213&y=4.7872340425532&cropw=74.666666666667&croph=52.127659574468&panox=19.148936170213&panoy=4.7872340425532&panow=74.666666666667&panoh=52.127659574468&width=1200&height=630",
                     },
                     {
                         id: 3,
                         result: "Du er en derpy Arabian Sand Boa.",
-                        resultbilde: "https://i.redd.it/arabian-sand-boa-v0-94vq475nbhj91.jpg?width=425&format=pjpg&auto=webp&s=7b2a3834082baa57d6d10af92315ac45836ed5cd",
+                        resultbilde:
+                            "https://i.redd.it/arabian-sand-boa-v0-94vq475nbhj91.jpg?width=425&format=pjpg&auto=webp&s=7b2a3834082baa57d6d10af92315ac45836ed5cd",
                     },
                 ],
                 isPublic: true,
-            
             },
             //Ny Quiz starter her
             {
                 id: 1,
                 title: "Hvilken wienerbakst er du?",
-                creator: 'Team1C',
+                creator: "Team1C",
                 bilde: "https://www.bakehuset.no/globalassets/bilder/sortiment/smabakst/wienerbakst/10654_wienerpecan.png?width=263&height=190&quality=70", //quiz hoved bilde
                 theme: "Mat",
                 date: "05.10.2023",
@@ -251,60 +253,45 @@ const model = {
                     {
                         id: 0,
                         result: "Du er en Krokanwiener!",
-                        resultbilde: "https://bilder.ngdata.no/2943/meny/large.jpg", //URL Lenke i string (eller eksisterende importert bilde til nettsiden)
+                        resultbilde:
+                            "https://bilder.ngdata.no/2943/meny/large.jpg", //URL Lenke i string (eller eksisterende importert bilde til nettsiden)
                     },
                     {
                         id: 1,
                         result: "Du er en Pain Au Chocolat",
-                        resultbilde: "https://bilder.ngdata.no/5662/meny/large.jpg", //URL Lenke i string (eller eksisterende importert bilde til nettsiden)
+                        resultbilde:
+                            "https://bilder.ngdata.no/5662/meny/large.jpg", //URL Lenke i string (eller eksisterende importert bilde til nettsiden)
                     },
                     {
                         id: 2,
                         result: "Du er en Wienerpecan",
-                        resultbilde: "https://bilder.ngdata.no/2808/meny/large.jpg", //URL Lenke i string (eller eksisterende importert bilde til nettsiden)
+                        resultbilde:
+                            "https://bilder.ngdata.no/2808/meny/large.jpg", //URL Lenke i string (eller eksisterende importert bilde til nettsiden)
                     },
                     {
                         id: 3,
                         result: "Du er en bringebærkube",
-                        resultbilde: "https://bilder.ngdata.no/2685/meny/large.jpg", //URL Lenke i string (eller eksisterende importert bilde til nettsiden)
+                        resultbilde:
+                            "https://bilder.ngdata.no/2685/meny/large.jpg", //URL Lenke i string (eller eksisterende importert bilde til nettsiden)
                     },
                 ],
                 isPublic: true, // er delt
             },
             //Ny quiz starter her
-            {
-                
-            }
+            {},
         ],
-        allCategories: [
-            "Mat",
-            "Dyr",
-            "Sport",
-            "Biler",
-            "Spill",
-            "Annet"
-        ],
-        colors:[
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
-        themeMode:[
+        allCategories: ["Mat", "Dyr", "Sport", "Biler", "Spill", "Annet"],
+        colors: ["", "", "", "", "", "", "", "", ""],
+        themeMode: [
             {
                 name: "Light",
-                textColor:"#202020",
-                backgroundColor:"#ffffff",
+                textColor: "#202020",
+                backgroundColor: "#ffffff",
             },
             {
                 name: "Dark",
-                textColor:"#ffffff",
-                backgroundColor:"#181818",
+                textColor: "#ffffff",
+                backgroundColor: "#181818",
             },
         ],
         users: [
@@ -313,11 +300,13 @@ const model = {
                 username: "Per", //Brukernavnet
                 password: "PerPollIsMyName123", //<-- Unhashed 10/10 passord
                 name: "Per Poll", //Deres navn, om ikke vi gjør firstName LastName
-                land:"",
-                bilde:"",
+                land: "",
+                bilde: "",
                 //selfMadeQuizes? En array over hva brukeren har lager eller så kan vi hente data ved hjelp av brukernavnet og legge det inn
-                answeredQuizes: [ //Liste over hva slags quizer de har svart på - referanser til quizzer med ID
-                    1, 69, 420
+                answeredQuizes: [
+                    //Liste over hva slags quizer de har svart på - referanser til quizzer med ID
+                    1,
+                    69, 420,
                 ],
             },
             {
@@ -325,15 +314,13 @@ const model = {
                 username: "Per", //Brukernavnet
                 password: "PerPollIsMyName123", //<-- Unhashed 10/10 passord
                 name: "Per Poll", //Deres navn, om ikke vi gjør firstName LastName
-                land:"",
-                bilde:"",
-                answeredQuizes: [
-                    1, 69, 420
-                ],
+                land: "",
+                bilde: "",
+                answeredQuizes: [1, 69, 420],
             },
         ],
     },
-}
+};
 
 let currentView = model.app.currentView;
 

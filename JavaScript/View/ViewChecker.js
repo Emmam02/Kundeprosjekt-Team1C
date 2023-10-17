@@ -1,15 +1,15 @@
 "use strict";
 //Start
 
-//Her har dere hvordan man oppdaterer viewen når den skal endres. 
+//Her har dere hvordan man oppdaterer viewen når den skal endres.
 //Gi currentView et av navnene som ligger i case for å så oppdatere det med updateView for å hoppe inn i den nye viewen.
-//currentView = ""; <-- Siden denne ikke har noen string i seg for øyeblikket vil den hoppe i default og kjøre mainView(); 
+//currentView = ""; <-- Siden denne ikke har noen string i seg for øyeblikket vil den hoppe i default og kjøre mainView();
 //Samme skjer hvis noe får feil navn (pass på uppercase og lowercase) ^
 //currentView = "myProfilePage"; <-- Hopper inn i profileView();
 //updateView();
 
 //View
-function updateView(){
+function updateView() {
     switch (model.app.currentView) {
         //Main Page
         case "mainPage":
@@ -48,7 +48,7 @@ function updateView(){
             registerView();
             break;
         //Quiz
-        case "createQuizPage":
+        case "createQuizView":
             createQuizView();
             break;
         case "myQuizPage":
@@ -74,7 +74,7 @@ updateView();
 //Alt som må skrives er hva view/page heter i changeView.
 //Eksempel: changeView('loginPage');
 
-function changeView(view){
+function changeView(view) {
     model.app.currentView = view.toString();
     updateView();
 }
