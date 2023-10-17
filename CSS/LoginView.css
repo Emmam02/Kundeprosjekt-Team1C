@@ -1,0 +1,11 @@
+#app{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 99vw;
+    height: 97vh;
+}
+#title{
+    font-size: 155px;
+    font-family:'Lexend';
+}
