@@ -2,7 +2,6 @@
 //Start
 
 //Model
-const defaultView = "mainPage";
 const app = document.getElementById("app");
 
 const model = {
