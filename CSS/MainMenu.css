@@ -1,0 +1,62 @@
+/*Start*/
+
+/*Nav*/
+#nav-bar{
+    color: black;
+    background-color: greenyellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+}
+
+#nav-bar-content{
+    display: flex;
+    align-items: center;
+}
+
+#nav-title {
+    color: blue;
+}
+
+#nav-profile-content {
+    display: flex;
+    align-items: flex-end;
+    justify-content: right;
+}
+
+#nav-profile-text {
+    color: black;
+}
+
+#nav-profile-picture {
+    background-size: contain;
+    height: 10px;
+    width: 10px;
+    background-position: center;
+}
+
+/*Search Bar*/
+#search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#search-bar-text {
+    text-align: left;
+}
+
+/**/
+#temp-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.link-view {
+    cursor: pointer;
+}
+
+/*End*/

@@ -7,134 +7,57 @@ const app = document.getElementById("app");
 
 const model = {
   app: {
-    currentView: defaultView,
+    currentView: "quizView",
     language: "en",
     isDarkMode: false,
     modeID: 0,
   },
-  input: {
-    searchBar: "",
-    loginView: {
-      username: "",
-      password: "",
-    },
-    createAccount: {
-      //registerView
-      username: "",
-      password: "",
-    },
-    profileView: {
-      //profileView
-      bilde: "", //URL Lenke i string (eller eksisterende importert bilde til nettsiden)
-      navn: "",
-      land: "",
-      changePassword: "",
-    },
-    createQuizView: {
-      id: null,
-      title: "",
-      creator: "",
-      image: "",
-      theme: "",
-      date: "",
-      questions: [
-        {
-          questionID: null,
-          theQuestion: "",
-          questionImage: "",
-          answers: [
-            {
-              answerID: null,
-              answerText: " ",
-              color: "",
-            },
-            {
-              answerID: null,
-              answerText: "",
-              color: "",
-            },
-            {
-              answerID: null,
-              answerText: "",
-              color: "",
-            },
-            {
-              answerID: null,
-              answerText: "",
-              color: "",
-            },
-          ],
-        },
-      ],
-      results: [
-        {
-          id: null,
-          result: "",
-          resultbilde: "",
-        },
-      ],
-      isPublic: true, // er delt
-    },
+  createAccount: {
+    //registerView
+    username: "",
+    password: "",
   },
-  data: {
-    newestQuiz: [
-      //getQuizByDate();
-    ],
-
-    mostPopularQuiz: [
-      //getQuizByPopularity();
-    ],
-    highestRatedQuiz: [
-      //getQuizByRating();
-      {},
-    ],
-    //Lage en eksempelquiz i allQuizes
-    allQuizes: [
-      //Ny quiz starter her
+  profileView: {
+    //profileView
+    bilde: "", //URL Lenke i string (eller eksisterende importert bilde til nettsiden)
+    navn: "",
+    land: "",
+    changePassword: "",
+  },
+  createQuizView: {
+    id: null,
+    title: "",
+    creator: "",
+    image: "",
+    theme: "",
+    date: "",
+    questions: [
       {
-        id: null,
-        title: "",
-        creator: "",
-        image: "",
-        theme: "",
-        date: "",
-        questions: [
+        questionID: null,
+        theQuestion: "",
+        questionImage: "",
+        answers: [
           {
-            questionID: null,
-            theQuestion: "",
-            questionImage: "",
-            answers: [
-              {
-                answerID: null,
-                answerText: " ",
-                color: "",
-              },
-              {
-                answerID: null,
-                answerText: "",
-                color: "",
-              },
-              {
-                answerID: null,
-                answerText: "",
-                color: "",
-              },
-              {
-                answerID: null,
-                answerText: "",
-                color: "",
-              },
-            ],
+            answerID: null,
+            answerText: " ",
+            color: "",
+          },
+          {
+            answerID: null,
+            answerText: "",
+            color: "",
+          },
+          {
+            answerID: null,
+            answerText: "",
+            color: "",
+          },
+          {
+            answerID: null,
+            answerText: "",
+            color: "",
           },
         ],
-        results: [
-          {
-            id: null,
-            result: "",
-            resultbilde: "",
-          },
-        ],
-        isPublic: true, // er delt
       },
 
       {

@@ -24,4 +24,12 @@
     color:#9e2828;
 }
 
+.temp-class{
+    cursor: pointer;
+}
+
+.temp-class:hover{
+    color:#9e2828;
+}
+
 /*End*/

@@ -1,64 +1,64 @@
 "use strict";
 //Start
 
-//Her har dere hvordan man oppdaterer viewen når den skal endres. 
+//Her har dere hvordan man oppdaterer viewen når den skal endres.
 //Gi currentView et av navnene som ligger i case for å så oppdatere det med updateView for å hoppe inn i den nye viewen.
-//currentView = ""; <-- Siden denne ikke har noen string i seg for øyeblikket vil den hoppe i default og kjøre mainView(); 
+//currentView = ""; <-- Siden denne ikke har noen string i seg for øyeblikket vil den hoppe i default og kjøre mainView();
 //Samme skjer hvis noe får feil navn (pass på uppercase og lowercase) ^
 //currentView = "myProfilePage"; <-- Hopper inn i profileView();
 //updateView();
 
 //View
-function updateView(){
+function updateView() {
     switch (model.app.currentView) {
         //Main Page
-        case "mainPage":
+        case "mainView":
             mainView();
             break;
         //Quiz Page kategorier
-        case "matQuizPage":
+        case "matQuizView":
             matQuizView();
             break;
-        case "dyrQuizPage":
+        case "dyrQuizView":
             matQuizView();
             break;
-        case "sportQuizPage":
+        case "sportQuizView":
             matQuizView();
             break;
-        case "bilQuizPage":
+        case "bilQuizView":
             matQuizView();
             break;
-        case "spillQuizPage":
+        case "spillQuizView":
             matQuizView();
             break;
-        case "annetQuizPage":
+        case "annetQuizView":
             annetQuizView();
             break;
         //Profil
-        case "editProfilePage":
+        case "editProfileView":
             editProfileView();
             break;
-        case "myProfilePage":
+        case "myProfileView":
             profileView();
             break;
-        case "loginPage":
+        case "loginView":
             loginView();
             break;
-        case "registerPage":
+        case "registerView":
             registerView();
             break;
         //Quiz
-        case "createQuizPage":
+        case "createQuizView":
             createQuizView();
             break;
-        case "myQuizPage":
+        case "myQuizView":
             myQuizView();
             break;
-        case "quizPage":
+        case "quizView":
             quizView();
             break;
         //Resultat
-        case "myResultsPage":
+        case "myResultsView":
             myResultsView();
             break;
         //Default hvis ingen blir funnet
@@ -74,7 +74,7 @@ updateView();
 //Alt som må skrives er hva view/page heter i changeView.
 //Eksempel: changeView('loginPage');
 
-function changeView(view){
+function changeView(view) {
     model.app.currentView = view.toString();
     updateView();
 }
