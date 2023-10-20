@@ -6,7 +6,8 @@ const app = document.getElementById("app");
 
 const model = {
     app: {
-        currentView: "MainView",
+        failedLogin: false,
+        currentView: "loginView",
         language: "en",
         isDarkMode: false,
         modeID: 0,
@@ -296,7 +297,7 @@ const model = {
         users: [
             {
                 isDarkMode: false, //<-- Deres preferanse, lastes deretter inn i app isDarkMode
-                username: "Per", //Brukernavnet
+                username: "per", //Brukernavnet
                 password: "PerPollIsMyName123", //<-- Unhashed 10/10 passord
                 name: "Per Poll", //Deres navn, om ikke vi gjør firstName LastName
                 land: "",
@@ -313,6 +314,15 @@ const model = {
                 username: "Per", //Brukernavnet
                 password: "PerPollIsMyName123", //<-- Unhashed 10/10 passord
                 name: "Per Poll", //Deres navn, om ikke vi gjør firstName LastName
+                land: "",
+                bilde: "",
+                answeredQuizes: [1, 69, 420],
+            },
+            {
+                isDarkMode: false, //<-- Deres preferanse, lastes deretter inn i app isDarkMode
+                username: "testBruker", //Brukernavnet
+                password: "testetest", //<-- Unhashed 10/10 passord
+                name: "Teste Per", //Deres navn, om ikke vi gjør firstName LastName
                 land: "",
                 bilde: "",
                 answeredQuizes: [1, 69, 420],
