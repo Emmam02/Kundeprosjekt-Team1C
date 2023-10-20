@@ -2,6 +2,7 @@
 //Start
 
 //Model
+const defaultView = "mainPage";
 const app = document.getElementById("app");
 
 const model = {
@@ -30,7 +31,7 @@ const model = {
             land: "",
             changePassword: "",
         },
-        quizView: {
+        createQuizView: {
             //quizView
             id: null, //<--- Generer en ny id for quizen
             creator: "", //getUsername();
