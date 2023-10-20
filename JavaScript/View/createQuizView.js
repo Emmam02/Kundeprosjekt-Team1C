@@ -3,7 +3,16 @@ function createQuizView() {
         <h1 class="gameQuizContainer"> Create Your own Quiz</h1>
             <input id="quizTitle" type="text" placeholder="Quiz Name" oninput=${model.input.createQuizView.title}></input>
             <input id="quizTheme" type="text" placeholder="choose Category" oninput=${model.input.createQuizView.theme}></input>
-            <input id="quizBilde" type="text" placeholder="Upload Quiz Image" oninput=${model.input.createQuizView.bilde}></input>
+                        <select onchange="updateTheme(${questionId}, null)">
+            <option value="Mat">Mat</option>
+            <option value="Dyr">Dyr</option>
+            <option value="Sport">Sport</option>
+            <option value="orange">Biler</option>
+            <option value="Spill">Spill</option>
+            <option value="Annet">Annet</option>
+        </select>
+            <input id="quizImage" type="text" placeholder="Upload Quiz Image" oninput=${model.input.createQuizView.quizImage}></input>
+            <input id="quizimage" type="text" placeholder="Upload Quiz Image" oninput=${model.input.createQuizView.image}></input>
             <div id="questionsContainer"></div>
             <button onclick="addQuestion()">Add question</button>
             <button onclick="submitQuiz()" type="submit">Submit</button>
@@ -16,8 +25,8 @@ function submitQuiz() {
         document.getElementById("quizTitle").value;
     model.input.createQuizView.theme =
         document.getElementById("quizTheme").value;
-    model.input.createQuizView.bilde =
-        document.getElementById("quizBilde").value;
+    model.input.createQuizView.image =
+        document.getElementById("quizimage").value;
     model.input.createQuizView.creator =
         document.getElementById("quizCreator").value;
 
@@ -54,7 +63,7 @@ function addQuestion() {
 
     questionContainer.innerHTML = /*HTML*/ `
         <input id="${questionId}" type="text" placeholder="Question" oninput="updateQuestion(${questionId}, 0)" required></input>
-        <input id="${questionId}-bilde" type="text" placeholder="Upload Question Image" oninput="updateQuestion(${questionId}, 0, true)"></input>
+        <input id="${questionId}-image" type="text" placeholder="Upload Question Image" oninput="updateQuestion(${questionId}, 0, true)"></input>
         <div class="answers-container" id="${questionId}-answers">
             <div class="answer">
                 <input type="text" placeholder="Answer1" oninput="updateAnswer(${questionId}, 0)"></input>
@@ -104,7 +113,7 @@ function updateQuestion(questionId, questionIndex, isImage = false) {
     question.theQuestion = document.getElementById(questionId).value;
 
     if (isImage) {
-        question.bilde = document.getElementById(`${questionId}-bilde`).value;
+        question.image = document.getElementById(`${questionId}-image`).value;
     }
 }
 
@@ -121,7 +130,7 @@ function clearAllQuizes() {
         id: null,
         creator: "",
         title: "",
-        bilde: "",
+        image: "",
         theme: "",
         rating: 0,
         popularitet: 0,
