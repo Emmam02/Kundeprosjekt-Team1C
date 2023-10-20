@@ -74,43 +74,43 @@ function addQuestion() {
     const questionId = giveUniqueId();
 
     questionContainer.innerHTML = /*HTML*/ `
-        <input id="${questionId}" type="text" placeholder="Question" oninput="updateQuestion('${questionId}', 0)" required></input>
-        <input id="${questionId}-image" type="text" placeholder="Upload Question Image" oninput="updateQuestion('${questionId}', 0, true)"></input>
+        <input id="${questionId}" type="text" placeholder="Question" oninput="updateInput('${questionId}',0, this.value)" required></input>
+        <input id="${questionId}-image" type="text" placeholder="Upload Question Image" oninput="updateInput('${questionId}', this.value, true)"></input>
         <div class="answers-container" id="${questionId}-answers">
             <div class="answer">
-                <input type="text" placeholder="Answer1" oninput="updateAnswer(${questionId}, 0)"></input>
-                <select onchange="updateAnswerColor(${questionId}, 0)">
-                    <option value="red">Red</option>
-                    <option value="blue">Blue</option>
-                    <option value="yellow">Yellow</option>
-                    <option value="orange">Orange</option>
+                <input type="text" placeholder="Answer1" oninput="updateInput('${questionId}', this.value)"></input>
+                <select onchange="updateAnswerColor(${questionId})">
+                    <option value="0">Red</option>
+                    <option value="1">Blue</option>
+                    <option value="2">Yellow</option>
+                    <option value="3">Orange</option>
                 </select>
             </div>
             <div class="answer">
-                <input type="text" placeholder="Answer2" oninput="updateAnswer(${questionId}, 1)"></input>
+                <input type="text" placeholder="Answer2" oninput="updateInput('${questionId}', this.value)"></input>
                 <select onchange="updateAnswerColor(${questionId}, 1)">
-                    <option value="red">Red</option>
-                    <option value="blue">Blue</option>
-                    <option value="yellow">Yellow</option>
-                    <option value="orange">Orange</option>
+                    <option value="0">Red</option>
+                    <option value="1">Blue</option>
+                    <option value="2">Yellow</option>
+                    <option value="3">Orange</option>
                 </select>
             </div>
             <div class="answer">
-                <input type="text" placeholder="Answer3" oninput="updateAnswer(${questionId}, 2)"></input>
+                <input type="text" placeholder="Answer3" oninput="updateInput('${questionId}', this.value)"></input>
                 <select onchange="updateAnswerColor(${questionId}, 2)">
-                    <option value="red">Red</option>
-                    <option value="blue">Blue</option>
-                    <option value="yellow">Yellow</option>
-                    <option value="orange">Orange</option>
+                    <option value="0">Red</option>
+                    <option value="1">Blue</option>
+                    <option value="2">Yellow</option>
+                    <option value="3">Orange</option>
                 </select>
             </div>
             <div class="answer">
-                <input type="text" placeholder="Answer4" oninput="updateAnswer(${questionId}, 3)"></input>
+                <input type="text" placeholder="Answer4" oninput="updateInput('${questionId}', this.value)"></input>
                 <select onchange="updateAnswerColor(${questionId}, 3)">
-                    <option value="red">Red</option>
-                    <option value="blue">Blue</option>
-                    <option value="yellow">Yellow</option>
-                    <option value="orange">Orange</option>
+                    <option value="0">Red</option>
+                    <option value="1">Blue</option>
+                    <option value="2">Yellow</option>
+                    <option value="3">Orange</option>
                 </select>
             </div>
         </div>
@@ -232,9 +232,15 @@ function results2() {
     let blue = "1";
     let orange = "2";
     let yellow = "3";
+    let resultColor = "";
 
-    switch (key) {
+    for (let index = 0; index < array.length; index++) {
+        const element = array[index];
+    }
+
+    switch (resultColor) {
         case "0":
+            //funksjon for å hente resultatet i tekst.
             break;
         case "1":
             break;
@@ -243,7 +249,7 @@ function results2() {
         case "3":
             break;
         default:
-            break;
+            console.debug;
     }
 
     //let red = model.data.allQuizes.questions.answers.color[0];
