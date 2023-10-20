@@ -1,4 +1,6 @@
 function createQuizView() {
+    currentQuiz();
+    giveQuizId();
     app.innerHTML = /*HTML*/ `
         <h1 class="gameQuizContainer"> Create Your own Quiz</h1>
         <input id="quizTitle" type="text" placeholder="Quiz Name" oninput="updateInput('title', this.value)"></input>
@@ -14,7 +16,6 @@ function createQuizView() {
         <div id="questionsContainer"></div>
         <button onclick="addQuestion()">Add question</button>
         <button onclick="submitQuiz()" type="submit">Submit</button>
-        <input id="quizCreator" type="text" placeholder="Creator" oninput="updateInput('creator', this.value)"></input>
         <p class="temp-class" onclick="changeView('mainView')">Tilbake</p>
         <p class="temp-class" onclick="changeView('quizView')">Preview Quiz</p>
     `;
@@ -36,8 +37,8 @@ function submitQuiz() {
         document.getElementById("quizTheme").value;
     model.input.createQuizView.image =
         document.getElementById("quizImage").value;
-    model.input.createQuizView.creator =
-        document.getElementById("quizCreator").value;
+    model.input.createQuizView.creator = getUsername();
+    model.input.createQuizView.date = getCurrentDate();
 
     const questionsContainer = document.getElementById("questionsContainer");
     model.input.createQuizView.questions = Array.from(
@@ -51,10 +52,12 @@ function submitQuiz() {
         return model.input.createQuizView.questions[questionIndex];
     });
 
-    giveQuizId();
     model.data.allQuizes.push({ ...model.input.createQuizView });
 
     clearAllQuizes();
+}
+function currentQuiz() {
+    return model.data.currentQuiz;
 }
 
 function giveQuizId() {
@@ -146,6 +149,135 @@ function clearAllQuizes() {
         questions: [],
     };
     updateView();
+}
+
+/*function results() {
+    let red = model.data.allQuizes.questions.answers.color["0"];
+    let blue = model.data.allQuizes.questions.answers.color["1"];
+    let yellow = model.data.allQuizes.questions.answers.color["2"];
+    let orange = model.data.allQuizes.questions.answers.color["3"];
+    let result = (model.data.allQuizes[currentQuiz].results = userResult);
+    //lage redCount, blueCount osvosv
+    //Funksjon for å telle svarene fra currentQuiz
+    //sjekke counts mot hverandre for å få resultatet
+    for (let i = 0; i < model.data.currentQuiz.questions.length; i++) {
+        if (model.data.currentQuiz.question[i].answer.color == "0") redCount++;
+        if (model.data.currentQuiz.question[i].answer.color == "1") blueCount++;
+        if (model.data.currentQuiz.question[i].answer.color == "2") yellowCount++;
+        if (model.data.currentQuiz.question[i].answer.color == "3") orangeCount++;
+    }
+    if (
+        redCount > blueCount &&
+        redCount > yellowCount &&
+        redCount > orangeCount
+    ) {
+        result = red; // Burde den endres til redResult så vikan linke det til result[index/tall]
+    } else if (blue > yellow && orange && red) result = blue;
+    else if (yellow > orange && red && blue) result = yellow;
+
+    getResultText();
+
+    //Bare telle når man har trykket på vis resultat
+}
+*/
+function results() {
+    // Assuming these are counts for each color
+    let redCount = 0;
+    let blueCount = 0;
+    let yellowCount = 0;
+    let orangeCount = 0;
+    let red = model.data.allQuizes.questions.answers.color["0"];
+    let blue = model.data.allQuizes.questions.answers.color["1"];
+    let yellow = model.data.allQuizes.questions.answers.color["2"];
+    let orange = model.data.allQuizes.questions.answers.color["3"];
+
+    // Assuming userResult is a variable available in the scope
+    let result = (model.data.allQuizes[currentQuiz].results = userResult);
+
+    // Funksjon for å telle svarene fra currentQuiz
+    // sjekke counts mot hverandre for å få resultatet
+    for (let i = 0; i < model.data.currentQuiz.questions.length; i++) {
+        const answerColor = model.data.currentQuiz.questions[i].answer.color;
+
+        // Increment the corresponding count based on the color
+        if (answerColor === "0") redCount++;
+        else if (answerColor === "1") blueCount++;
+        else if (answerColor === "2") yellowCount++;
+        else if (answerColor === "3") orangeCount++;
+    }
+
+    // Determine the result based on counts
+    if (
+        redCount > blueCount &&
+        redCount > yellowCount &&
+        redCount > orangeCount
+    ) {
+        result = red; // Assuming red is a predefined variable
+    } else if (blueCount > yellowCount && blueCount > orangeCount) {
+        result = blue; // Assuming blue is a predefined variable
+    } else if (yellowCount > orangeCount) {
+        result = yellow; // Assuming yellow is a predefined variable
+    } else {
+        result = orange; // Assuming orange is a predefined variable
+    }
+
+    getResultText();
+
+    // Bare telle når man har trykket på vis resultat
+}
+
+//Henter resultatet fra nåværende quiz som er lastet inn i currentQuiz
+function results2() {
+    let red = "0";
+    let blue = "1";
+    let orange = "2";
+    let yellow = "3";
+
+    switch (key) {
+        case "0":
+            break;
+        case "1":
+            break;
+        case "2":
+            break;
+        case "3":
+            break;
+        default:
+            break;
+    }
+
+    //let red = model.data.allQuizes.questions.answers.color[0];
+    //let blue = model.data.allQuizes.questions.answers.color[1];
+    //let yellow = model.data.allQuizes.questions.answers.color[2];
+    //let orange = model.data.allQuizes.questions.answers.color[3];
+    let result = (model.data.allQuizes[currentQuiz].results = userResult);
+    //lage redCount, blueCount osvosv
+    //Funksjon for å telle svarene fra currentQuiz
+    //sjekke counts mot hverandre for å få resultatet
+    for (let i = 0; i < model.data.currentQuiz.questions.length; i++) {
+        if (model.data.currentQuiz.question[i].answer.color == "0") redCount++;
+        if (model.data.currentQuiz.question[i].answer.color == "1") blueCount++;
+        if (model.data.currentQuiz.question[i].answer.color == "2")
+            yellowCount++;
+        if (model.data.currentQuiz.question[i].answer.color == "3")
+            orangeCount++;
+    }
+    if (
+        redCount > blueCount &&
+        redCount > yellowCount &&
+        redCount > orangeCount
+    ) {
+        result = red; // Burde den endres til redResult så vikan linke det til result[index/tall]
+    } else if (blue > yellow && orange && red) result = blue;
+    else if (yellow > orange && red && blue) result = yellow;
+
+    getResultText(1);
+
+    //Bare telle når man har trykket på vis resultat
+}
+
+function getResultText(color) {
+    return model.currentQuiz.results.find((result) => result.id == color);
 }
 
 function updateAnswer(questionId, answerIndex) {

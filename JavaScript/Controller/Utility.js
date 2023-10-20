@@ -2,24 +2,20 @@
 //Start
 
 //dd:mm:yyyy <-- dag, måned, år //ss:mm:hh <-- Sekund, minutt, time (klokke)
-function getCurrentDate(){
+function getCurrentDate() {}
 
-}
+function getQuizByDate() {}
 
-function getQuizByDate(){
+function getQuizByPopularity() {}
 
-}
+function getQuizByRating() {}
 
-function getQuizByPopularity(){
-
-}
-
-function getQuizByRating(){
-
-}
-
-function getUsername(){
-
+function getUsername() {
+    if (model.app.username.toString() == (null || "")) {
+        model.app.username = "Anonymous";
+    } else {
+        return model.app.username.toString();
+    }
 }
 
 //End
