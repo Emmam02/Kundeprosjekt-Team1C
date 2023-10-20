@@ -9,7 +9,9 @@ const model = {
         currentView: "MainView",
         language: "en",
         isDarkMode: false,
-        modeID: 0,
+        //modeID: 0, <-- Ingen anelse hva denne er for.
+        userID:null,
+        username:"",
     },
     input: {
         searchBar: "",
@@ -29,7 +31,7 @@ const model = {
             land: "",
             changePassword: "",
         },
-        quizView: {
+        createQuizView: {
             //quizView
             id: null, //<--- Generer en ny id for quizen
             creator: "", //getUsername();
@@ -295,6 +297,7 @@ const model = {
         ],
         users: [
             {
+                id: 0,
                 isDarkMode: false, //<-- Deres preferanse, lastes deretter inn i app isDarkMode
                 username: "Per", //Brukernavnet
                 password: "PerPollIsMyName123", //<-- Unhashed 10/10 passord
@@ -304,11 +307,11 @@ const model = {
                 //selfMadeQuizes? En array over hva brukeren har lager eller så kan vi hente data ved hjelp av brukernavnet og legge det inn
                 answeredQuizes: [
                     //Liste over hva slags quizer de har svart på - referanser til quizzer med ID
-                    1,
-                    69, 420,
+                    1, 69, 420,
                 ],
             },
             {
+                id: 1,
                 isDarkMode: false, //<-- Deres preferanse, lastes deretter inn i app isDarkMode
                 username: "Per", //Brukernavnet
                 password: "PerPollIsMyName123", //<-- Unhashed 10/10 passord
@@ -324,3 +327,67 @@ const model = {
 let currentView = model.app.currentView;
 
 //End
+
+
+quizModel = [
+    {
+        id: 0,
+        title: "",
+        creator: "",
+        bilde: "", //quiz hoved bilde
+        theme: "",
+        date: "",
+        questions: [
+            {
+                questionID: 0,
+                theQuestion: "",
+                bilde: "",
+                answers: [
+                    {
+                        answerID: 0,
+                        answerText: "",
+                        color: "",
+                    },
+                    {
+                        answerID: 1,
+                        answerText: "",
+                        color: "",
+                    },
+                    {
+                        answerID: 2,
+                        answerText: "",
+                        color: "",
+                    },
+                    {
+                        answerID: 3,
+                        answerText: "",
+                        color: "",
+                    },
+                ],
+            },
+        ],
+        results: [
+            {
+                id: 0,
+                result: "",
+                resultbilde: "", //URL Lenke i string (eller eksisterende importert bilde til nettsiden)
+            },
+            {
+                id: 1,
+                result: "",
+                resultbilde: "", //URL Lenke i string (eller eksisterende importert bilde til nettsiden)
+            },
+            {
+                id: 2,
+                result: "",
+                resultbilde: "",
+            },
+            {
+                id: 3,
+                result: "",
+                resultbilde: "",
+            },
+        ],
+        isPublic: true,
+    },
+];

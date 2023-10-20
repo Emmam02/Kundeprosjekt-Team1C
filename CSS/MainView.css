@@ -1,13 +1,27 @@
 /*Start*/
 
+/*Fonts*/ /*Annen måte å importere fonts på*/
+/*@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');*/
+/*@import url('https://fonts.googleapis.com/css2?family=Nosifer&display=swap');*/
+
+/*MainView*/
+#mainView{
+    overflow: hidden;
+}
+
 /*Nav*/
 #nav-bar{
     color: black;
-    background-color: greenyellow;
+    background-color: hsl(0, 69%, 43%);
     display: flex;
-    justify-content: center;
+    justify-content:center;
     align-items: center;
-    margin: 0px;
+    margin: 0px 0px 0px 0px;
+    width: 100%;
+}
+
+#nav-bar:last-child{
+    justify-content: right;
 }
 
 #nav-bar-content{
@@ -16,12 +30,14 @@
 }
 
 #nav-title {
-    color: blue;
+    color: #344053;
+    font-size: 3rem;
+    /*font-family: 'Roboto', sans-serif;*/
+    font-family: 'Nosifer', sans-serif;
 }
 
 #nav-profile-content {
     display: flex;
-    align-items: flex-end;
     justify-content: right;
 }
 
@@ -34,10 +50,12 @@
     height: 10px;
     width: 10px;
     background-position: center;
+    margin: 2px 2px 2px 2px;
 }
 
 /*Search Bar*/
 #search-bar {
+    margin-top: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
