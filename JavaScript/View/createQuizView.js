@@ -1,8 +1,8 @@
 function createQuizView() {
     app.innerHTML = /*HTML*/ `
         <h1 class="gameQuizContainer"> Create Your own Quiz</h1>
-            <input id="quizTitle" type="text" placeholder="Quiz Name" oninput=${model.input.createQuizView.title}></input>
-            <select onchange="updateTheme(${model.input.createQuizView.theme}, 0)">
+        <input id="quizTitle" type="text" placeholder="Quiz Name" oninput="updateInput('title', this.value)"></input>
+        <select id="quizTheme" oninput="updateInput('theme', this.value)">
             <option value="Mat">Mat</option>
             <option value="Dyr">Dyr</option>
             <option value="Sport">Sport</option>
@@ -10,14 +10,23 @@ function createQuizView() {
             <option value="Spill">Spill</option>
             <option value="Annet">Annet</option>
         </select>
-            <input id="quizImage" type="text" placeholder="Upload Quiz Image" oninput=${model.input.createQuizView.quizImage}></input>
-            <input id="quizimage" type="text" placeholder="Upload Quiz Image" oninput=${model.input.createQuizView.image}></input>
-            <div id="questionsContainer"></div>
-            <button onclick="addQuestion()">Add question</button>
-            <button onclick="submitQuiz()" type="submit">Submit</button>
-            <input id="quizCreator" type="text" placeholder="Creator" oninput=${model.input.createQuizView.creator}></input>
-            
+        <input id="quizImage" type="text" placeholder="Upload Quiz Image" oninput="updateInput('image', this.value)"></input>
+        <div id="questionsContainer"></div>
+        <button onclick="addQuestion()">Add question</button>
+        <button onclick="submitQuiz()" type="submit">Submit</button>
+        <input id="quizCreator" type="text" placeholder="Creator" oninput="updateInput('creator', this.value)"></input>
+        <p class="temp-class" onclick="changeView('mainView')">Tilbake</p>
+        <p class="temp-class" onclick="changeView('quizView')">Preview Quiz</p>
     `;
+}
+
+function updateInput(key, value) {
+    model.input.createQuizView[key] = value;
+}
+
+function updateTheme() {
+    theme = model.data.allCategories.value;
+    return theme;
 }
 
 function submitQuiz() {
@@ -26,7 +35,7 @@ function submitQuiz() {
     model.input.createQuizView.theme =
         document.getElementById("quizTheme").value;
     model.input.createQuizView.image =
-        document.getElementById("quizimage").value;
+        document.getElementById("quizImage").value;
     model.input.createQuizView.creator =
         document.getElementById("quizCreator").value;
 
@@ -42,9 +51,9 @@ function submitQuiz() {
         return model.input.createQuizView.questions[questionIndex];
     });
 
+    giveQuizId();
     model.data.allQuizes.push({ ...model.input.createQuizView });
 
-    giveQuizId();
     clearAllQuizes();
 }
 
@@ -62,8 +71,8 @@ function addQuestion() {
     const questionId = giveUniqueId();
 
     questionContainer.innerHTML = /*HTML*/ `
-        <input id="${questionId}" type="text" placeholder="Question" oninput="updateQuestion(${questionId}, 0)" required></input>
-        <input id="${questionId}-image" type="text" placeholder="Upload Question Image" oninput="updateQuestion(${questionId}, 0, true)"></input>
+        <input id="${questionId}" type="text" placeholder="Question" oninput="updateQuestion('${questionId}', 0)" required></input>
+        <input id="${questionId}-image" type="text" placeholder="Upload Question Image" oninput="updateQuestion('${questionId}', 0, true)"></input>
         <div class="answers-container" id="${questionId}-answers">
             <div class="answer">
                 <input type="text" placeholder="Answer1" oninput="updateAnswer(${questionId}, 0)"></input>
@@ -103,7 +112,6 @@ function addQuestion() {
             </div>
         </div>
     `;
-
     const questionsContainer = document.getElementById("questionsContainer");
     questionsContainer.appendChild(questionContainer);
 }
@@ -137,6 +145,7 @@ function clearAllQuizes() {
         date: "",
         questions: [],
     };
+    updateView();
 }
 
 function updateAnswer(questionId, answerIndex) {
