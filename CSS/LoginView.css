@@ -11,3 +11,20 @@
     font-size: 155px;
     font-family:'Lexend';
 }
+
+
+#Loginbox{
+    flex-direction: column;
+}
+
+#userInputName{
+    margin-top: 10px;
+}
+
+#userInputPAS{
+    margin-top: 10px;
+}
+
+#logInButton{
+    margin-top: 20px;
+}
