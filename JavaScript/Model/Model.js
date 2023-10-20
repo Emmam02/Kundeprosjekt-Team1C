@@ -7,7 +7,7 @@ const app = document.getElementById("app");
 const model = {
     app: {
         failedLogin: false,
-        currentView: "loginView",
+        currentView: "MainView",
         language: "en",
         isDarkMode: false,
         modeID: 0,
