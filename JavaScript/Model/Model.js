@@ -6,7 +6,7 @@ const app = document.getElementById("app");
 
 const model = {
     app: {
-        currentView: "createQuizView",
+        currentView: "mainView",
         language: "en",
         isDarkMode: false,
         modeID: 0,

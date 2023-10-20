@@ -2,8 +2,7 @@ function createQuizView() {
     app.innerHTML = /*HTML*/ `
         <h1 class="gameQuizContainer"> Create Your own Quiz</h1>
             <input id="quizTitle" type="text" placeholder="Quiz Name" oninput=${model.input.createQuizView.title}></input>
-            <input id="quizTheme" type="text" placeholder="choose Category" oninput=${model.input.createQuizView.theme}></input>
-                        <select onchange="updateTheme(${model.input.createQuizView.id}, 0)">
+            <select onchange="updateTheme(${model.input.createQuizView.theme}, 0)">
             <option value="Mat">Mat</option>
             <option value="Dyr">Dyr</option>
             <option value="Sport">Sport</option>
@@ -17,6 +16,7 @@ function createQuizView() {
             <button onclick="addQuestion()">Add question</button>
             <button onclick="submitQuiz()" type="submit">Submit</button>
             <input id="quizCreator" type="text" placeholder="Creator" oninput=${model.input.createQuizView.creator}></input>
+            
     `;
 }
 
