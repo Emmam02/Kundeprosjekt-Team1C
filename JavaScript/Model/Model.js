@@ -2,7 +2,6 @@
 //Start
 
 //Model
-const defaultView = "quizPage";
 const app = document.getElementById("app");
 
 const model = {
@@ -10,56 +9,81 @@ const model = {
     currentView: "quizView",
     language: "en",
     isDarkMode: false,
-    modeID: 0,
-  },
-  createAccount: {
-    //registerView
+    //modeID: 0,
+    userID: null,
     username: "",
-    password: "",
   },
-  profileView: {
-    //profileView
-    bilde: "", //URL Lenke i string (eller eksisterende importert bilde til nettsiden)
-    navn: "",
-    land: "",
-    changePassword: "",
+  input: {
+    createAccount: {
+      //registerView
+      username: "",
+      password: "",
+    },
+    profileView: {
+      //profileView
+      image: "", //URL Lenke i string (eller eksisterende importert bilde til nettsiden)
+      name: "",
+      country: "",
+      changePassword: "",
+    },
+    createQuizView: {
+      id: null,
+      title: "",
+      creator: "",
+      image: "",
+      theme: "",
+      date: "",
+      questions: [
+        {
+          questionID: null,
+          theQuestion: "",
+          questionImage: "",
+          answers: [
+            {
+              answerID: null,
+              answerText: " ",
+              color: "",
+            },
+            {
+              answerID: null,
+              answerText: "",
+              color: "",
+            },
+            {
+              answerID: null,
+              answerText: "",
+              color: "",
+            },
+            {
+              answerID: null,
+              answerText: "",
+              color: "",
+            },
+          ],
+        },
+      ],
+      results: [
+        {
+          id: null,
+          result: "",
+          resultimage: "", //URL Lenke i string (eller eksisterende importert bilde til nettsiden)
+        },
+      ],
+      isPublic: false,
+    },
   },
-  createQuizView: {
-    id: null,
-    title: "",
-    creator: "",
-    image: "",
-    theme: "",
-    date: "",
-    questions: [
-      {
-        questionID: null,
-        theQuestion: "",
-        questionImage: "",
-        answers: [
-          {
-            answerID: null,
-            answerText: " ",
-            color: "",
-          },
-          {
-            answerID: null,
-            answerText: "",
-            color: "",
-          },
-          {
-            answerID: null,
-            answerText: "",
-            color: "",
-          },
-          {
-            answerID: null,
-            answerText: "",
-            color: "",
-          },
-        ],
-      },
+  data: {
+    newestQuiz: [
+      //getQuizByDate();
+    ],
 
+    mostPopularQuiz: [
+      //getQuizByPopularity();
+    ],
+    highestRatedQuiz: [
+      //getQuizByRating();
+    ],
+    allQuizes: [
       {
         id: 0,
         title: "Hvilken hund er du?",
@@ -300,14 +324,14 @@ const model = {
             id: 0,
             result:
               "Du er en Labrador Retriever! Livlig og vennlig, du er alltid klar for moro og elsker å være i sentrum av oppmerksomheten.",
-            resultbilde:
+            resultimage:
               "https://hips.hearstapps.com/hmg-prod/images/dog-1598970334.png?crop=0.563xw:1.00xh;0.231xw,0&resize=980:*",
           },
           {
             id: 1,
             result:
               " Du er en Bernese Mountain Dog! Rolig og omsorgsfull, du verdsetter nære relasjoner og setter pris på fredelige stunder.",
-            resultbilde:
+            resultimage:
               "https://www.lifetimepetcover.co.uk/assets/uploads/alexandra_lau_jxEJY7SrJco_unsplash_min.jpg",
           },
           {
@@ -348,8 +372,8 @@ const model = {
         username: "Per", //Brukernavnet
         password: "PerPollIsMyName123", //<-- Unhashed 10/10 passord
         name: "Per Poll", //Deres navn, om ikke vi gjør firstName LastName
-        land: "",
-        bilde: "",
+        country: "",
+        image: "",
         //selfMadeQuizes? En array over hva brukeren har lager eller så kan vi hente data ved hjelp av brukernavnet og legge det inn
         answeredQuizes: [
           //Liste over hva slags quizer de har svart på - referanser til quizzer med ID
