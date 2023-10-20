@@ -9,7 +9,7 @@ const model = {
     currentView: "quizView",
     language: "en",
     isDarkMode: false,
-    //modeID: 0,
+    modeID: 0,
     userID: null,
     username: "",
   },
