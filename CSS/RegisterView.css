@@ -16,6 +16,14 @@
     text-align: left;
 }
 
+#regButton{
+    margin-top: 5px;
+}
+
+.commonSize{
+    width: 3rem;
+}
+
 #linkLoginP{
     cursor: pointer;
 }

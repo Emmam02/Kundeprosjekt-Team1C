@@ -376,6 +376,7 @@ const model = {
         ],
         users: [
             {
+                id: 0,
                 isDarkMode: false, //<-- Deres preferanse, lastes deretter inn i app isDarkMode
                 username: "Per", //Brukernavnet
                 password: "PerPollIsMyName123", //<-- Unhashed 10/10 passord
@@ -385,11 +386,11 @@ const model = {
                 //selfMadeQuizes? En array over hva brukeren har lager eller så kan vi hente data ved hjelp av brukernavnet og legge det inn
                 answeredQuizes: [
                     //Liste over hva slags quizer de har svart på - referanser til quizzer med ID
-                    1,
-                    69, 420,
+                    1, 69, 420,
                 ],
             },
             {
+                id: 1,
                 isDarkMode: false, //<-- Deres preferanse, lastes deretter inn i app isDarkMode
                 username: "Per", //Brukernavnet
                 password: "PerPollIsMyName123", //<-- Unhashed 10/10 passord
