@@ -386,8 +386,8 @@ const model = {
         username: "Per", //Brukernavnet
         password: "PerPollIsMyName123", //<-- Unhashed 10/10 passord
         name: "Per Poll", //Deres navn, om ikke vi gjør firstName LastName
-        land: "",
-        bilde: "",
+        country: "", //<-- skiftet språk her
+        image: "", //<-- skiftet språk her
         answeredQuizes: [1, 69, 420],
       },
     ],

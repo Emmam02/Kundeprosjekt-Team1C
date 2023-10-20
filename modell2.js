@@ -276,8 +276,6 @@ const model = {
         ],
         isPublic: true, // er delt
       },
-      //Ny quiz starter her
-      {},
     ],
     allCategories: ["Mat", "Dyr", "Sport", "Biler", "Spill", "Annet"],
     colors: ["", "", "", "", "", "", "", "", ""],
