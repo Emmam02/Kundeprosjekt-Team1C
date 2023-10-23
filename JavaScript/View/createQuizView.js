@@ -1,8 +1,10 @@
 function createQuizView() {
+    currentQuiz();
+    giveQuizId();
     app.innerHTML = /*HTML*/ `
         <h1 class="gameQuizContainer"> Create Your own Quiz</h1>
-            <input id="quizTitle" type="text" placeholder="Quiz Name" oninput=${model.input.createQuizView.title}></input>
-            <select onchange="updateTheme(${model.input.createQuizView.theme}, 0)">
+        <input id="quizTitle" type="text" placeholder="Quiz Name" oninput="updateInput('title', this.value)"></input>
+        <select id="quizTheme" oninput="updateInput('theme', this.value)">
             <option value="Mat">Mat</option>
             <option value="Dyr">Dyr</option>
             <option value="Sport">Sport</option>
@@ -10,14 +12,22 @@ function createQuizView() {
             <option value="Spill">Spill</option>
             <option value="Annet">Annet</option>
         </select>
-            <input id="quizImage" type="text" placeholder="Upload Quiz Image" oninput=${model.input.createQuizView.quizImage}></input>
-            <input id="quizimage" type="text" placeholder="Upload Quiz Image" oninput=${model.input.createQuizView.image}></input>
-            <div id="questionsContainer"></div>
-            <button onclick="addQuestion()">Add question</button>
-            <button onclick="submitQuiz()" type="submit">Submit</button>
-            <input id="quizCreator" type="text" placeholder="Creator" oninput=${model.input.createQuizView.creator}></input>
-            
+        <input id="quizImage" type="text" placeholder="Upload Quiz Image" oninput="updateInput('image', this.value)"></input>
+        <div id="questionsContainer"></div>
+        <button onclick="addQuestion()">Add question</button>
+        <button onclick="submitQuiz()" type="submit">Submit</button>
+        <p class="temp-class" onclick="changeView('mainView')">Tilbake</p>
+        <p class="temp-class" onclick="changeView('quizView')">Preview Quiz</p>
     `;
+}
+
+function updateInput(key, value) {
+    model.input.createQuizView[key] = value;
+}
+
+function updateTheme() {
+    theme = model.data.allCategories.value;
+    return theme;
 }
 
 function submitQuiz() {
@@ -26,9 +36,9 @@ function submitQuiz() {
     model.input.createQuizView.theme =
         document.getElementById("quizTheme").value;
     model.input.createQuizView.image =
-        document.getElementById("quizimage").value;
-    model.input.createQuizView.creator =
-        document.getElementById("quizCreator").value;
+        document.getElementById("quizImage").value;
+    model.input.createQuizView.creator = getUsername();
+    model.input.createQuizView.date = getCurrentDate();
 
     const questionsContainer = document.getElementById("questionsContainer");
     model.input.createQuizView.questions = Array.from(
@@ -44,8 +54,10 @@ function submitQuiz() {
 
     model.data.allQuizes.push({ ...model.input.createQuizView });
 
-    giveQuizId();
     clearAllQuizes();
+}
+function currentQuiz() {
+    return model.data.currentQuiz;
 }
 
 function giveQuizId() {
@@ -62,48 +74,47 @@ function addQuestion() {
     const questionId = giveUniqueId();
 
     questionContainer.innerHTML = /*HTML*/ `
-        <input id="${questionId}" type="text" placeholder="Question" oninput="updateQuestion(${questionId}, 0)" required></input>
-        <input id="${questionId}-image" type="text" placeholder="Upload Question Image" oninput="updateQuestion(${questionId}, 0, true)"></input>
+        <input id="${questionId}" type="text" placeholder="Question" oninput="updateInput('${questionId}',0, this.value)" required></input>
+        <input id="${questionId}-image" type="text" placeholder="Upload Question Image" oninput="updateInput('${questionId}', this.value, true)"></input>
         <div class="answers-container" id="${questionId}-answers">
             <div class="answer">
-                <input type="text" placeholder="Answer1" oninput="updateAnswer(${questionId}, 0)"></input>
-                <select onchange="updateAnswerColor(${questionId}, 0)">
-                    <option value="red">Red</option>
-                    <option value="blue">Blue</option>
-                    <option value="yellow">Yellow</option>
-                    <option value="orange">Orange</option>
+                <input type="text" placeholder="Answer1" oninput="updateInput('${questionId}', this.value)"></input>
+                <select onchange="updateAnswerColor(${questionId})">
+                    <option value="0">Red</option>
+                    <option value="1">Blue</option>
+                    <option value="2">Yellow</option>
+                    <option value="3">Orange</option>
                 </select>
             </div>
             <div class="answer">
-                <input type="text" placeholder="Answer2" oninput="updateAnswer(${questionId}, 1)"></input>
+                <input type="text" placeholder="Answer2" oninput="updateInput('${questionId}', this.value)"></input>
                 <select onchange="updateAnswerColor(${questionId}, 1)">
-                    <option value="red">Red</option>
-                    <option value="blue">Blue</option>
-                    <option value="yellow">Yellow</option>
-                    <option value="orange">Orange</option>
+                    <option value="0">Red</option>
+                    <option value="1">Blue</option>
+                    <option value="2">Yellow</option>
+                    <option value="3">Orange</option>
                 </select>
             </div>
             <div class="answer">
-                <input type="text" placeholder="Answer3" oninput="updateAnswer(${questionId}, 2)"></input>
+                <input type="text" placeholder="Answer3" oninput="updateInput('${questionId}', this.value)"></input>
                 <select onchange="updateAnswerColor(${questionId}, 2)">
-                    <option value="red">Red</option>
-                    <option value="blue">Blue</option>
-                    <option value="yellow">Yellow</option>
-                    <option value="orange">Orange</option>
+                    <option value="0">Red</option>
+                    <option value="1">Blue</option>
+                    <option value="2">Yellow</option>
+                    <option value="3">Orange</option>
                 </select>
             </div>
             <div class="answer">
-                <input type="text" placeholder="Answer4" oninput="updateAnswer(${questionId}, 3)"></input>
+                <input type="text" placeholder="Answer4" oninput="updateInput('${questionId}', this.value)"></input>
                 <select onchange="updateAnswerColor(${questionId}, 3)">
-                    <option value="red">Red</option>
-                    <option value="blue">Blue</option>
-                    <option value="yellow">Yellow</option>
-                    <option value="orange">Orange</option>
+                    <option value="0">Red</option>
+                    <option value="1">Blue</option>
+                    <option value="2">Yellow</option>
+                    <option value="3">Orange</option>
                 </select>
             </div>
         </div>
     `;
-
     const questionsContainer = document.getElementById("questionsContainer");
     questionsContainer.appendChild(questionContainer);
 }
@@ -137,6 +148,142 @@ function clearAllQuizes() {
         date: "",
         questions: [],
     };
+    updateView();
+}
+
+/*function results() {
+    let red = model.data.allQuizes.questions.answers.color["0"];
+    let blue = model.data.allQuizes.questions.answers.color["1"];
+    let yellow = model.data.allQuizes.questions.answers.color["2"];
+    let orange = model.data.allQuizes.questions.answers.color["3"];
+    let result = (model.data.allQuizes[currentQuiz].results = userResult);
+    //lage redCount, blueCount osvosv
+    //Funksjon for å telle svarene fra currentQuiz
+    //sjekke counts mot hverandre for å få resultatet
+    for (let i = 0; i < model.data.currentQuiz.questions.length; i++) {
+        if (model.data.currentQuiz.question[i].answer.color == "0") redCount++;
+        if (model.data.currentQuiz.question[i].answer.color == "1") blueCount++;
+        if (model.data.currentQuiz.question[i].answer.color == "2") yellowCount++;
+        if (model.data.currentQuiz.question[i].answer.color == "3") orangeCount++;
+    }
+    if (
+        redCount > blueCount &&
+        redCount > yellowCount &&
+        redCount > orangeCount
+    ) {
+        result = red; // Burde den endres til redResult så vikan linke det til result[index/tall]
+    } else if (blue > yellow && orange && red) result = blue;
+    else if (yellow > orange && red && blue) result = yellow;
+
+    getResultText();
+
+    //Bare telle når man har trykket på vis resultat
+}
+*/
+function results() {
+    // Assuming these are counts for each color
+    let redCount = 0;
+    let blueCount = 0;
+    let yellowCount = 0;
+    let orangeCount = 0;
+    let red = model.data.allQuizes.questions.answers.color["0"];
+    let blue = model.data.allQuizes.questions.answers.color["1"];
+    let yellow = model.data.allQuizes.questions.answers.color["2"];
+    let orange = model.data.allQuizes.questions.answers.color["3"];
+
+    // Assuming userResult is a variable available in the scope
+    let result = (model.data.allQuizes[currentQuiz].results = userResult);
+
+    // Funksjon for å telle svarene fra currentQuiz
+    // sjekke counts mot hverandre for å få resultatet
+    for (let i = 0; i < model.data.currentQuiz.questions.length; i++) {
+        const answerColor = model.data.currentQuiz.questions[i].answer.color;
+
+        // Increment the corresponding count based on the color
+        if (answerColor === "0") redCount++;
+        else if (answerColor === "1") blueCount++;
+        else if (answerColor === "2") yellowCount++;
+        else if (answerColor === "3") orangeCount++;
+    }
+
+    // Determine the result based on counts
+    if (
+        redCount > blueCount &&
+        redCount > yellowCount &&
+        redCount > orangeCount
+    ) {
+        result = red; // Assuming red is a predefined variable
+    } else if (blueCount > yellowCount && blueCount > orangeCount) {
+        result = blue; // Assuming blue is a predefined variable
+    } else if (yellowCount > orangeCount) {
+        result = yellow; // Assuming yellow is a predefined variable
+    } else {
+        result = orange; // Assuming orange is a predefined variable
+    }
+
+    getResultText();
+
+    // Bare telle når man har trykket på vis resultat
+}
+
+//Henter resultatet fra nåværende quiz som er lastet inn i currentQuiz
+function results2() {
+    let red = "0";
+    let blue = "1";
+    let orange = "2";
+    let yellow = "3";
+    let resultColor = "";
+
+    for (let index = 0; index < array.length; index++) {
+        const element = array[index];
+    }
+
+    switch (resultColor) {
+        case "0":
+            //funksjon for å hente resultatet i tekst.
+            break;
+        case "1":
+            break;
+        case "2":
+            break;
+        case "3":
+            break;
+        default:
+            console.debug;
+    }
+
+    //let red = model.data.allQuizes.questions.answers.color[0];
+    //let blue = model.data.allQuizes.questions.answers.color[1];
+    //let yellow = model.data.allQuizes.questions.answers.color[2];
+    //let orange = model.data.allQuizes.questions.answers.color[3];
+    let result = (model.data.allQuizes[currentQuiz].results = userResult);
+    //lage redCount, blueCount osvosv
+    //Funksjon for å telle svarene fra currentQuiz
+    //sjekke counts mot hverandre for å få resultatet
+    for (let i = 0; i < model.data.currentQuiz.questions.length; i++) {
+        if (model.data.currentQuiz.question[i].answer.color == "0") redCount++;
+        if (model.data.currentQuiz.question[i].answer.color == "1") blueCount++;
+        if (model.data.currentQuiz.question[i].answer.color == "2")
+            yellowCount++;
+        if (model.data.currentQuiz.question[i].answer.color == "3")
+            orangeCount++;
+    }
+    if (
+        redCount > blueCount &&
+        redCount > yellowCount &&
+        redCount > orangeCount
+    ) {
+        result = red; // Burde den endres til redResult så vikan linke det til result[index/tall]
+    } else if (blue > yellow && orange && red) result = blue;
+    else if (yellow > orange && red && blue) result = yellow;
+
+    getResultText(1);
+
+    //Bare telle når man har trykket på vis resultat
+}
+
+function getResultText(color) {
+    return model.currentQuiz.results.find((result) => result.id == color);
 }
 
 function updateAnswer(questionId, answerIndex) {

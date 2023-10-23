@@ -84,6 +84,13 @@ const model = {
         highestRatedQuiz: [
             //getQuizByRating();
         ],
+
+        currentQuiz: {
+            //Nåværende quiz. Her blir quizen lagt inn som et objekt med alle sine verdier.
+            //Etter å ha tatt quizen og er ferdig med å hente svaret/resultatene, skal resultatene lagres i users[].answeredQuizes[currentQuiz].result.
+            //Til sist etter man er ferdig og har fått lagret dataen skal man bare fjerne alt inne i currentQuiz for å gjøre klar til neste.
+        },
+
         allQuizes: [
             {
                 id: 0,
@@ -387,7 +394,8 @@ const model = {
                 //selfMadeQuizes? En array over hva brukeren har lager eller så kan vi hente data ved hjelp av brukernavnet og legge det inn
                 answeredQuizes: [
                     //Liste over hva slags quizer de har svart på - referanser til quizzer med ID
-                    1, 69, 420,
+                    1,
+                    69, 420,
                 ],
             },
             {
@@ -399,6 +407,35 @@ const model = {
                 country: "", //<-- skiftet språk her
                 image: "", //<-- skiftet språk her
                 answeredQuizes: [1, 69, 420],
+            },
+            {
+                id: 1,
+                isDarkMode: false, //<-- Deres preferanse, lastes deretter inn i app isDarkMode
+                username: "Per", //Brukernavnet
+                password: "PerPollIsMyName123", //<-- Unhashed 10/10 passord
+                name: "Per Poll", //Deres navn, om ikke vi gjør firstName LastName
+                country: "", //<-- skiftet språk her
+                image: "", //<-- skiftet språk her
+                answeredQuizes: [
+                    {
+                        id: 1,
+                        quizTitle: "",
+                        description: "",
+                        result: "2",
+                    },
+                    {
+                        id: 69,
+                        quizTitle: "",
+                        description: "",
+                        result: "3",
+                    },
+                    {
+                        id: ("94ad45bd-dcff-4564-9b95-2ccaa3447fd0", 420),
+                        quizTitle: "",
+                        description: "",
+                        result: "1",
+                    },
+                ],
             },
         ],
     },
