@@ -6,8 +6,8 @@
 //<div></div>
 //</div>
 
-function mainView(){
-    app.innerHTML = /*HTML*/`
+function mainView() {
+  app.innerHTML = /*HTML*/ `
     <div id="mainView">
         <nav id="nav-bar">
             <div id="nav-title-content">
@@ -30,7 +30,7 @@ function mainView(){
             <p class="link-view" onclick="changeView('registerView')">RegisterView</p>
             <p class="link-view" onclick="changeView('createQuizView')">CreateQuizView</p>
             <p class="link-view" onclick="changeView('myProfileView')">profileView</p>
-            <p class="link-view" onclick="changeView('')">Temp</p>
+            <p class="link-view" onclick="changeView('quizView')">QuizView</p>
             <p class="link-view" onclick="changeView('')">Temp</p>
             <p class="link-view" onclick="changeView('')">Temp</p>
         </div>
