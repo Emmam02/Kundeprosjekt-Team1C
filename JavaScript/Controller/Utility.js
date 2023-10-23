@@ -19,7 +19,11 @@ function getQuizByRating(){
 }
 
 function getUsername(){
-
+    if(model.app.username.toString() == (null || "")){
+        model.app.username = "Anonymous";
+    }else{
+        return model.app.username.toString();
+    }
 }
 
 //End

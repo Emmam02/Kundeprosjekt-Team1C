@@ -8,10 +8,11 @@ const model = {
     app: {
         currentView: "mainView",
         language: "en",
-        isDarkMode: false,
+        isDarkMode: true,
         modeID: 0,
         userID: null,
         username: "",
+        profilePic:"",
     },
     input: {
         createAccount: {
