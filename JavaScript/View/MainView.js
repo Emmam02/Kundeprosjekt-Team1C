@@ -15,7 +15,7 @@ function mainView() {
             </div>
             <div id="nav-profile-content">
                 <div id="nav-profile-text">Test</div>
-                <div id="nav-profile-picture">Img</div>
+                <div id="nav-profile-picture"></div>
             <div>
         </nav>
 
