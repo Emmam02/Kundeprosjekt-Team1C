@@ -9,9 +9,9 @@ function getProfilePic(){
 
 function setProfilePic(){
     if (getProfilePic() == "") {
-        navPic.style.background = new url("Images/DefaultProfile.png");
+        navPic.style.background = "url('Images/DefaultProfile.png')";
     }else{
-        navPic.style.backgroundImage = getProfilePic();
+        navPic.style.backgroundImage = `url('${getProfilePic().toString()}')`;
     }
 }
 

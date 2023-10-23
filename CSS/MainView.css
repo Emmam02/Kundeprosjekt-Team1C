@@ -47,9 +47,10 @@
 
 #nav-profile-picture {
     background-size: contain;
-    height: 10px;
-    width: 10px;
+    background-repeat: no-repeat;
     background-position: center;
+    height: 25px;
+    width: 25px;
     margin: 2px 2px 2px 2px;
 }
 
@@ -65,7 +66,7 @@
     text-align: left;
 }
 
-/**/
+/*Temp*/
 #temp-container {
     display: flex;
     flex-direction: column;

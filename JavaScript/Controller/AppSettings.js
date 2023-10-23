@@ -23,7 +23,7 @@ function loadColorTheme(){
 
 function loadProfilePic(){
     if(model.app.username == "" && model.app.userID == null || model.app.userID == null || model.app.username == ""){
-        profileNavImg.style.background = url("Images/DefaultProfile.png");
+        profileNavImg.style.backgroundImage = "url('Images/DefaultProfile.png')";
     }else{
         profileNavImg.style.background = model.app.profilePic;
     }
