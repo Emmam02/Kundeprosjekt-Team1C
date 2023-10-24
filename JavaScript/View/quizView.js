@@ -1,5 +1,5 @@
 let i = 0;
-const quiz = model.data.allQuizes[i];
+const quiz = getQuiz();
 
 let currentQuestion = 0;
 
@@ -10,6 +10,16 @@ let userAnswers = {
   3: 0,
 };
 
+function getQuiz() {
+  return model.data.allQuizes.find(
+    (quiz) => quiz.id == model.app.currentQuizId
+  );
+}
+
+/* 
+Den siden man først kommer til når man trykker
+på en quiz, med start knapp for å begynne quizen. ↓
+*/
 function quizView() {
   app.innerHTML = /*HTML*/ `
     <div class="quizContainer">
@@ -20,6 +30,10 @@ function quizView() {
     `;
 }
 
+/* 
+Når man har trykket på start knappen så går man til dette,her 
+ser man første spørssmål og svaralternativene som hører til ↓.
+ */
 function quizStarted() {
   app.innerHTML = /*HTML*/ `
     <div class="quizContainer">
@@ -36,38 +50,64 @@ function quizStarted() {
       <div class="nextAndPrevButtons">
       <button onclick="nextQuestion()" class="nextButton">Next</button>
       </div>
-      <!--<h4 style="color: white;">Laget av: ${quiz.creator}</h4>-->
     </div>
   `;
 }
 
+/* 
+Denne henter spørsmålet som skal vises  ↓. 
+ */
 function getQuizQuestion() {
-  return model.data.allQuizes[0].questions[currentQuestion];
+  return model.data.allQuizes[1].questions[currentQuestion];
 }
 
+/*
+Henter svaralternativer og legger til det valgte 
+svaret i result = ""; ↓.	 
+*/
 function getQuizAnswers() {
   let result = "";
-  getQuizQuestion().answers.forEach((answer) => {
-    result += `
-        <div class="quizAnswer" onclick="submitAnswer(this)" color="${answer.color}">${answer.answerText}</div>
-        `;
-  });
+
+  const answers = getQuizQuestion().answers;
+  for (let i = 0; i < answers.length; i++) {
+    result +=
+      '<div class="quizAnswer" onclick="submitAnswer(this)" color="' +
+      answers[i].color +
+      '">' +
+      answers[i].answerText +
+      "</div>";
+  }
   return result;
 }
 
+/*
+Lagrer vardien til svaret som er klikket for å finne ut hva 
+man trykket mest på, for å komme frem til resultatet.
+
+Endrer utseende på det svaret man trykket på så det skal være 
+godt synlig for brukeren hva de har svart før man går videre ↓.
+ */
 function submitAnswer(clickedAnswer) {
   const color = clickedAnswer.getAttribute("color");
   userAnswers[color]++;
+
   const allAnswers = document.querySelectorAll(".quizAnswer");
-  allAnswers.forEach((answer) => {
+
+  for (let i = 0; i < allAnswers.length; i++) {
+    const answer = allAnswers[i];
     answer.style.backgroundColor = "#faf0e6";
     answer.style.boxShadow = "0px 0px 0px #888888";
-  });
+  }
+
   clickedAnswer.style.backgroundColor = "#fdf0d0";
   clickedAnswer.style.border = "2px solid black";
   clickedAnswer.style.boxShadow = "6px 4px 4px #888888";
 }
 
+/*
+Når man trykker på next vil denne funksjonen kjøre,
+da komme rman til det neste spørsmålet. ↓
+ */
 function nextQuestion() {
   if (currentQuestion < quiz.questions.length - 1) {
     currentQuestion++;
@@ -77,6 +117,10 @@ function nextQuestion() {
   }
 }
 
+/*
+Finner hvilket svar(farge) som brukeren har
+valgt flest ganger. ↓
+ */
 function findMostSelectedColor() {
   let mostSelectedColor = 0;
   let maxCount = userAnswers[0];
@@ -91,11 +135,14 @@ function findMostSelectedColor() {
   return mostSelectedColor;
 }
 
+/*
+Viser resultatet som ble valgt i forhold til 
+hvilket svar(farge) som brukeren valgte flest ganger ↓.
+ */
 function handleLastQuestion() {
   const mostSelectedColor = findMostSelectedColor();
-  console.log("Most selected color in handleLastQuestion:", mostSelectedColor);
-  const result = model.data.allQuizes[0].results[mostSelectedColor];
-  console.log("Result:", result);
+
+  const result = model.data.allQuizes[1].results[mostSelectedColor];
 
   app.innerHTML = /*HTML*/ `
     <div class="quizContainerResult">
@@ -116,8 +163,12 @@ function handleLastQuestion() {
       </div>
       
   `;
+
   // Dette fungerer, men den viser ikke typ "skjermbilde" av siden
   // til resultatene som man ønsker å dele, så det må rettes opp i.
+  /*
+  Linker til andre some sider hvor man kan share resultatet sitt. ↓
+   */
   const link = encodeURIComponent(window.location.href);
   const message = encodeURIComponent("Jeg tok denne kule testen!");
   const title = encodeURIComponent(document.querySelector("title").textContent);
