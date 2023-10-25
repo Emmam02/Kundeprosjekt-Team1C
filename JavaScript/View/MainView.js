@@ -1,11 +1,6 @@
 "use strict";
 //Start
 
-//<div id="">
-//<div></div>
-//<div></div>
-//</div>
-
 function mainView(){
     app.innerHTML = /*HTML*/`
     <div id="mainView">
@@ -14,13 +9,22 @@ function mainView(){
                 <div id="nav-title">Testify - Main Menu</div>
             </div>
             <div id="nav-profile-content">
-                <div id="nav-profile-text">Test</div>
-                <div id="nav-profile-picture">Img</div>
+                <div id="nav-profile-text"></div>
+                <div id="nav-profile-picture"></div>
             <div>
         </nav>
 
         <div id="search-bar">
             <input id="search-bar-text" placeholder="Search..." type="search">
+        </div>
+
+        <div id="themeContainer">
+            <div class="themeDisplay link-view" onclick="changeView('matQuizView')">${model.data.allCategories[0].name}</div>
+            <div class="themeDisplay link-view" onclick="changeView('dyrQuizView')">${model.data.allCategories[1].name}</div>
+            <div class="themeDisplay link-view" onclick="changeView('sportQuizView')">${model.data.allCategories[2].name}</div>
+            <div class="themeDisplay link-view" onclick="changeView('bilQuizView')">${model.data.allCategories[3].name}</div>
+            <div class="themeDisplay link-view" onclick="changeView('spillQuizView')">${model.data.allCategories[4].name}</div>
+            <div class="themeDisplay link-view" onclick="changeView('annetQuizView')">${model.data.allCategories[5].name}</div>
         </div>
 
         <div id="temp-container">
@@ -30,7 +34,7 @@ function mainView(){
             <p class="link-view" onclick="changeView('registerView')">RegisterView</p>
             <p class="link-view" onclick="changeView('createQuizView')">CreateQuizView</p>
             <p class="link-view" onclick="changeView('myProfileView')">profileView</p>
-            <p class="link-view" onclick="changeView('')">Temp</p>
+            <p class="link-view" onclick="changeView('quizView')">QuizView</p>
             <p class="link-view" onclick="changeView('')">Temp</p>
             <p class="link-view" onclick="changeView('')">Temp</p>
         </div>
