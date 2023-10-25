@@ -1,26 +1,30 @@
 "use strict";
 //Start
 
-//<div id="">
-//<div></div>
-//<div></div>
-//</div>
-
 function mainView(){
     app.innerHTML = /*HTML*/`
-    <div id="mainView">
+    <div id="mainView" onload="">
         <nav id="nav-bar">
             <div id="nav-title-content">
                 <div id="nav-title">Testify - Main Menu</div>
             </div>
             <div id="nav-profile-content">
-                <div id="nav-profile-text">Test</div>
+                <div id="nav-profile-text"></div>
                 <div id="nav-profile-picture"></div>
             <div>
         </nav>
 
         <div id="search-bar">
             <input id="search-bar-text" placeholder="Search..." type="search">
+        </div>
+
+        <div id="themeContainer">
+            <div class="themeDisplay link-view" onclick="changeView('matQuizView')">${model.data.allCategories[0].name}</div>
+            <div class="themeDisplay link-view" onclick="changeView('dyrQuizView')">${model.data.allCategories[1].name}</div>
+            <div class="themeDisplay link-view" onclick="changeView('sportQuizView')">${model.data.allCategories[2].name}</div>
+            <div class="themeDisplay link-view" onclick="changeView('bilQuizView')">${model.data.allCategories[3].name}</div>
+            <div class="themeDisplay link-view" onclick="changeView('spillQuizView')">${model.data.allCategories[4].name}</div>
+            <div class="themeDisplay link-view" onclick="changeView('annetQuizView')">${model.data.allCategories[5].name}</div>
         </div>
 
         <div id="temp-container">

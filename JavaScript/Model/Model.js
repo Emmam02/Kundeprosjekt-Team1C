@@ -368,7 +368,28 @@ const model = {
                 isPublic: true, // er delt
             },
         ],
-        allCategories: ["Mat", "Dyr", "Sport", "Biler", "Spill", "Annet"],
+
+        allCategories:[
+            {
+                name:"Mat",
+            },
+            {
+                name:"Dyr",
+            },
+            {
+                name:"Sport",
+            },
+            {
+                name:"Biler",
+            },
+            {
+                name:"Spill",
+            },
+            {
+                name: "Annet",
+            },
+        ],
+
         colors: ["", "", "", "", "", "", "", "", ""],
         themeMode: [
             {

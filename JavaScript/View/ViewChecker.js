@@ -20,16 +20,16 @@ function updateView() {
             matQuizView();
             break;
         case "dyrQuizView":
-            matQuizView();
+            dyrQuizView();
             break;
         case "sportQuizView":
-            matQuizView();
+            sportQuizView();
             break;
         case "bilQuizView":
-            matQuizView();
+            bilQuizView();
             break;
         case "spillQuizView":
-            matQuizView();
+            spillQuizView();
             break;
         case "annetQuizView":
             annetQuizView();

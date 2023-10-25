@@ -1,7 +1,8 @@
 "use strict";
 //Start
 
-const navPic = document.getElementById();
+const navUser = document.getElementById("nav-profile-text")
+const navPic = document.getElementById("nav-profile-picture");
 
 function getProfilePic(){
     return model.app.profilePic;
@@ -13,6 +14,18 @@ function setProfilePic(){
     }else{
         navPic.style.backgroundImage = `url('${getProfilePic().toString()}')`;
     }
+}
+
+function getUsernameNav(){
+    if(model.app.username.toString() == (null || "")){
+        model.app.username = "Anonymous";
+    }else{
+        return model.app.username.toString();
+    }
+}
+
+function setUsernameNav(){
+    navUser.innerText = getUsernameNav();
 }
 
 //End

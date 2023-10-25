@@ -3,13 +3,16 @@
 
 const siteSettings = document.getElementById("siteSettings");
 const profileNavImg = document.getElementById("nav-profile-picture");
-
-loadSettingsApp();
-loadProfilePic();
+const profileNavUser = document.getElementById("nav-profile-text")
 
 function loadSettingsApp(){
     loadColorTheme();
+    loadProfilePic();
+    loadUsername();
 }
+
+//Loading settings
+loadSettingsApp();
 
 function loadColorTheme(){
     if(model.app.isDarkMode == true){
@@ -26,6 +29,14 @@ function loadProfilePic(){
         profileNavImg.style.backgroundImage = "url('Images/DefaultProfile.png')";
     }else{
         profileNavImg.style.background = model.app.profilePic;
+    }
+}
+
+function loadUsername(){
+    if((model.app.username == "" && model.app.userID == null) || model.app.userID == null || model.app.username == ""){
+        profileNavImg.innerText = "Anonymous";
+    }else{
+        profileNavUser.innerText = model.app.username;
     }
 }
 
