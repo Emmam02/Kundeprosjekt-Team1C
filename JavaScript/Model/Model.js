@@ -6,7 +6,7 @@ const app = document.getElementById("app");
 
 const model = {
     app: {
-        currentView: "mainView",
+        currentView: "loginView",
         language: "en",
         isDarkMode: true,
         modeID: 0,
@@ -17,6 +17,11 @@ const model = {
     input: {
         createAccount: {
             //registerView
+            username: "",
+            password: "",
+        },
+        loggingInView: {
+            //loginView
             username: "",
             password: "",
         },
@@ -387,7 +392,7 @@ const model = {
                 id: 0,
                 isDarkMode: false, //<-- Deres preferanse, lastes deretter inn i app isDarkMode
                 username: "Per", //Brukernavnet
-                password: "PerPollIsMyName123", //<-- Unhashed 10/10 passord
+                password: "Perlikervann", //<-- Unhashed 10/10 passord
                 name: "Per Poll", //Deres navn, om ikke vi gjør firstName LastName
                 country: "",
                 image: "",
@@ -401,19 +406,19 @@ const model = {
             {
                 id: 1,
                 isDarkMode: false, //<-- Deres preferanse, lastes deretter inn i app isDarkMode
-                username: "Per", //Brukernavnet
-                password: "PerPollIsMyName123", //<-- Unhashed 10/10 passord
-                name: "Per Poll", //Deres navn, om ikke vi gjør firstName LastName
+                username: "Jens", //Brukernavnet
+                password: "JensNATO", //<-- Unhashed 10/10 passord
+                name: "Jens Stoltenberg", //Deres navn, om ikke vi gjør firstName LastName
                 country: "", //<-- skiftet språk her
                 image: "", //<-- skiftet språk her
                 answeredQuizes: [1, 69, 420],
             },
             {
-                id: 1,
+                id: 2,
                 isDarkMode: false, //<-- Deres preferanse, lastes deretter inn i app isDarkMode
-                username: "Per", //Brukernavnet
-                password: "PerPollIsMyName123", //<-- Unhashed 10/10 passord
-                name: "Per Poll", //Deres navn, om ikke vi gjør firstName LastName
+                username: "Pål", //Brukernavnet
+                password: "Pålergammel", //<-- Unhashed 10/10 passord
+                name: "Pål Kautokeino", //Deres navn, om ikke vi gjør firstName LastName
                 country: "", //<-- skiftet språk her
                 image: "", //<-- skiftet språk her
                 answeredQuizes: [
