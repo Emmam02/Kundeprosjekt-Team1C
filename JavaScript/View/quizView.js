@@ -15,7 +15,6 @@ function getQuiz() {
     (quiz) => quiz.id == model.app.currentQuizId
   );
 }
-
 /* 
 Den siden man først kommer til når man trykker
 på en quiz, med start knapp for å begynne quizen. ↓
@@ -58,7 +57,7 @@ function quizStarted() {
 Denne henter spørsmålet som skal vises  ↓. 
  */
 function getQuizQuestion() {
-  return model.data.allQuizes[1].questions[currentQuestion];
+  return model.data.allQuizes[0].questions[currentQuestion];
 }
 
 /*
@@ -142,7 +141,7 @@ hvilket svar(farge) som brukeren valgte flest ganger ↓.
 function handleLastQuestion() {
   const mostSelectedColor = findMostSelectedColor();
 
-  const result = model.data.allQuizes[1].results[mostSelectedColor];
+  const result = model.data.allQuizes[0].results[mostSelectedColor];
 
   app.innerHTML = /*HTML*/ `
     <div class="quizContainerResult">

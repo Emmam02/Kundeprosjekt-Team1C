@@ -13,7 +13,7 @@ const model = {
     userID: null,
     username: "",
     profilePic: "",
-    currentQuizId: 1,
+    currentQuizId: 0,
   },
   input: {
     createAccount: {
