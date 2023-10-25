@@ -29,3 +29,12 @@ function logIn(){
    updateView()
     
 }
+
+function togglePasVis() {
+    var  x= document.getElementById("userInputPAS");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }
