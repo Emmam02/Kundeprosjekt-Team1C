@@ -28,6 +28,11 @@ const model = {
       country: "",
       changePassword: "",
     },
+    loggingInView: {
+      //loginView
+      username: "",
+      password: "",
+    },
     createQuizView: {
       id: null,
       title: "",
@@ -417,9 +422,9 @@ const model = {
       {
         id: 0,
         isDarkMode: false, //<-- Deres preferanse, lastes deretter inn i app isDarkMode
-        username: "Per", //Brukernavnet
-        password: "PerPollIsMyName123", //<-- Unhashed 10/10 passord
-        name: "Per Poll", //Deres navn, om ikke vi gjør firstName LastName
+        username: "Pål", //Brukernavnet
+        password: "Pålergammel", //<-- Unhashed 10/10 passord
+        name: "Per Kautokeino", //Deres navn, om ikke vi gjør firstName LastName
         country: "",
         image: "",
         //selfMadeQuizes? En array over hva brukeren har lager eller så kan vi hente data ved hjelp av brukernavnet og legge det inn
@@ -433,9 +438,9 @@ const model = {
       {
         id: 1,
         isDarkMode: false, //<-- Deres preferanse, lastes deretter inn i app isDarkMode
-        username: "Per", //Brukernavnet
-        password: "PerPollIsMyName123", //<-- Unhashed 10/10 passord
-        name: "Per Poll", //Deres navn, om ikke vi gjør firstName LastName
+        username: "Jens", //Brukernavnet
+        password: "JensNATO", //<-- Unhashed 10/10 passord
+        name: "Jens Stoltenberg", //Deres navn, om ikke vi gjør firstName LastName
         country: "", //<-- skiftet språk her
         image: "", //<-- skiftet språk her
         answeredQuizes: [1, 69, 420],
@@ -444,7 +449,7 @@ const model = {
         id: 1,
         isDarkMode: false, //<-- Deres preferanse, lastes deretter inn i app isDarkMode
         username: "Per", //Brukernavnet
-        password: "PerPollIsMyName123", //<-- Unhashed 10/10 passord
+        password: "Perlikervann", //<-- Unhashed 10/10 passord
         name: "Per Poll", //Deres navn, om ikke vi gjør firstName LastName
         country: "", //<-- skiftet språk her
         image: "", //<-- skiftet språk her

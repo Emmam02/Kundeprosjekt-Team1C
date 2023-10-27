@@ -1,28 +1,37 @@
 let newQuiz = model.input.createQuizView;
+let interactionText = "";
 
 function createQuizView() {
     app.innerHTML = /*HTML*/ `
         <h1 class="gameQuizContainer"> Create Your own Quiz</h1>
         <input id="quizTitle" type="text" placeholder="Quiz Name" oninput="${(newQuiz.title =
-            this.value)}" ></input>
-        <select id="quizTheme" oninput="${(newQuiz.theme = this.value)}">
+            this.value)}" required></input>
+        <select id="quizTheme" oninput="${(newQuiz.theme =
+            this.value)}" required>
             <option value="Mat">Mat</option>
             <option value="Dyr">Dyr</option>
             <option value="Sport">Sport</option>
-            <option value="orange">Biler</option>
+            <option value="Biler">Biler</option>
             <option value="Spill">Spill</option>
             <option value="Annet">Annet</option>
         </select>
         <input id="quizImage" type="text" placeholder="Upload Quiz Image"oninput="${(newQuiz.image =
-            this.value)}"></input>
+            this.value)}"required></input>
+        <span id="interactionText"></span>
         <button onclick="clearQuestions()">Add question</button>
-        <button onclick="submit()"type="submit">Submit</button>
- 
+        
+        <button onclick="submit()" type="submit">Submit</button>
+        <label class="switch">
+        <input onclick="togglePrivate()" type="checkbox">
+        <span class="slider round"></span>
+        </label>
+        <div id="togglePrivate" class="private"> Private/Public</div>
+            
         <div>
-        <input type="text" placeholder="Question" oninput="${(newQuiz.questions[0].theQuestion =
-            this.value)}" >
-        <input type="text" placeholder="Upload Question Image" oninput="${(newQuiz.questions[0].questionImage =
-            this.value)}"></input>
+            <input type="text" placeholder="Question" oninput="${(newQuiz.questions[0].theQuestion =
+                this.value)}" >
+            <input type="text" placeholder="Upload Question Image" oninput="${(newQuiz.questions[0].questionImage =
+                this.value)}"></input>
             <div class="answer">
             <input type="text" placeholder="Answer1" oninput="${(newQuiz.questions[0].answers[0].answerText =
                 this.value)}"></input>
@@ -67,9 +76,10 @@ function createQuizView() {
                     <option value="3">Orange</option>
                 </select>
             </div>
+        
         </div>
-        </div>
-
+        
+        
         <p class="temp-class" onclick="changeView('mainView')">Tilbake</p>
         <p class="temp-class " onclick="changeView('quizView')">Preview Quiz</p>
 
@@ -102,8 +112,18 @@ function createQuizView() {
     `;
 }
 
+function togglePrivate() {
+    let togglePrivate = document.getElementById("togglePrivate");
+    if (newQuiz.isPublic == false) {
+        newQuiz.isPublic = true;
+        togglePrivate.innerText = `Public`;
+    } else if (newQuiz.isPublic == true) {
+        togglePrivate.innerText = `Private`;
+        newQuiz.isPublic = false;
+    }
+}
+
 function clearQuestions() {
-    // let newQuestion = structuredClone(newQuiz.questions[0]);
     newQuiz.questions.push(newQuiz.questions[0]);
 
     newQuiz.questions[0] = {
@@ -133,16 +153,33 @@ function clearQuestions() {
             },
         ],
     };
+    setInteractionText(`Question Added Successfully`);
+    setTimeout(() => {
+        setInteractionText("");
+    }, 2000);
+}
 
-    // newQuiz.questions.push(newQuestion);
+function setInteractionText(text) {
+    document.getElementById("interactionText").innerText = text;
 }
 
 function submit() {
-    model.data.allQuizes.push(model.input.createQuizView);
+    newQuiz.id = generateUniqueId();
+    newQuiz.creator = getUsername();
+    newQuiz.date = getCurrentDate();
+    model.data.allQuizes.push(newQuiz);
+    setInteractionText(`Quiz Added Successfully`);
+    setTimeout(() => {
+        setInteractionText("");
+    }, 2000);
+}
+
+function generateUniqueId() {
+    return Math.floor(Math.random() * Date.now());
 }
 
 function clearNewQuiz() {
-    model.input.createQuizView = {
+    newQuiz = {
         id: null,
         title: "",
         creator: "",
@@ -185,6 +222,10 @@ function clearNewQuiz() {
                 resultimage: "", //URL Lenke i string (eller eksisterende importert bilde til nettsiden)
             },
         ],
-        isPublic: false,
+        isPublic: true,
     };
+    setInteractionText(`Quiz Added Successfully`);
+    setTimeout(() => {
+        setInteractionText("");
+    }, 2000);
 }
