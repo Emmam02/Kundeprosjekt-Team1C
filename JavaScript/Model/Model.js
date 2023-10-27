@@ -376,8 +376,8 @@ const model = {
         isPublic: true, // er delt
       },
     ],
-    //allCategories: ["Mat", "Dyr", "Sport", "Biler", "Spill", "Annet"],
 
+    //allCategories: ["Mat", "Dyr", "Sport", "Biler", "Spill", "Annet"],
     allCategories:[
       {
           name:"Mat",

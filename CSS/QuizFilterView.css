@@ -1,0 +1,23 @@
+
+.annetQuizList{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.innerQuiz{
+    color:white;
+}
+
+.theQuizTitle{
+    color:white;
+}
+
+.theCreator{
+    color:white;
+}
+
+.theCategory{
+    color:white;
+}

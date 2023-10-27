@@ -14,7 +14,7 @@ function loginView(){
 }
 
 function wrongUserNameOrPassword(){
-    return `
+    return /*HTML*/`
     <div>Du skrev inn feil brukernavn eller passord</div>
     `
 }

@@ -49,29 +49,13 @@ function getQuizByPopularity() {
   }
 }
 
+/*
 function getQuizByRating() {
   for (let index = 0; index < array.length; index++) {
     const element = array[index];
   }
 }
-
-function getQuizByDate() {
-  for (let index = 0; index < array.length; index++) {
-    const element = array[index];
-  }
-}
-
-function getQuizByPopularity() {
-  for (let index = 0; index < array.length; index++) {
-    const element = array[index];
-  }
-}
-
-function getQuizByRating() {
-  for (let index = 0; index < array.length; index++) {
-    const element = array[index];
-  }
-}
+*/
 
 function getUsername() {
   if (model.app.username.toString() == (null || "")) {
