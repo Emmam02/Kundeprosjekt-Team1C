@@ -8,7 +8,7 @@ const model = {
   app: {
     currentView: "mainView",
     language: "en",
-    isDarkMode: true,
+    isDarkMode: false,
     modeID: 0,
     userID: null,
     username: "",
@@ -383,24 +383,24 @@ const model = {
     ],
 
     //allCategories: ["Mat", "Dyr", "Sport", "Biler", "Spill", "Annet"],
-    allCategories:[
+    allCategories: [
       {
-          name:"Mat",
+        name: "Mat",
       },
       {
-          name:"Dyr",
+        name: "Dyr",
       },
       {
-          name:"Sport",
+        name: "Sport",
       },
       {
-          name:"Biler",
+        name: "Biler",
       },
       {
-          name:"Spill",
+        name: "Spill",
       },
       {
-          name: "Annet",
+        name: "Annet",
       },
     ],
 
@@ -431,8 +431,7 @@ const model = {
         answeredQuizes: [
           //Liste over hva slags quizer de har svart på - referanser til quizzer med ID
           1,
-          69, 
-          420,
+          69, 420,
         ],
       },
       {
