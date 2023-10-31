@@ -15,8 +15,8 @@ function createQuizView() {
             <option value="${model.data.allCategories[4].name}">Spill</option>
             <option value="${model.data.allCategories[5].name}">Annet</option>
         </select>
-        <input id="quizImage" type="text" placeholder="Upload Quiz Image"oninput="${(newQuiz.image =
-          this.value)}"required></input>
+        <input id="quizImage" type="text" placeholder="Upload Quiz Image"oninput="(newQuiz.image =
+          this.value)"required></input>
         <button onclick="clearQuestions()">Add question</button>
         
         <label class="switch">
