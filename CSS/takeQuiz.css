@@ -9,8 +9,10 @@
   font-family: "Merriweather", serif;
   border: 1px solid black;
   margin-left: 25%;
-  margin-top: 2%;
-  background-color: #acbb90;
+  margin-right: 25%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  background-color: #e3dec4;
   width: 1000px;
   height: 800px;
   text-align: center;
@@ -62,7 +64,7 @@
   font-size: x-large;
   margin: 10px;
   padding: 5px;
-  background-color: #d6dcc5;
+  background-color: #e8d6b3;
   border: 1px solid black;
   border-radius: 7px;
   cursor: pointer;
@@ -110,8 +112,8 @@
 }
 /* #shareResultButton {
   position: absolute;
-  bottom: 3%;  Juster denne verdien etter behov for ønsket avstand fra bunnen 
-  right: 3%;  Juster denne verdien etter ønsket avstand fra høyre kant 
+  bottom: 3%;  
+  right: 3%;  
 }
 #shareResultButton img {
   width: 20px;
