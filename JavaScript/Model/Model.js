@@ -445,7 +445,7 @@ const model = {
         answeredQuizes: [1, 69, 420],
       },
       {
-        id: 1,
+        id: 2,
         isDarkMode: false, //<-- Deres preferanse, lastes deretter inn i app isDarkMode
         username: "Per", //Brukernavnet
         password: "Perlikervann", //<-- Unhashed 10/10 passord
