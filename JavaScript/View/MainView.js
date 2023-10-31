@@ -1,6 +1,10 @@
 "use strict";
 //Start
 
+function getLoggedInUser(){
+    return model.data.users.find((user) => user.id === model.app.userID)
+}
+
 function mainView(){
     app.innerHTML = /*HTML*/`
     <div id="mainView">
@@ -9,8 +13,8 @@ function mainView(){
                 <div id="nav-title">Testify - Main Menu</div>
             </div>
             <div id="nav-profile-content">
-                <div id="nav-profile-text"></div>
-                <div id="nav-profile-picture"></div>
+                <div id="nav-profile-text">${getLoggedInUser().username}</div>
+                <img id="nav-profile-picture" src="${getLoggedInUser().image}">
             <div>
         </nav>
 

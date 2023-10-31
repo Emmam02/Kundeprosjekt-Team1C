@@ -8,9 +8,9 @@ const model = {
   app: {
     currentView: "mainView",
     language: "en",
-    isDarkMode: false,
+    isDarkMode: true,
     modeID: 0,
-    userID: null,
+    userID: 1, //Trenger egentlig bare denne for å vise brukerinformasjon
     username: "",
     profilePic: "",
     currentQuizId: 0,
@@ -18,14 +18,21 @@ const model = {
   input: {
     createAccount: {
       //registerView
+      id:null,
       username: "",
       password: "",
+      name: "",
+      age:"",
+      mail:"",
+      image:"",
     },
     profileView: {
       //profileView
       image: "", //URL Lenke i string (eller eksisterende importert bilde til nettsiden)
       name: "",
-      country: "",
+      username:"",
+      mail:"",
+      age:"",
       changePassword: "",
     },
     loggingInView: {
@@ -424,9 +431,10 @@ const model = {
         isDarkMode: false, //<-- Deres preferanse, lastes deretter inn i app isDarkMode
         username: "Pål", //Brukernavnet
         password: "Pålergammel", //<-- Unhashed 10/10 passord
-        name: "Per Kautokeino", //Deres navn, om ikke vi gjør firstName LastName
-        country: "",
-        image: "",
+        name: "Pål Kautokeino", //Deres navn, om ikke vi gjør firstName LastName
+        age:"",
+        image: "https://th.bing.com/th/id/R.03ca93494fd99b7c015a31f35fc9f901?rik=KLa2G67GlioelA&riu=http%3a%2f%2fthirdmonk.net%2fpostcont%2f2013%2f12%2fMr-Bean-Pictures-1.jpg&ehk=T391CT1w8zhrVPvzUYwUgATV62XcYmfVZKMJ7pjyvYg%3d&risl=&pid=ImgRaw&r=0",
+        mail:"",
         //selfMadeQuizes? En array over hva brukeren har lager eller så kan vi hente data ved hjelp av brukernavnet og legge det inn
         answeredQuizes: [
           //Liste over hva slags quizer de har svart på - referanser til quizzer med ID
@@ -440,18 +448,20 @@ const model = {
         username: "Jens", //Brukernavnet
         password: "JensNATO", //<-- Unhashed 10/10 passord
         name: "Jens Stoltenberg", //Deres navn, om ikke vi gjør firstName LastName
-        country: "", //<-- skiftet språk her
-        image: "", //<-- skiftet språk her
+        age:"",
+        mail:"",
+        image:"https://www.lindasdekor.no/cdn/shop/files/VzZEz_Dutch_Frekk_apekatt_1.png?v=1695378385&width=1946",
         answeredQuizes: [1, 69, 420],
       },
       {
-        id: 1,
+        id: 2,
         isDarkMode: false, //<-- Deres preferanse, lastes deretter inn i app isDarkMode
         username: "Per", //Brukernavnet
         password: "Perlikervann", //<-- Unhashed 10/10 passord
         name: "Per Poll", //Deres navn, om ikke vi gjør firstName LastName
-        country: "", //<-- skiftet språk her
+        age: "",
         image: "", //<-- skiftet språk her
+        mail:"",
         answeredQuizes: [
           {
             id: 1,

@@ -20,13 +20,13 @@ function logIn(){
     findUser()
     checkPassword()
     if(canLogIn){
-        model.app.currentView = "mainView"
+       // model.app.currentView = "mainView"
+        changeView('mainView')
         console.log("logget inn")
     }
     else {
         console.log("logget ikke inn")
     }
-   updateView()
     
 }
 
