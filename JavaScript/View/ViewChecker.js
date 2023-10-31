@@ -34,6 +34,9 @@ function updateView() {
         case "annetQuizView":
             annetQuizView();
             break;
+        case "quizFilterView":
+            quizFilterView();
+            break;
         //Profil
         case "editProfileView":
             editProfileView();
@@ -77,6 +80,10 @@ updateView();
 function changeView(view) {
     model.app.currentView = view.toString();
     updateView();
+}
+
+function changeViewByCategory(category){
+
 }
 
 //End

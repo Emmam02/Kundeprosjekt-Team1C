@@ -31,6 +31,12 @@ function mainView(){
             <div class="themeDisplay link-view" onclick="changeView('annetQuizView')">${model.data.allCategories[5].name}</div>
         </div>
 
+
+        <div id="quiz-box-position">
+            <div id="quiz-by-date" class=""><div>
+            <div id="quiz-by-date" class=""><div>
+        </div>
+
         <div id="temp-container">
             <h1>Site under construction</h1>
             <p style="color: #ca4848;">Please utilize these links below.</p>
