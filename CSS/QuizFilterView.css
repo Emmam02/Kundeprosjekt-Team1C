@@ -1,4 +1,9 @@
 
+.quizFilterSite{
+    color:black;
+    background-color: white;
+}
+
 .annetQuizList{
     display: flex;
     justify-content: center;
@@ -7,17 +12,17 @@
 }
 
 .innerQuiz{
-    color:white;
+    color:black;
 }
 
 .theQuizTitle{
-    color:white;
+    color:black;
 }
 
 .theCreator{
-    color:white;
+    color:black;
 }
 
 .theCategory{
-    color:white;
+    color:black;
 }

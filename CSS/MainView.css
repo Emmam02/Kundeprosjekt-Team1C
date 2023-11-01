@@ -41,6 +41,7 @@
 
 #nav-profile-content {
     display: flex;
+    float: right;
     flex-direction: row;
     align-items: end;
     width: fit-content;
@@ -57,6 +58,10 @@
     height: 25px;
     width: 25px;
     margin: 2px 2px 2px 2px;
+}
+
+#drop-down-menu{
+    color: black;
 }
 
 /*Search Bar*/
