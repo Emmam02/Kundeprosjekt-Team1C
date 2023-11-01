@@ -1,6 +1,3 @@
-let newQuiz = model.input.createQuizView;
-let interactionText = "";
-
 function createQuizView() {
     app.innerHTML = /*HTML*/ `
         <h1 class="gameQuizContainer"> Create Your own Quiz</h1>

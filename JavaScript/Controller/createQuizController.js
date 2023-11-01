@@ -1,3 +1,6 @@
+let newQuiz = model.input.createQuizView;
+let interactionText = "";
+
 function togglePrivate() {
     let togglePrivate = document.getElementById("togglePrivate");
     if (newQuiz.isPublic == false) {

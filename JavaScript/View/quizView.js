@@ -112,7 +112,7 @@ Når man trykker på next vil denne funksjonen kjøre,
 da komme rman til det neste spørsmålet. ↓
  */
 function nextQuestion() {
-    if (currentQuestion < quiz.questions.length - 1) {
+    if (currentQuestion < getQuiz().questions.length - 1) {
         currentQuestion++;
         quizStarted();
     } else {
