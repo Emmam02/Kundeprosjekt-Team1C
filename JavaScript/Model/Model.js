@@ -10,7 +10,7 @@ const model = {
         language: "no",
         isDarkMode: false,
         modeID: 0,
-        userID: null,
+        userID: 0,
         username: "",
         profilePic: "",
         currentQuizId: 0,
@@ -18,14 +18,21 @@ const model = {
     input: {
         createAccount: {
             //registerView
+            id: null,
             username: "",
             password: "",
+            name: "",
+            age: "",
+            mail: "",
+            image: "",
         },
         profileView: {
             //profileView
             image: "", //URL Lenke i string (eller eksisterende importert bilde til nettsiden)
             name: "",
-            country: "",
+            username: "",
+            mail: "",
+            age: "",
             changePassword: "",
         },
         loggingInView: {
@@ -433,7 +440,8 @@ const model = {
                 username: "Pål", //Brukernavnet
                 password: "Pålergammel", //<-- Unhashed 10/10 passord
                 name: "Per Kautokeino", //Deres navn, om ikke vi gjør firstName LastName
-                country: "",
+                mail: "",
+                age: "",
                 image: "",
                 //selfMadeQuizes? En array over hva brukeren har lager eller så kan vi hente data ved hjelp av brukernavnet og legge det inn
                 answeredQuizes: [
@@ -448,7 +456,8 @@ const model = {
                 username: "Jens", //Brukernavnet
                 password: "JensNATO", //<-- Unhashed 10/10 passord
                 name: "Jens Stoltenberg", //Deres navn, om ikke vi gjør firstName LastName
-                country: "", //<-- skiftet språk her
+                age: "",
+                mail: "",
                 image: "", //<-- skiftet språk her
                 answeredQuizes: [1, 69, 420],
             },
@@ -458,7 +467,8 @@ const model = {
                 username: "Per", //Brukernavnet
                 password: "Perlikervann", //<-- Unhashed 10/10 passord
                 name: "Per Poll", //Deres navn, om ikke vi gjør firstName LastName
-                country: "", //<-- skiftet språk her
+                age: "",
+                mail: "",
                 image: "", //<-- skiftet språk her
                 answeredQuizes: [
                     {

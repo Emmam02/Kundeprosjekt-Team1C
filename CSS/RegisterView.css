@@ -16,6 +16,22 @@
     text-align: left;
 }
 
+#regInputName{
+    text-align: left;
+  
+}
+
+#regInputAge{
+    text-align: left;
+}
+
+    
+
+#regInputMail{
+    text-align: left;
+    
+}
+
 #regButton{
     margin-top: 5px;
 }
@@ -38,6 +54,12 @@
 
 .temp-class:hover{
     color:#9e2828;
+}
+
+.inputContainer{
+    display: flex;
+    align-items: flex-;
+    justify-content: flex-start;
 }
 
 /*End*/
