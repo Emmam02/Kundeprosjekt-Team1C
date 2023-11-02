@@ -1,7 +1,39 @@
 
-.quizFilterSite{
+#quizFilterSite{
     color:black;
     background-color: white;
+}
+
+#extra-container{
+    display: flex;
+    align-items: center;
+}
+
+#theQuiz-container{
+    display: flex;
+    align-items: center;
+}
+
+#newest-Quiz-container{
+    display: flex;
+    justify-content: left;
+    align-items: start;
+}
+
+#newest-Quiz{
+    justify-content: left;
+    flex-direction: column;
+}
+
+#popular-Quiz-container{
+    display: flex;
+    justify-content: left;
+    align-items: start;
+}
+
+#popular-Quiz{
+    justify-content: left;
+    flex-direction: column;
 }
 
 .annetQuizList{

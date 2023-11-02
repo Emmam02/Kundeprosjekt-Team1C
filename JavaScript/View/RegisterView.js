@@ -4,26 +4,26 @@
 function registerView(){
     app.innerHTML = /*HTML*/`
     <div id="registerBox">
-        <h1>Testify - Register</h1>
+        <h1>Testify - Registrer</h1>
         
         <div class="inputContainer"> 
-            <div>Username: </div>
-            <input id="regInputUser" placeholder="Username" type="text" oninput="model.input.createAccount.username = this.value" required>
+            <div>Brukernavn: </div>
+            <input id="regInputUser" placeholder="Brukernavn" type="text" oninput="model.input.createAccount.username = this.value" required>
         </div>
 
         <div class="inputContainer">
-            <div>Password: </div>         
-            <input id="regInputPass" placeholder="Password" type="password" oninput="model.input.createAccount.password = this.value" required>
+            <div>Passord: </div>         
+            <input id="regInputPass" placeholder="Passord" type="password" oninput="model.input.createAccount.password = this.value" required>
         </div>
 
         <div class="inputContainer">
-            <div>Name: </div> 
-            <input id="regInputName" placeholder="Name" type="text" oninput="model.input.createAccount.name = this.value" required>
+            <div>Navn: </div> 
+            <input id="regInputName" placeholder="Navn" type="text" oninput="model.input.createAccount.name = this.value" required>
         </div>
 
         <div class="inputContainer">
-            <div>Age: </div> 
-            <input id="regInputAge"  placeholder="Age" type="number" oninput="model.input.createAccount.age = this.value" required>
+            <div>Alder: </div> 
+            <input id="regInputAge"  placeholder="Alder" type="number" oninput="model.input.createAccount.age = this.value" required>
         </div>
 
         <div class="inputContainer">
@@ -32,12 +32,12 @@ function registerView(){
         </div>
 
         <div class="inputContainer">
-            <div>Image: </div> 
-            <input id="regInputAvatar" placeholder="Image" oninput="model.input.createAccount.image = this.value">
+            <div>Bildeadresse: </div> 
+            <input id="regInputAvatar" placeholder="Bildeadresse" oninput="model.input.createAccount.image = this.value">
         </div>
 
-        <button id="regButton" type="submit" onclick="registerAccount()">Register</button>
-        <p id="linkLoginP" onclick="changeView('loginView')">Do you already have an account? Login here!</p>
+        <button id="regButton" type="submit" onclick="registerAccount();changeView('loginView')">Registrer</button>
+        <p id="linkLoginP" onclick="changeView('loginView')">Har du allerede en bruker? Logg inn her!</p>
         <p class="temp-class" onclick="changeView('mainView')">Tilbake</p>
     </div>
     `;

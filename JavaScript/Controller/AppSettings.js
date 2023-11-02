@@ -7,8 +7,8 @@ const profileNavUser = document.getElementById("nav-profile-text")
 
 function loadSettingsApp(){
     loadColorTheme();
-    loadProfilePic();
-    loadUsername();
+    //loadProfilePic();
+    //loadUsername();
 }
 
 //Loading settings
