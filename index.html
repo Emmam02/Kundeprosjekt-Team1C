@@ -1,29 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-        <link rel="stylesheet" href="CSS/Main.css" />
-        <link rel="stylesheet" href="CSS/MainMenu.css">
-        <link rel="stylesheet" href="CSS/Register.css" />
-        <link rel="stylesheet" href="CSS/LoginView.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lexend">
-    </head>
-    <body>
-        <div id="app"></div>
-        <!-- Model -->
-        <script src="JavaScript/Model/Model.js"></script>
-        <!-- View -->
-        <script src="JavaScript/View/CreateQuizView.js"></script>
-        <script src="JavaScript/View/RegisterView.js"></script>
-        <script src="JavaScript/View/LoginView.js"></script>
-        <script src="JavaScript/View/MainView.js"></script>
-        <script src="JavaScript/View/ViewChecker.js"></script>
-        <!-- Controller -->
-        <script src="JavaScript/Controller/Utility.js"></script>
-        <script src=""></script>
-        <script src=""></script>
-        <script src=""></script>
-    </body>
+
+<head>
+    <!-- Metadata -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Testify</title>
+    <!-- CSS/Stylesheets -->
+    <!-- "Hovedside" -->
+    <link rel="stylesheet" href="CSS/Main.css" />
+    <link rel="stylesheet" href="CSS/MainView.css" />
+    <!-- QuizViews -->
+    <link rel="stylesheet" href="CSS/createQuizView.css" />
+    <link rel="stylesheet" href="CSS/QuizFilterView.css" />
+    <link rel="stylesheet" href="CSS/takeQuiz.css" />
+    <!-- Profile Page -->
+    <link rel="stylesheet" href="CSS/ProfileView.css" />
+    <!-- Login/Register -->
+    <link rel="stylesheet" href="CSS/RegisterView.css" />
+    <link rel="stylesheet" href="CSS/LoginView.css" />
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lexend" />
+    <!-- Misc -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" />
+</head>
+
+<body id="siteSettings">
+    <div id="app"></div>
+    <!-- Model -->
+    <script src="JavaScript/Model/Model.js"></script>
+    <!-- View -->
+    <!-- CategoryQuizViews (Ikke glem at dette skal fjernes når alt går i ett view (quizView?)) -->
+    <script src="JavaScript/View/CategoryQuizViews/AnnetQuizView.js"></script>
+    <script src="JavaScript/View/CategoryQuizViews/BilQuizView.js"></script>
+    <script src="JavaScript/View/CategoryQuizViews/DyrQuizView.js"></script>
+    <script src="JavaScript/View/CategoryQuizViews/MatQuizView.js"></script>
+    <script src="JavaScript/View/CategoryQuizViews/SpillQuizView.js"></script>
+    <script src="JavaScript/View/CategoryQuizViews/SportQuizView.js"></script>
+    <!-- QuizViews-->
+    <script src="JavaScript/View/MainView.js"></script>
+    <script src="JavaScript/View/CreateQuizView.js"></script>
+    <script src="JavaScript/View/quizView.js"></script>
+    <script src="JavaScript/View/QuizFilterView.js"></script>
+    <script src="JavaScript/View/ProfileView.js"></script>
+    <!-- Login/Register -->
+    <script src="JavaScript/View/RegisterView.js"></script>
+    <script src="JavaScript/View/LoginView.js"></script>
+    <!-- ViewChecker -->
+    <script src="JavaScript/View/ViewChecker.js"></script>
+    <!-- Controller -->
+    <script src="JavaScript/Controller/MainViewController.js"></script>
+    <script src="JavaScript/Controller/LoginController.js"></script>
+    <script src="JavaScript/Controller/QuizFilterController.js"></script>
+    <script src="JavaScript/Controller/Utility.js"></script>
+    <script src="JavaScript/Controller/AppSettings.js"></script>
+    <script src="JavaScript/Controller/RegisterController.js"></script>
+    <script src="JavaScript/Controller/createQuizController.js"></script>
+</body>
+
 </html>

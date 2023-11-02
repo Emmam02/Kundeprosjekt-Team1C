@@ -1,0 +1,28 @@
+
+.quizFilterSite{
+    color:black;
+    background-color: white;
+}
+
+.annetQuizList{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.innerQuiz{
+    color:black;
+}
+
+.theQuizTitle{
+    color:black;
+}
+
+.theCreator{
+    color:black;
+}
+
+.theCategory{
+    color:black;
+}

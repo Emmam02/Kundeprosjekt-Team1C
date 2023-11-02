@@ -1,4 +1,13 @@
-body{
-    color: black;
-    background-color: #ffffff;
+/*Start*/
+
+body {
+  margin: 0;
+  padding: 0;
 }
+
+#siteSettings {
+  color: #000000;
+  background-color: #ffffff;
+}
+
+/*End*/

@@ -1,0 +1,65 @@
+/*Start*/
+
+#registerBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#regInputUser{
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+#regInputPass{
+    text-align: left;
+}
+
+#regInputName{
+    text-align: left;
+  
+}
+
+#regInputAge{
+    text-align: left;
+}
+
+    
+
+#regInputMail{
+    text-align: left;
+    
+}
+
+#regButton{
+    margin-top: 5px;
+}
+
+.commonSize{
+    width: 3rem;
+}
+
+#linkLoginP{
+    cursor: pointer;
+}
+
+#linkLoginP:hover{
+    color:#9e2828;
+}
+
+.temp-class{
+    cursor: pointer;
+}
+
+.temp-class:hover{
+    color:#9e2828;
+}
+
+.inputContainer{
+    display: flex;
+    align-items: flex-;
+    justify-content: flex-start;
+}
+
+/*End*/
