@@ -31,6 +31,7 @@ function quizFilterView(){
 
 function getNewQuizes(category){
 
+    //Tmp
     if (model.app.currentTheme == (null || "")) {
         document.getElementById('newest-Quiz').innerHTML = /*HTML*/`
             <p>No quizes to show. Did you access this in a different way?</p>
