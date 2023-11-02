@@ -35,13 +35,9 @@ function renderQuiz(){
             <div class="theCategory">${allQuizes[i].theme}</div>
         </div>
         `;
-        console.log("Running index: " + i);
     }
-
     quizToggler.innerText = "Hide Quiz";
-
     quizRendered = true;
-    console.log("Status:" + quizRendered);
 }
 
 function hideQuiz(){

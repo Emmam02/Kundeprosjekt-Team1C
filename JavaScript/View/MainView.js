@@ -16,12 +16,14 @@ function mainView(){
                 <div id="nav-profile-text">${getLoggedInUser().username}</div>
                 <img id="nav-profile-picture" src="${getLoggedInUser().image}">
             <div>
+            <div id="drop-down-menu"><div>
         </nav>
 
         <div id="search-bar">
             <input id="search-bar-text" placeholder="Søk..." type="search">
         </div>
 
+        <span>
         <div id="themeContainer">
             <div class="themeDisplay link-view" onclick="changeView('matQuizView')">${model.data.allCategories[0].name}</div>
             <div class="themeDisplay link-view" onclick="changeView('dyrQuizView')">${model.data.allCategories[1].name}</div>
@@ -37,8 +39,8 @@ function mainView(){
         </div>
 
         <div id="temp-container">
-            <h1>Site under construction</h1>
-            <p style="color: #ca4848;">Please utilize these links below.</p>
+            <h1>Nettstedet er under oppbygging</h1>
+            <p style="color: #ca4848;">Vennligst bruk linkene under.</p>
             <p class="link-view" onclick="changeView('loginView')">LoginView</p>
             <p class="link-view" onclick="changeView('registerView')">RegisterView</p>
             <p class="link-view" onclick="changeView('createQuizView')">CreateQuizView</p>
