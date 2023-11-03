@@ -8,7 +8,7 @@ const model = {
     app: {
         currentView: "mainView",
         language: "no",
-        isDarkMode: false,
+        isDarkMode: true,
         modeID: 0,
         userID: 0,
         username: "",
