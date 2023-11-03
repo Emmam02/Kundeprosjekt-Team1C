@@ -1,9 +1,10 @@
 function createQuizView() {
-    app.innerHTML = /*HTML*/ `
+  app.innerHTML = /*HTML*/ `
         <h1 class="gameQuizContainer"> Lag din egen Quiz!</h1>
         <input id="quizTitle" type="text" placeholder="Quiz Navn" oninput="(newQuiz.title =
             this.value)" required></input>
-        <select id="quizTheme" oninput="(newQuiz.theme =
+            
+           <select id="quizTheme" oninput="(newQuiz.theme =
             this.value)" required>
             <option value="${model.data.allCategories[0].name}">Mat</option>
             <option value="${model.data.allCategories[1].name}">Dyr</option>

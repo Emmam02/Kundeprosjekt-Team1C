@@ -523,12 +523,12 @@ const model = {
                 createdQuizes:[
                     //Liste over quizer brukeren har laget
                 ],
-
             },
         ],
     },
 };
 
 let currentView = model.app.currentView;
+//Kun laget i tilfelle noe skjer
 
 //End
