@@ -21,7 +21,7 @@ function quizFilterView(){
                 </div>
             </div>
             <div id="">
-                <img id="">
+                <img id="" src="">
                 <input id="" placeholder="Søk i ${model.app.currentTheme}-quizer...">
             </div>
         </div>
@@ -31,7 +31,6 @@ function quizFilterView(){
 
 function getNewQuizes(category){
 
-    //Tmp
     if (model.app.currentTheme == (null || "")) {
         document.getElementById('newest-Quiz').innerHTML = /*HTML*/`
             <p>No quizes to show. Did you access this in a different way?</p>

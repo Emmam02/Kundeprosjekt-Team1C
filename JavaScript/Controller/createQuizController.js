@@ -120,6 +120,37 @@ function setInteractionText(text) {
     document.getElementById("interactionText").innerText = text;
 }
 
+//A certain snake was here
+function checkAndSubmit(){
+    if (newQuiz.image == (null || "")) {
+        notifyMessages('');
+    }else if(newQuiz){
+        notifyMessages('');
+    }else if(newQuiz){
+        notifyMessages('');
+    }else if(newQuiz){
+        notifyMessages('');
+    }else if(newQuiz){
+        notifyMessages('');
+    }else if(newQuiz){
+        notifyMessages('');
+    }else if(newQuiz){
+        notifyMessages('');
+    }else if(newQuiz){
+        notifyMessages('');
+    }else{
+        submit();
+    }
+}
+
+function notifyMessages(errorMessage){
+    setInteractionText(errorMessage);
+    setTimeout(() => {
+        setInteractionText("");
+    }, 2000);
+}
+
+
 function submit() {
     newQuiz.id = generateUniqueId();
     newQuiz.creator = getUsername();

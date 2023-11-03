@@ -83,7 +83,9 @@ function changeView(view) {
 }
 
 function changeViewByCategory(category){
-
+    model.app.currentTheme = category;
+    model.app.currentView = 'quizFilterView';
+    updateView();
 }
 
 //End
