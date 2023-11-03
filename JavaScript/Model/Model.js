@@ -6,17 +6,6 @@ const app = document.getElementById("app");
 
 const model = {
   app: {
-<<<<<<< Updated upstream
-    currentView: "mainView",
-    language: "no",
-    isDarkMode: false,
-    modeID: 0,
-    userID: 0,
-    username: "",
-    profilePic: "",
-    currentQuizId: 0,
-    currentTheme: "",
-=======
     currentView: "createQuizView",
     language: "no",
     isDarkMode: false,
@@ -25,12 +14,10 @@ const model = {
     username: "",
     profilePic: "",
     currentQuizId: 0,
->>>>>>> Stashed changes
   },
   input: {
     createAccount: {
       //registerView
-<<<<<<< Updated upstream
       id: null,
       username: "",
       password: "",
@@ -38,22 +25,14 @@ const model = {
       age: "",
       mail: "",
       image: "",
-=======
-      username: "",
-      password: "",
->>>>>>> Stashed changes
     },
     profileView: {
       //profileView
       image: "", //URL Lenke i string (eller eksisterende importert bilde til nettsiden)
       name: "",
-<<<<<<< Updated upstream
       username: "",
       mail: "",
       age: "",
-=======
-      country: "",
->>>>>>> Stashed changes
       changePassword: "",
     },
     loggingInView: {
@@ -149,10 +128,7 @@ const model = {
           "https://naturvet.com/cdn/shop/articles/researching_dog_breeds_blog_header.jpg?v=1668789923&width=1100",
         theme: "Dyr",
         date: "17/10-23",
-<<<<<<< Updated upstream
         popularity: 325,
-=======
->>>>>>> Stashed changes
         questions: [
           {
             questionID: 0,
@@ -379,7 +355,6 @@ const model = {
               },
             ],
           },
-<<<<<<< Updated upstream
         ],
         results: [
           {
@@ -539,134 +514,6 @@ const model = {
           //Liste over quizer brukeren har laget
         ],
       },
-=======
-        ],
-        results: [
-          {
-            color: 0,
-            result:
-              "Du er en Labrador Retriever! Livlig og vennlig, du er alltid klar for moro og elsker å være i sentrum av oppmerksomheten.",
-            resultimage:
-              "https://hips.hearstapps.com/hmg-prod/images/dog-1598970334.png?crop=0.563xw:1.00xh;0.231xw,0&resize=980:*",
-          },
-          {
-            color: 1,
-            result:
-              " Du er en Bernese Mountain Dog! Rolig og omsorgsfull, du verdsetter nære relasjoner og setter pris på fredelige stunder.",
-            resultimage:
-              "https://www.lifetimepetcover.co.uk/assets/uploads/alexandra_lau_jxEJY7SrJco_unsplash_min.jpg",
-          },
-          {
-            color: 2,
-            result:
-              "Du er en Border Collie! Intelligent og energisk, du søker stadig etter nye utfordringer og elsker å være aktiv.",
-            resultimage:
-              "https://www.aaretsdyreven.dk/wp-content/uploads/2020/12/border-collie-672634_1280.jpg",
-          },
-          {
-            color: 3,
-            result:
-              "Du er en Shiba Inu! Stolt og uavhengig, du har en egen personlighet og setter pris på kulturelle opplevelser.",
-            resultimage:
-              "https://tierpal.de/wp-content/uploads/2022/11/Depositphotos_298037642_XL-1024x683.jpg",
-          },
-        ],
-        isPublic: true, // er delt
-      },
-    ],
-
-    //allCategories: ["Mat", "Dyr", "Sport", "Biler", "Spill", "Annet"],
-    allCategories: [
-      {
-        name: "Mat",
-      },
-      {
-        name: "Dyr",
-      },
-      {
-        name: "Sport",
-      },
-      {
-        name: "Biler",
-      },
-      {
-        name: "Spill",
-      },
-      {
-        name: "Annet",
-      },
-    ],
-
-    colors: ["0", "1", "2", "3"],
-
-    themeMode: [
-      {
-        name: "Light",
-        textColor: "#202020",
-        backgroundColor: "#ffffff",
-      },
-      {
-        name: "Dark",
-        textColor: "#ffffff",
-        backgroundColor: "#181818",
-      },
-    ],
-    users: [
-      {
-        id: 0,
-        isDarkMode: false, //<-- Deres preferanse, lastes deretter inn i app isDarkMode
-        username: "Pål", //Brukernavnet
-        password: "Pålergammel", //<-- Unhashed 10/10 passord
-        name: "Per Kautokeino", //Deres navn, om ikke vi gjør firstName LastName
-        country: "",
-        image: "",
-        //selfMadeQuizes? En array over hva brukeren har lager eller så kan vi hente data ved hjelp av brukernavnet og legge det inn
-        answeredQuizes: [
-          //Liste over hva slags quizer de har svart på - referanser til quizzer med ID
-          1,
-          69, 420,
-        ],
-      },
-      {
-        id: 1,
-        isDarkMode: false, //<-- Deres preferanse, lastes deretter inn i app isDarkMode
-        username: "Jens", //Brukernavnet
-        password: "JensNATO", //<-- Unhashed 10/10 passord
-        name: "Jens Stoltenberg", //Deres navn, om ikke vi gjør firstName LastName
-        country: "", //<-- skiftet språk her
-        image: "", //<-- skiftet språk her
-        answeredQuizes: [1, 69, 420],
-      },
-      {
-        id: 2,
-        isDarkMode: false, //<-- Deres preferanse, lastes deretter inn i app isDarkMode
-        username: "Per", //Brukernavnet
-        password: "Perlikervann", //<-- Unhashed 10/10 passord
-        name: "Per Poll", //Deres navn, om ikke vi gjør firstName LastName
-        country: "", //<-- skiftet språk her
-        image: "", //<-- skiftet språk her
-        answeredQuizes: [
-          {
-            id: 1,
-            quizTitle: "",
-            description: "",
-            result: "2",
-          },
-          {
-            id: 69,
-            quizTitle: "",
-            description: "",
-            result: "3",
-          },
-          {
-            id: ("94ad45bd-dcff-4564-9b95-2ccaa3447fd0", 420),
-            quizTitle: "",
-            description: "",
-            result: "1",
-          },
-        ],
-      },
->>>>>>> Stashed changes
     ],
   },
 };
