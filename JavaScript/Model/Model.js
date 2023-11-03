@@ -103,15 +103,18 @@ const model = {
         },
     },
     data: {
+        
         newestQuiz: [
             //getQuizByDate();
         ],
-
         mostPopularQuiz: [
             //getQuizByPopularity();
         ],
         highestRatedQuiz: [
             //getQuizByRating();
+        ],
+        quizbyCategories:[
+            //getQuizByCategory();
         ],
 
         currentQuiz: {
