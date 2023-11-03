@@ -1,9 +1,15 @@
 function createQuizView() {
   app.innerHTML = /*HTML*/ `
+  <div id="createYourOwnQuizContainer">
         <h1 class="gameQuizContainer"> Lag din egen Quiz!</h1>
-        <input id="quizTitle" type="text" placeholder="Quiz Navn" oninput="(newQuiz.title =
-            this.value)" required></input>
-            
+       <div> <input id="quizTitle" type="text" placeholder="Quiz Navn" oninput="(newQuiz.title =
+            this.value)" required>
+
+            <input class="createQuizImage" type="text" 
+            placeholder="Quiz bilde (URL)" 
+            oninput="(newQuiz.image = this.value)" 
+            required style="width: 40%;">
+
            <select id="quizTheme" oninput="(newQuiz.theme =
             this.value)" required>
             <option value="${model.data.allCategories[0].name}">Mat</option>
@@ -13,21 +19,17 @@ function createQuizView() {
             <option value="${model.data.allCategories[4].name}">Spill</option>
             <option value="${model.data.allCategories[5].name}">Annet</option>
         </select>
-        <input id="quizImage" type="text" placeholder="Last opp Quiz bilde"oninput="(newQuiz.image =
-          this.value)"required></input>
-        <button onclick="clearQuestions()">Legg til spørsmål</button>
+        </div>
+
         
-        <label class="switch">
-        <input onclick="togglePrivate()" type="checkbox">
-        <span class="slider round"></span>
-        </label>
-        <div id="togglePrivate" class="private"> Privat/Offentlig</div>
+        
+        
             
         <div id="questions-container">
         <!-- hsnush -->
             <input type="text" placeholder="Spørsmål" oninput="(newQuiz.questions[0].theQuestion =
                 this.value)" >
-            <input type="text" placeholder="Last opp Spørsmålsbilde" oninput="(newQuiz.questions[0].questionImage =
+            <input type="text" placeholder="Spørsmålsbilde (URL)" oninput="(newQuiz.questions[0].questionImage =
                 this.value)"></input>
             <div class="answer">
             <input type="text" placeholder="Svar1" oninput="(newQuiz.questions[0].answers[0].answerText =
@@ -72,28 +74,32 @@ function createQuizView() {
                     <option value="${model.data.colors[2]}">Gul</option>
                     <option value="${model.data.colors[3]}">Oransje</option>
                 </select>
+                <button class="addQuestionButton"onclick="clearQuestions()">Legg til spørsmål</button>
             </div>
             <!-- hsnush -->
         </div>
         
         
-        <p class="temp-class" onclick="changeView('mainView')">Tilbake</p>
-        <p class="temp-class " onclick="changeView('quizView')">Forhåndsvis Quiz</p>
+        
+        
 
     <div id="resultsContainer">
-        <div id="resultRed">Resultat Rød:
+        <div id="resultRed">Resultat Rød :
+        ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ 
             <input oninput="(newQuiz.results[0].result =
                 this.value)" placeholder="resultat"></input>
             <input oninput="(newQuiz.results[0].resultimage =
                 this.value)" placeholder="resultat bilde"></input>
         </div>
         <div id="resultBlue">Resultat Blå:
+        ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ 
             <input oninput="(newQuiz.results[1].result =
                 this.value)" placeholder="resultat"></input>
             <input oninput="(newQuiz.results[1].resultimage =
                 this.value)" placeholder="resultat bilde"></input>
         </div>
         <div id="resultYellow">Resultat Gul:
+        ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎  
             <input oninput="(newQuiz.results[2].result =
                 this.value)" placeholder="resultat"></input>
             <input oninput="(newQuiz.results[2].resultimage =
@@ -106,8 +112,20 @@ function createQuizView() {
                 this.value)" placeholder="resultat bilde"></input>
         </div>
     </div>
-    <span id="interactionText"></span>
-    <button onclick="submit()" type="submit">Godkjenn</button>
 
+    <label class="switch">
+        <input onclick="togglePrivate()" type="checkbox">
+        <span class="slider round"></span>
+        </label>
+
+        
+        <div id="togglePrivate" class="private"> Privat/Offentlig</div>
+        <span id="interactionText"></span>
+        <div class="lastTolastButtons">
+        <div class="tempClass" onclick="changeView('quizView')">Forhåndsvis Quiz</div>
+        <div class="tempClass" onclick="changeView('mainView')">Tilbake</div>
+        </div>
+    <button class="submitButton" onclick="submit()" type="submit">Godkjenn</button>
+    </div>
     `;
 }
