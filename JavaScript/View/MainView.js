@@ -1,23 +1,29 @@
 "use strict";
 //Start
 
+function getLoggedInUser(){
+    return model.data.users.find((user) => user.id === model.app.userID)
+}
+
 function mainView(){
     app.innerHTML = /*HTML*/`
     <div id="mainView">
         <nav id="nav-bar">
             <div id="nav-title-content">
-                <div id="nav-title">Testify - Main Menu</div>
+                <div id="nav-title">Testify - Hovedmeny</div>
             </div>
             <div id="nav-profile-content">
-                <div id="nav-profile-text"></div>
-                <div id="nav-profile-picture"></div>
+                <div id="nav-profile-text">${getLoggedInUser().username}</div>
+                <img id="nav-profile-picture" src="${getLoggedInUser().image}">
             <div>
+            <div id="drop-down-menu"><div>
         </nav>
 
         <div id="search-bar">
-            <input id="search-bar-text" placeholder="Search..." type="search">
+            <input id="search-bar-text" placeholder="Søk..." type="search">
         </div>
 
+        <span>
         <div id="themeContainer">
             <div class="themeDisplay link-view" onclick="changeView('matQuizView')">${model.data.allCategories[0].name}</div>
             <div class="themeDisplay link-view" onclick="changeView('dyrQuizView')">${model.data.allCategories[1].name}</div>
@@ -27,22 +33,20 @@ function mainView(){
             <div class="themeDisplay link-view" onclick="changeView('annetQuizView')">${model.data.allCategories[5].name}</div>
         </div>
 
-
         <div id="quiz-box-position">
             <div id="quiz-by-date" class=""><div>
             <div id="quiz-by-date" class=""><div>
         </div>
 
         <div id="temp-container">
-            <h1>Site under construction</h1>
-            <p style="color: #ca4848;">Please utilize these links below.</p>
+            <h1>Nettstedet er under oppbygging</h1>
+            <p style="color: #ca4848;">Vennligst bruk linkene under.</p>
             <p class="link-view" onclick="changeView('loginView')">LoginView</p>
             <p class="link-view" onclick="changeView('registerView')">RegisterView</p>
             <p class="link-view" onclick="changeView('createQuizView')">CreateQuizView</p>
-            <p class="link-view" onclick="changeView('myProfileView')">profileView</p>
+            <p class="link-view" onclick="changeView('myProfileView')">ProfileView</p>
             <p class="link-view" onclick="changeView('quizView')">QuizView</p>
-            <p class="link-view" onclick="changeView('')">Temp</p>
-            <p class="link-view" onclick="changeView('')">Temp</p>
+            <p class="link-view" onclick="changeView('quizFilterView')">QuizFilterView</p>
         </div>
     </div>
     `;

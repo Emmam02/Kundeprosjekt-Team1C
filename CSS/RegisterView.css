@@ -5,15 +5,38 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
 }
 
 #regInputUser{
     text-align: left;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 
 #regInputPass{
     text-align: left;
+    margin-bottom: 8px;
+    
+}
+
+#regInputName{
+    text-align: left;
+    margin-bottom: 8px;
+    
+}
+
+#regInputAge{
+    text-align: left;
+    margin-bottom: 8px;
+    
+}
+
+    
+
+#regInputMail{
+    text-align: left;
+    margin-bottom: 8px;
+       
 }
 
 #regButton{
@@ -38,6 +61,12 @@
 
 .temp-class:hover{
     color:#9e2828;
+}
+
+.inputContainer{
+    display: flex;
+    align-items: flex;
+    justify-content: flex-start;
 }
 
 /*End*/

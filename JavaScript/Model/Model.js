@@ -8,24 +8,32 @@ const model = {
     app: {
         currentView: "mainView",
         language: "no",
-        isDarkMode: false,
+        isDarkMode: true,
         modeID: 0,
-        userID: null,
+        userID: 0,
         username: "",
         profilePic: "",
         currentQuizId: 0,
+        currentTheme:"",
     },
     input: {
         createAccount: {
             //registerView
+            id: null,
             username: "",
             password: "",
+            name: "",
+            age: "",
+            mail: "",
+            image: "",
         },
         profileView: {
             //profileView
             image: "", //URL Lenke i string (eller eksisterende importert bilde til nettsiden)
             name: "",
-            country: "",
+            username: "",
+            mail: "",
+            age: "",
             changePassword: "",
         },
         loggingInView: {
@@ -120,6 +128,7 @@ const model = {
                 image: "https://naturvet.com/cdn/shop/articles/researching_dog_breeds_blog_header.jpg?v=1668789923&width=1100",
                 theme: "Dyr",
                 date: "17/10-23",
+                popularity: 325,
                 questions: [
                     {
                         questionID: 0,
@@ -394,21 +403,27 @@ const model = {
         allCategories: [
             {
                 name: "Mat",
+                image: "https://res.cloudinary.com/norgesgruppen/images/c_scale,dpr_auto,f_auto,q_auto:eco,w_1600/mnnrfrpmfqbjtnxdycf2/klassisk-pizza-margherita",
             },
             {
                 name: "Dyr",
+                image: "https://www.perfectpetinsurance.co.uk/wp-content/uploads/2023/06/PP_Desktop_banner_Redesign_v7_pug_v2.png",
             },
             {
                 name: "Sport",
+                image: "",
             },
             {
                 name: "Biler",
+                image: "",
             },
             {
                 name: "Spill",
+                image: "",
             },
             {
                 name: "Annet",
+                image: "",
             },
         ],
 
@@ -433,14 +448,11 @@ const model = {
                 username: "Pål", //Brukernavnet
                 password: "Pålergammel", //<-- Unhashed 10/10 passord
                 name: "Per Kautokeino", //Deres navn, om ikke vi gjør firstName LastName
-                country: "",
+                mail: "",
+                age: "",
                 image: "",
                 //selfMadeQuizes? En array over hva brukeren har lager eller så kan vi hente data ved hjelp av brukernavnet og legge det inn
-                answeredQuizes: [
-                    //Liste over hva slags quizer de har svart på - referanser til quizzer med ID
-                    1,
-                    69, 420,
-                ],
+                answeredQuizes: [1,69, 420,], //Liste over hva slags quizer de har svart på - referanser til quizzer med ID
             },
             {
                 id: 1,
@@ -448,9 +460,33 @@ const model = {
                 username: "Jens", //Brukernavnet
                 password: "JensNATO", //<-- Unhashed 10/10 passord
                 name: "Jens Stoltenberg", //Deres navn, om ikke vi gjør firstName LastName
-                country: "", //<-- skiftet språk her
+                age: "",
+                mail: "",
                 image: "", //<-- skiftet språk her
                 answeredQuizes: [1, 69, 420],
+            },
+            {
+                id: 3,
+                isDarkMode: false,
+                username: "Ompalompa",
+                password:"",
+                name: "Ompalompa",
+                age:"",
+                mail:"",
+                image:"",
+                answeredQuizes: [
+                    {
+                        id:0,
+                        quizTitle:"Hvilken hund er du?",
+                        result:"",
+                    }
+                ],
+                createdQuizes:[
+                    {
+                        id:0,
+                        quizTitle:"Hvilken hund er du?",
+                    }
+                ],
             },
             {
                 id: 2,
@@ -458,7 +494,8 @@ const model = {
                 username: "Per", //Brukernavnet
                 password: "Perlikervann", //<-- Unhashed 10/10 passord
                 name: "Per Poll", //Deres navn, om ikke vi gjør firstName LastName
-                country: "", //<-- skiftet språk her
+                age: "",
+                mail: "",
                 image: "", //<-- skiftet språk her
                 answeredQuizes: [
                     {
@@ -474,12 +511,16 @@ const model = {
                         result: "3",
                     },
                     {
-                        id: ("94ad45bd-dcff-4564-9b95-2ccaa3447fd0", 420),
+                        id: 0,
                         quizTitle: "",
                         description: "",
                         result: "1",
                     },
                 ],
+                createdQuizes:[
+                    //Liste over quizer brukeren har laget
+                ],
+
             },
         ],
     },

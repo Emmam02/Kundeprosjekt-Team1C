@@ -1,0 +1,54 @@
+#generalInfoContainer{
+border: soild gray;
+margin-left: 10px;
+
+font-size: large;
+
+}
+
+#headerContainer{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+}
+
+#mainContainer{
+    border: solid gray;
+    margin: 50px;
+    height: 1000px;
+    background-color: #ffd9b3;
+}
+
+#profilePic{
+    border: solid gray;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin-left: 10px;
+    text-align: center;
+    justify-content: center;
+    background-size: cover;
+    margin-bottom: 20px;
+}
+
+#profileButtonsContainer{
+    text-align: right;
+}
+
+#myQuizesButton{
+    height: 100px;
+    width: 275px;
+    margin-right: 20px;
+}
+
+#myResultsButton{
+    height: 100px;
+    width: 275px;
+    margin-right: 20px
+}
+
+#backToMainButton{
+    height: 100px;
+    width: 275px;
+}
