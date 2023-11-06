@@ -1,5 +1,4 @@
 let newQuiz = model.input.createQuizView;
-let interactionText = "";
 
 function togglePrivate() {
     let togglePrivate = document.getElementById("togglePrivate");
@@ -62,6 +61,7 @@ function newQuestions() {
               <option value="${model.data.colors[2]}">Gul</option>
               <option value="${model.data.colors[3]}">Oransje</option>
           </select>
+          <button class="addQuestionButton"onclick="clearQuestions()">Legg til spørsmål</button>
       </div>
       <!-- hsnush -->
       `;
@@ -69,87 +69,12 @@ function newQuestions() {
 
 function clearThis(target) {
     document.getElementById(target).innerHTML = "";
-    //target.value = "";
 }
 function clearQuestions() {
     newQuiz.questions.push(newQuiz.questions[0]);
-
-    //10
-    //21
-
     clearThis("questions-container");
     newQuestions();
-
-    newQuiz.questions[0] = {
-        questionID: null,
-        theQuestion: "",
-        questionImage: "",
-        answers: [
-            {
-                answerID: null,
-                answerText: " ",
-                color: "",
-            },
-            {
-                answerID: null,
-                answerText: "",
-                color: "",
-            },
-            {
-                answerID: null,
-                answerText: "",
-                color: "",
-            },
-            {
-                answerID: null,
-                answerText: "",
-                color: "",
-            },
-        ],
-    };
-
-    console.log("Test: " + newQuiz.theme);
-
-    setInteractionText(`Spørsmål lagt til!`);
-    setTimeout(() => {
-        setInteractionText("");
-    }, 2000);
 }
-
-function setInteractionText(text) {
-    document.getElementById("interactionText").innerText = text;
-}
-
-//A certain snake was here
-function checkAndSubmit(){
-    if (newQuiz.image == (null || "")) {
-        notifyMessages('');
-    }else if(newQuiz){
-        notifyMessages('');
-    }else if(newQuiz){
-        notifyMessages('');
-    }else if(newQuiz){
-        notifyMessages('');
-    }else if(newQuiz){
-        notifyMessages('');
-    }else if(newQuiz){
-        notifyMessages('');
-    }else if(newQuiz){
-        notifyMessages('');
-    }else if(newQuiz){
-        notifyMessages('');
-    }else{
-        submit();
-    }
-}
-
-function notifyMessages(errorMessage){
-    setInteractionText(errorMessage);
-    setTimeout(() => {
-        setInteractionText("");
-    }, 2000);
-}
-
 
 function submit() {
     newQuiz.id = generateUniqueId();
@@ -163,56 +88,4 @@ function submit() {
 
 function generateUniqueId() {
     return Math.floor(Math.random() * Date.now());
-}
-
-function clearNewQuiz() {
-    newQuiz = {
-        id: null,
-        title: "",
-        creator: "",
-        image: "",
-        theme: "",
-        date: "",
-        questions: [
-            {
-                questionID: null,
-                theQuestion: "",
-                questionImage: "",
-                answers: [
-                    {
-                        answerID: null,
-                        answerText: " ",
-                        color: "",
-                    },
-                    {
-                        answerID: null,
-                        answerText: "",
-                        color: "",
-                    },
-                    {
-                        answerID: null,
-                        answerText: "",
-                        color: "",
-                    },
-                    {
-                        answerID: null,
-                        answerText: "",
-                        color: "",
-                    },
-                ],
-            },
-        ],
-        results: [
-            {
-                id: null,
-                result: "",
-                resultimage: "", //URL Lenke i string (eller eksisterende importert bilde til nettsiden)
-            },
-        ],
-        isPublic: true,
-    };
-    setInteractionText(`Question Added Successfully`);
-    setTimeout(() => {
-        setInteractionText("");
-    }, 2000);
 }

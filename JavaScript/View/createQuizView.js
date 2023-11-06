@@ -1,5 +1,5 @@
 function createQuizView() {
-  app.innerHTML = /*HTML*/ `
+    app.innerHTML = /*HTML*/ `
   <div id="createYourOwnQuizContainer">
         <h1 class="gameQuizContainer"> Lag din egen Quiz!</h1>
        <div> <input id="quizTitle" type="text" placeholder="Quiz Navn" oninput="(newQuiz.title =
@@ -26,7 +26,7 @@ function createQuizView() {
         
             
         <div id="questions-container">
-        <!-- hsnush -->
+        
             <input type="text" placeholder="Spørsmål" oninput="(newQuiz.questions[0].theQuestion =
                 this.value)" >
             <input type="text" placeholder="Spørsmålsbilde (URL)" oninput="(newQuiz.questions[0].questionImage =
@@ -76,7 +76,7 @@ function createQuizView() {
                 </select>
                 <button class="addQuestionButton"onclick="clearQuestions()">Legg til spørsmål</button>
             </div>
-            <!-- hsnush -->
+            
         </div>
         
         
@@ -84,6 +84,7 @@ function createQuizView() {
         
 
     <div id="resultsContainer">
+                    <h2>Quiz slutt-resultater</h2>
         <div id="resultRed">Resultat Rød :
         ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ 
             <input oninput="(newQuiz.results[0].result =
@@ -120,7 +121,6 @@ function createQuizView() {
 
         
         <div id="togglePrivate" class="private"> Privat/Offentlig</div>
-        <span id="interactionText"></span>
         <div class="lastTolastButtons">
         <div class="tempClass" onclick="changeView('quizView')">Forhåndsvis Quiz</div>
         <div class="tempClass" onclick="changeView('mainView')">Tilbake</div>

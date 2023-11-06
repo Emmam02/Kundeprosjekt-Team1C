@@ -1,123 +1,123 @@
 .switch {
-  position: relative;
-  display: inline-block;
-  width: 50px;
-  height: 15px;
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 15px;
 }
 .switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
 .private {
-  position: relative;
-  display: inline-block;
-  width: 30px;
-  height: 34px;
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 34px;
 }
 
 .slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #8f8282;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #8f8282;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
 }
 
 .slider:before {
-  position: absolute;
-  content: "";
-  height: 10px;
-  width: 10px;
-  left: 4px;
-  bottom: 3px;
-  background-color: rgb(0, 0, 0);
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+    position: absolute;
+    content: "";
+    height: 10px;
+    width: 10px;
+    left: 4px;
+    bottom: 3px;
+    background-color: rgb(0, 0, 0);
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
 }
 
 input:checked + .slider {
-  background-color: #2196f3;
+    background-color: #2196f3;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196f3;
+    box-shadow: 0 0 1px #2196f3;
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
 }
 
 .slider.round {
-  border-radius: 34px;
+    border-radius: 34px;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap");
 
 .slider.round:before {
-  border-radius: 50%;
+    border-radius: 50%;
 }
 
 #createYourOwnQuizContainer {
-  font-size: larger;
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  font-family: "Merriweather", serif;
-  background-color: #e3dec4;
-  height: 100vh;
+    font-size: larger;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-family: "Merriweather", serif;
+    background-color: #e3dec4;
+    height: 100%;
 }
 
 #createYourOwnQuizContainer input,
 button {
-  font-size: larger;
-  margin: 9px;
-  border-radius: 7px;
+    font-size: larger;
+    margin: 9px;
+    border-radius: 7px;
 }
 #createYourOwnQuizContainer input {
-  width: 20%;
+    width: 20%;
 }
 #questions-container input {
-  width: 70%;
+    width: 70%;
 }
 select {
-  padding: 3px;
-  border-radius: 7px;
-  font-size: large;
+    padding: 3px;
+    border-radius: 7px;
+    font-size: large;
 }
 #quizTheme {
-  width: 10%;
+    width: 10%;
 }
 #resultsContainer input {
-  width: 30%;
+    width: 30%;
 }
 .addQuestionButton {
-  transition: ease 0.5s;
+    transition: ease 0.5s;
 }
 .addQuestionButton:hover {
-  background-color: rgb(195, 191, 191);
+    background-color: rgb(195, 191, 191);
 }
 .lastTolastButtons {
-  display: flex;
+    display: flex;
 }
 
 .submitButton:hover {
-  background-color: rgb(91, 208, 91);
-  transition: ease-in 0.2s;
+    background-color: rgb(91, 208, 91);
+    transition: ease-in 0.2s;
 }
 .tempClass {
-  cursor: pointer;
-  margin-right: 80px;
+    cursor: pointer;
+    margin-right: 80px;
 }
 .tempClass:hover {
-  color: #9e2828;
+    color: #9e2828;
 }
 /* .gameQuizContainer {
   display: flex;
