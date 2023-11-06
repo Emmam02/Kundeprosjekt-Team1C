@@ -13,11 +13,11 @@ function quizFilterView(){
             <div id="theQuiz-container">
                 <div id="newest-Quiz-container">
                     <h3>Nyeste quizer</h3>
-                    <div id="newest-Quiz">${getNewQuizes(model.app.currentTheme)}</div>
+                    <div id="newest-Quiz"></div>
                 </div>
                 <div id="popular-Quiz-container">
                     <h3>Mest populære quizer</h3>
-                    <div id="popular-Quiz">${getPopularQuizes(model.app.currentTheme)}</div>
+                    <div id="popular-Quiz"></div>
                 </div>
             </div>
             <div id="">
@@ -28,6 +28,9 @@ function quizFilterView(){
     </div>
     `;
 }
+
+//${getNewQuizes(model.app.currentTheme)}
+//${getPopularQuizes(model.app.currentTheme)}
 
 function getNewQuizes(category){
 
@@ -63,6 +66,7 @@ function getPopularQuizes(category){
         }
     }
 }
+
 
 
 //End

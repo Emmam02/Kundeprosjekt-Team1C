@@ -10,7 +10,7 @@ const model = {
         language: "no",
         isDarkMode: false,
         modeID: 0,
-        userID: 0,
+        userID: null,
         username: "",
         profilePic: "",
         currentQuizId: 0,
@@ -117,11 +117,11 @@ const model = {
             //getQuizByCategory();
         ],
 
-        currentQuiz: {
+        currentQuiz: [
             //Nåværende quiz. Her blir quizen lagt inn som et objekt med alle sine verdier.
             //Etter å ha tatt quizen og er ferdig med å hente svaret/resultatene, skal resultatene lagres i users[].answeredQuizes[currentQuiz].result.
             //Til sist etter man er ferdig og har fått lagret dataen skal man bare fjerne alt inne i currentQuiz for å gjøre klar til neste.
-        },
+        ],
 
         allQuizes: [
             {
@@ -444,6 +444,17 @@ const model = {
                 backgroundColor: "#181818",
             },
         ],
+
+        fakeUser:{
+            id: null,
+            username:"Anonym",
+            password: "",
+            image:"Images/DefaultProfile.png",
+            name: "Anonym",
+            age: "",
+            mail: "",
+        },
+
         users: [
             {
                 id: 0,
