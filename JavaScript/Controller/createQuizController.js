@@ -13,15 +13,17 @@ function togglePrivate() {
 
 function newQuestions() {
     const createQuizContainer = document.getElementById("questions-container");
-    createQuizContainer.innerHTML = /*HTML*/ `
-      <input type="text" placeholder="Spørsmål" oninput="(newQuiz.questions[0].theQuestion =
+    createQuizContainer.innerHTML = "";
+    for (let i = 0; i < newQuiz.questions.length; i++) {
+        createQuizContainer.innerHTML = /*HTML*/ `
+      <input type="text" placeholder="Spørsmål" oninput="(newQuiz.questions[${i}].theQuestion =
           this.value)" >
-      <input type="text" placeholder="Last opp spørsmåls bilde" oninput="(newQuiz.questions[0].questionImage =
+      <input type="text" placeholder="Last opp spørsmåls bilde" oninput="(newQuiz.questions[${i}].questionImage =
           this.value)"></input>
       <div class="answer">
-      <input type="text" placeholder="Svar1" oninput="(newQuiz.questions[0].answers[0].answerText =
+      <input type="text" placeholder="Svar1" oninput="(newQuiz.questions[${i}].answers[0].answerText =
           this.value)"></input>
-          <select onchange="(newQuiz.questions[0].answers[0].color =
+          <select onchange="(newQuiz.questions[${i}].answers[0].color =
               this.value)">
               <option value="${model.data.colors[0]}">Rød</option>
               <option value="${model.data.colors[1]}">Blå</option>
@@ -30,9 +32,9 @@ function newQuestions() {
           </select>
       </div>
       <div class="answer">
-          <input type="text" placeholder="Svar2"oninput="(newQuiz.questions[0].answers[1].answerText =
+          <input type="text" placeholder="Svar2"oninput="(newQuiz.questions[${i}].answers[1].answerText =
               this.value)"></input>
-          <select onchange="(newQuiz.questions[0].answers[1].color =
+          <select onchange="(newQuiz.questions[${i}].answers[1].color =
               this.value)">
               <option value="${model.data.colors[0]}">Rød</option>
               <option value="${model.data.colors[1]}">Blå</option>
@@ -41,9 +43,9 @@ function newQuestions() {
           </select>
       </div>
       <div class="answer">
-          <input type="text" placeholder="Svar3"oninput="(newQuiz.questions[0].answers[2].answerText =
+          <input type="text" placeholder="Svar3"oninput="(newQuiz.questions[${i}].answers[2].answerText =
               this.value)"></input>
-          <select onchange="(newQuiz.questions[0].answers[2].color =
+          <select onchange="(newQuiz.questions[${i}].answers[2].color =
               this.value)">
               <option value="${model.data.colors[0]}">Rød</option>
               <option value="${model.data.colors[1]}">Blå</option>
@@ -52,9 +54,9 @@ function newQuestions() {
           </select>
       </div>
       <div class="answer">
-          <input type="text" placeholder="Svar4" oninput="(newQuiz.questions[0].answers[3].answerText =
+          <input type="text" placeholder="Svar4" oninput="(newQuiz.questions[${i}].answers[3].answerText =
               this.value)"></input>
-          <select onchange="(newQuiz.questions[0].answers[3].color =
+          <select onchange="(newQuiz.questions[${i}].answers[3].color =
               this.value)">
               <option value="${model.data.colors[0]}">Rød</option>
               <option value="${model.data.colors[1]}">Blå</option>
@@ -65,17 +67,37 @@ function newQuestions() {
       </div>
       <!-- hsnush -->
       `;
+    }
 }
 
 function clearThis(target) {
     document.getElementById(target).innerHTML = "";
 }
+
+function clearQuestions() {
+    const newQuestion = {
+        theQuestion: "",
+        questionImage: "",
+        answers: [
+            { answerText: "", color: model.data.colors[0] },
+            { answerText: "", color: model.data.colors[0] },
+            { answerText: "", color: model.data.colors[0] },
+            { answerText: "", color: model.data.colors[0] },
+        ],
+    };
+
+    newQuiz.questions.push(newQuestion);
+    clearThis("questions-container");
+    newQuestions();
+}
+
+/*
 function clearQuestions() {
     newQuiz.questions.push(newQuiz.questions[0]);
     clearThis("questions-container");
     newQuestions();
 }
-
+*/
 function submit() {
     newQuiz.id = generateUniqueId();
     newQuiz.creator = getUsername();
