@@ -7,7 +7,30 @@ body {
 
 #siteSettings {
   color: #000000;
+  background-color: #ffd9b3;
+}
+
+.darkmodeClass{
+  color:#ffffff;
+  background-color:#181818 ;
+}
+
+.lightmodeClass{
+  color: #202020;
   background-color: #ffffff;
 }
+
+/*
+#ffd9b3
+
+NEW
+color: #000000; <-- Svart tekst
+background-color: #ffd9b3; <-- Beige bakgrunnsfarge
+
+OLD
+color: #000000;
+background-color: #ffffff;
+
+*/
 
 /*End*/

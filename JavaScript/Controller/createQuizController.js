@@ -150,14 +150,13 @@ function notifyMessages(errorMessage){
     }, 2000);
 }
 
-
 function submit() {
     newQuiz.id = generateUniqueId();
     newQuiz.creator = getUsername();
     newQuiz.date = getCurrentDate();
     model.data.allQuizes.push(newQuiz);
     model.app.currentQuizId = newQuiz.id;
-    getQuiz();
+    getQuiz(); //<-- Kan hende at vi ikke trenger dette
     quizView();
 }
 

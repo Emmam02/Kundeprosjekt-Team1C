@@ -1,6 +1,9 @@
 "use strict";
 //Start
 
+//--------------------------------------------------------------------------------
+//Old code starts here
+//--------------------------------------------------------------------------------
 const navUser = document.getElementById("nav-profile-text")
 const navPic = document.getElementById("nav-profile-picture");
 
@@ -27,5 +30,6 @@ function getUsernameNav(){
 function setUsernameNav(){
     navUser.innerText = getUsernameNav();
 }
+//--------------------------------------------------------------------------------
 
 //End

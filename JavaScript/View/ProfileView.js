@@ -5,8 +5,11 @@ function profileView(){
             <h1>Profile page</h1>
         </div>
 
-        <div id="userName"><h1>Per Poll</h1></div>
-        <div id="profilePic"><img src="img/Køllaferdig.jpg"></div>
+        <button onclick="forcedLogin()">Midlertidig bruker</button>
+
+        <div id="userName"><h1>${currentUser().username}</h1></div>
+        <div id="profilePic"><img src="${currentUser().image}"></div>
+
         <form action="upload.php" method="post" enctype="multipart/form-data">
             <label for="file">Klikk her for å velge et profilbilde:</label>
             <input type="file" name="file" id="file" accept="image/*">
@@ -14,23 +17,30 @@ function profileView(){
             <div>Klikk her for å laste opp<input type="submit" value="Upload" onclick="changeProfilePic()"></div>
         </form>
 
-   
+        <!-- 
+        Om jeg husket rett, fikk vi beskjed om å kun bruke url.
+        Derimot, hvis vi hadde en database og et nettsted, skulle dette ha fungert godt
+        - By: A certain snake
+        -->
    
         <div id="generalInfoContainer">
-            <li>$[{users.username}]</li>
+            <li>${currentUser().image}</li>
             <br>
-            <p>
-            <li>$[{users.age}]</li>
+            <p></p>
+            <li>${currentUser().age}</li>
             <br>
-            <p>
-            <li>$[{users.answeredQuizes}]</li>
+            <p></p>
+            <!-- 
+            <li>users.answeredQuizes</li> 
+            Anbefaler å lage listen på en annen måte. Fjernet også dette midlertidig ettersom den forårsaker feil for øyeblikket.
+            -->
             <br>
-            <p>
+            <p></p>
             <li>Bosted</li>
-            <p>
+            <p></p>
             <br>
             <li>Antall quizer gjennomført:</li>
-            <p>
+            <p></p>
             <br>
             <li>Antall quizer laget:</li>
         </div>
@@ -48,3 +58,14 @@ function profileView(){
     </div>
     `;
 }
+
+//Den henter ikke ID forresten. Bruker bare indeks som er litt mer dumt. Bruker denne kun for å se noen få brukere på profilen
+function forcedLogin(){
+    usersLength = model.data.users.length;
+    model.app.userID = model.data.users[getRandomNumber(usersLength)].id;
+    updateView();
+}
+
+function getRandomNumber(max) {
+    return Math.floor(Math.random() * max);
+};

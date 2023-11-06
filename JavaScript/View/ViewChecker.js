@@ -64,6 +64,10 @@ function updateView() {
         case "myResultsView":
             myResultsView();
             break;
+        //Hvis feil oppstår
+        case "errorView":
+            errorView();
+            break;
         //Default hvis ingen blir funnet
         default:
             mainView();
@@ -78,13 +82,39 @@ updateView();
 //Eksempel: changeView('loginPage');
 
 function changeView(view) {
+    //Brukeren må være logget inn for å ta quizen og for å gå på sin profil.
+    /*
+        if (view == 'myProfileView') {
+        if(model.app.userID == null){
+            model.app.currentView = 'loginView';
+        }else{
+            model.app.currentView = view.toString();
+        }
+    }else if(view == 'quizView'){
+        if(model.app.userID == null){
+            model.app.currentView = 'loginView';
+        }else{
+            model.app.currentView = view.toString();
+        }
+    }
+    */
     model.app.currentView = view.toString();
     updateView();
 }
 
 function changeViewByCategory(category){
-    model.app.currentTheme = category;
-    model.app.currentView = 'quizFilterView';
+    let theApp = model.app;
+    let theData = model.data;
+    if (category == (null || "")) {
+        theApp.currentView = 'errorView';
+    } else {
+        theApp.currentTheme = category;
+        theApp.currentView = 'quizFilterView';
+        theData.mostPopularQuiz = [];
+        theData.newestQuiz = [];
+        //theData.quizbyCategories= [];
+        getQuizByCategories();   
+    }
     updateView();
 }
 
