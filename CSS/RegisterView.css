@@ -1,12 +1,37 @@
 /*Start*/
 
+#testbackgroundF{
+    position: fixed;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: #e8d6b3;
+}
+#registerView{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e8d6b3;
+}
+
+
 #registerBox{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+    background-color: #F8F8FF;
+    height: 45rem;
+    width: 35rem;
+    border-radius: 40px;
+    margin-top: 97px;
+    font-family:'Lexend';
 }
+#tittelCreatAcc{
+    font-size: 70px;
+}
+
 
 #regInputUser{
     text-align: left;
@@ -28,7 +53,10 @@
 #regInputAge{
     text-align: left;
     margin-bottom: 8px;
-    
+}
+
+div.inputContainer {
+    display: block;
 }
 
     

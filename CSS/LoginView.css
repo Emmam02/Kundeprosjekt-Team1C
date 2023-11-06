@@ -3,8 +3,8 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 99vw;
-    height: 97vh;
+    margin-top: 200px;
+    background-color: #e8d6b3;
 }
 
 #title{
@@ -15,6 +15,9 @@
 
 #Loginbox{
     flex-direction: column;
+    height: 45rem;
+    width: 25px;
+    border-radius: 40px;
 }
 
 #userInputName{
