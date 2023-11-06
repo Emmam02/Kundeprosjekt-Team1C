@@ -78,7 +78,7 @@ function clearQuestions() {
 
 function submit() {
     newQuiz.id = generateUniqueId();
-    newQuiz.creator = getUsername();
+    newQuiz.creator = currentUser().username;
     newQuiz.date = getCurrentDate();
     model.data.allQuizes.push(newQuiz);
     model.app.currentQuizId = newQuiz.id;
