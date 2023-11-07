@@ -8,13 +8,13 @@ const model = {
     app: {
         currentView: "mainView",
         language: "no",
-        isDarkMode: true,
+        isDarkMode: false,
         modeID: 0,
         userID: null,
         username: "",
         profilePic: "",
         currentQuizId: 0,
-        currentTheme:"",
+        currentTheme: "",
     },
     input: {
         createAccount: {
@@ -103,7 +103,6 @@ const model = {
         },
     },
     data: {
-        
         newestQuiz: [
             //getQuizByDate();
         ],
@@ -113,7 +112,7 @@ const model = {
         highestRatedQuiz: [
             //getQuizByRating();
         ],
-        quizbyCategories:[
+        quizbyCategories: [
             //getQuizByCategory();
         ],
 
@@ -447,11 +446,11 @@ const model = {
             },
         ],
 
-        fakeUser:{
+        fakeUser: {
             id: null,
-            username:"Anonym",
+            username: "Anonym",
             password: "",
-            image:"Images/DefaultProfile.png",
+            image: "Images/DefaultProfile.png",
             name: "Anonym",
             age: "",
             mail: "",
@@ -466,9 +465,9 @@ const model = {
                 name: "Per Kautokeino", //Deres navn, om ikke vi gjør firstName LastName
                 mail: "",
                 age: "",
-                image: "",
+                image: "https://arkiv.p3.no/rd/files/2011/03/p%C3%A5l-bang-hansen.jpg",
                 //selfMadeQuizes? En array over hva brukeren har lager eller så kan vi hente data ved hjelp av brukernavnet og legge det inn
-                answeredQuizes: [1,69, 420,], //Liste over hva slags quizer de har svart på - referanser til quizzer med ID
+                answeredQuizes: [1, 69, 420], //Liste over hva slags quizer de har svart på - referanser til quizzer med ID
             },
             {
                 id: 1,
@@ -478,30 +477,30 @@ const model = {
                 name: "Jens Stoltenberg", //Deres navn, om ikke vi gjør firstName LastName
                 age: "",
                 mail: "",
-                image: "", //<-- skiftet språk her
+                image: "https://akamai.vgc.no/v2/images/a2da6147-74b3-485b-8e2b-7e8d7995a3a9?fit=crop&format=auto&h=667&w=1000&s=e26bc6be00a11258475a44b8477859bf67eb4f51", //<-- skiftet språk her
                 answeredQuizes: [1, 69, 420],
             },
             {
                 id: 3,
                 isDarkMode: false,
                 username: "Ompalompa",
-                password:"",
+                password: "ompa",
                 name: "Ompalompa",
-                age:"",
-                mail:"",
-                image:"",
+                age: "",
+                mail: "",
+                image: "https://pbs.twimg.com/media/CQbgg7CW8AEgnwR?format=jpg&name=small",
                 answeredQuizes: [
                     {
-                        id:0,
-                        quizTitle:"Hvilken hund er du?",
-                        result:"",
-                    }
+                        id: 0,
+                        quizTitle: "Hvilken hund er du?",
+                        result: "",
+                    },
                 ],
-                createdQuizes:[
+                createdQuizes: [
                     {
-                        id:0,
-                        quizTitle:"Hvilken hund er du?",
-                    }
+                        id: 0,
+                        quizTitle: "Hvilken hund er du?",
+                    },
                 ],
             },
             {
@@ -512,7 +511,7 @@ const model = {
                 name: "Per Poll", //Deres navn, om ikke vi gjør firstName LastName
                 age: "",
                 mail: "",
-                image: "", //<-- skiftet språk her
+                image: "https://media.snl.no/media/236173/standard_compressed_Per_Jansen_.jpeg", //<-- skiftet språk her
                 answeredQuizes: [
                     {
                         id: 1,
@@ -533,7 +532,7 @@ const model = {
                         result: "1",
                     },
                 ],
-                createdQuizes:[
+                createdQuizes: [
                     //Liste over quizer brukeren har laget
                 ],
             },

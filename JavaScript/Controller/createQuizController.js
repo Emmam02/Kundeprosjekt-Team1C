@@ -25,7 +25,7 @@ function newQuestions() {
           this.value)"></input>
           <select onchange="(newQuiz.questions[${i}].answers[0].color =
               this.value)">
-              <option value="${model.data.colors[0]}">Rød</option>
+              <option selected value="${model.data.colors[0]}">Rød</option>
               <option value="${model.data.colors[1]}">Blå</option>
               <option value="${model.data.colors[2]}">Gul</option>
               <option value="${model.data.colors[3]}">Oransje</option>
@@ -37,7 +37,7 @@ function newQuestions() {
           <select onchange="(newQuiz.questions[${i}].answers[1].color =
               this.value)">
               <option value="${model.data.colors[0]}">Rød</option>
-              <option value="${model.data.colors[1]}">Blå</option>
+              <option selected value="${model.data.colors[1]}">Blå</option>
               <option value="${model.data.colors[2]}">Gul</option>
               <option value="${model.data.colors[3]}">Oransje</option>
           </select>
@@ -49,7 +49,7 @@ function newQuestions() {
               this.value)">
               <option value="${model.data.colors[0]}">Rød</option>
               <option value="${model.data.colors[1]}">Blå</option>
-              <option value="${model.data.colors[2]}">Gul</option>
+              <option selected value="${model.data.colors[2]}">Gul</option>
               <option value="${model.data.colors[3]}">Oransje</option>
           </select>
       </div>
@@ -61,7 +61,7 @@ function newQuestions() {
               <option value="${model.data.colors[0]}">Rød</option>
               <option value="${model.data.colors[1]}">Blå</option>
               <option value="${model.data.colors[2]}">Gul</option>
-              <option value="${model.data.colors[3]}">Oransje</option>
+              <option selected value="${model.data.colors[3]}">Oransje</option>
           </select>
           <button class="addQuestionButton"onclick="addQuestions()">Legg til spørsmål</button>
       </div>
@@ -102,6 +102,7 @@ function submit() {
     newQuiz.id = generateUniqueId();
     newQuiz.creator = currentUser().username;
     newQuiz.date = getCurrentDate();
+    newQuiz.questions.splice(newQuiz.questions.length - 1, 1);
     model.data.allQuizes.push(newQuiz);
     model.app.currentQuizId = newQuiz.id;
     getQuiz(); //<-- Kan hende at vi ikke trenger dette

@@ -1,23 +1,32 @@
 /*Start*/
 
+:root {
+    --mainColor: #ffd9b3;
+    --secondaryColor: #181818;
+}
+/* const root = document.querySelector(':root');
+
+// set css variable
+root.style.setProperty('--my-color', 'blue');
+*/
 body {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 #siteSettings {
-  color: #000000;
-  background-color: #ffd9b3;
+    color: #000000;
+    background-color: var(--mainColor);
 }
 
-.darkmodeClass{
-  color:#ffffff;
-  background-color:#181818 ;
+.darkmodeClass {
+    color: #ffffff;
+    background-color: #181818;
 }
 
-.lightmodeClass{
-  color: #202020;
-  background-color: #ffffff;
+.lightmodeClass {
+    color: #202020;
+    background-color: #ffffff;
 }
 
 /*

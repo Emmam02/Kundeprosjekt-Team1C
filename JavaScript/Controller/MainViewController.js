@@ -7,6 +7,11 @@
 const navUser = document.getElementById("nav-profile-text")
 const navPic = document.getElementById("nav-profile-picture");
 
+function toggleDarkMode(){
+    model.app.isDarkMode != model.app.isDarkMode
+    }
+
+
 function getProfilePic(){
     return model.app.profilePic;
 }

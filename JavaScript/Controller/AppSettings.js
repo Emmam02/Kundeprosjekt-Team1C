@@ -3,12 +3,16 @@
 
 const siteSettings = document.getElementById("siteSettings");
 const profileNavImg = document.getElementById("nav-profile-picture");
-const profileNavUser = document.getElementById("nav-profile-text")
-const backgroundList = ['nav-bar','mainContainer','createYourOwnQuizContainer'];
+const profileNavUser = document.getElementById("nav-profile-text");
+const backgroundList = [
+    "nav-bar",
+    "mainContainer",
+    "createYourOwnQuizContainer",
+];
 
 //Loading settings
 
-function loadSettingsApp(){
+function loadSettingsApp() {
     loadColorThemeOLD();
     //loadProfilePic();
     //loadUsername();
@@ -16,77 +20,92 @@ function loadSettingsApp(){
 
 loadColorThemeOLD();
 
-function changeColorTheme(){
+function changeColorTheme() {
     if (model.app.isDarkMode == true) {
-        for (let i = 0; o < array.length; i++) {
-            
-        }
-    }else{
-        for (let i = 0; index < array.length; i++) {
-            
-        }
+        for (let i = 0; o < array.length; i++) {}
+    } else {
+        for (let i = 0; index < array.length; i++) {}
     }
 }
 
-function changeColorThemeV2(){
+function changeColorThemeV2() {
     let bgListLength = backgroundList.length;
-    let lightModeArray
+    let lightModeArray;
     for (let i = 0; i < bgListLength; i++) {
         if (model.app.isDarkMode == true) {
-            document.getElementById(backgroundList[i]).style.color = '';
-            document.getElementById(backgroundList[i]).style.backgroundColor = '';
+            document.getElementById(backgroundList[i]).style.color = "";
+            document.getElementById(backgroundList[i]).style.backgroundColor =
+                "";
         } else {
-            document.getElementById(backgroundList[i]).style.color = '';
-            document.getElementById(backgroundList[i]).style.backgroundColor = '';
+            document.getElementById(backgroundList[i]).style.color = "";
+            document.getElementById(backgroundList[i]).style.backgroundColor =
+                "";
         }
     }
     if (model.app.isDarkMode == true) {
-
     } else {
-        
     }
 }
 
-
-function loadColorTheme(){
-    if(model.app.isDarkMode == true){
-
+function loadColorTheme() {
+    if (model.app.isDarkMode == true) {
         //siteSettings.style.color = model.data.themeMode[1].textColor;
         //siteSettings.style.backgroundColor = model.data.themeMode[1].backgroundColor;
-    }else{
+    } else {
         //siteSettings.style.color = model.data.themeMode[0].textColor;
         //siteSettings.style.backgroundColor = model.data.themeMode[0].backgroundColor;
     }
 }
 
-
+function toggleMode() {
+    let toggleMode = document.getElementById("toggleMode");
+    loadColorThemeOLD();
+    if (model.app.isDarkMode == false) {
+        model.app.isDarkMode = true;
+        toggleMode.innerText = `Dark Mode`;
+    } else if (model.app.isDarkMode == true) {
+        toggleMode.innerText = `Light Mode`;
+        model.app.isDarkMode = false;
+    }
+}
 
 //--------------------------------------------------------------------------------
 //Old code starts here
 //--------------------------------------------------------------------------------
 
-function loadColorThemeOLD(){
-    if(model.app.isDarkMode == true){
+function loadColorThemeOLD() {
+    if (model.app.isDarkMode == true) {
         siteSettings.style.color = model.data.themeMode[1].textColor;
-        siteSettings.style.backgroundColor = model.data.themeMode[1].backgroundColor;
-    }else{
+        siteSettings.style.backgroundColor =
+            model.data.themeMode[1].backgroundColor;
+    } else {
         siteSettings.style.color = model.data.themeMode[0].textColor;
-        siteSettings.style.backgroundColor = model.data.themeMode[0].backgroundColor;
+        siteSettings.style.backgroundColor =
+            model.data.themeMode[0].backgroundColor;
     }
 }
 
-function loadProfilePic(){
-    if(model.app.username == "" && model.app.userID == null || model.app.userID == null || model.app.username == ""){
-        profileNavImg.style.backgroundImage = "url('Images/DefaultProfile.png')";
-    }else{
+function loadProfilePic() {
+    if (
+        (model.app.username == "" && model.app.userID == null) ||
+        model.app.userID == null ||
+        model.app.username == ""
+    ) {
+        profileNavImg.style.backgroundImage =
+            "url('Images/DefaultProfile.png')";
+    } else {
         profileNavImg.style.background = model.app.profilePic;
     }
 }
 
-function loadUsername(){
-    if((model.app.username == "" && model.app.userID == null) || model.app.userID == null || model.app.username == ""){
+function loadUsername() {
+    if (
+        (model.app.username == "" && model.app.userID == null) ||
+        model.app.userID == null ||
+        model.app.username == ""
+    ) {
         profileNavImg.innerText = "Anonymous";
-    }else{
+    } else {
         profileNavUser.innerText = model.app.username;
     }
 }

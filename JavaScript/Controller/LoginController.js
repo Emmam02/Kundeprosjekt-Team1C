@@ -20,7 +20,8 @@ function logIn(){
     findUser()
     checkPassword()
     if(canLogIn){
-        //En funksjon eller variabel trengs her for å oppd
+       //model.app.currentView = "mainView"
+       model.app.userID= user.id
        changeView('mainView')
        console.log("logget inn")
     }

@@ -3,8 +3,9 @@
 
 function registerView(){
     app.innerHTML = /*HTML*/`
+    <div id= "registerView">
     <div id="registerBox">
-        <h1>Testify - Registrer</h1>
+        <h1 id="tittelCreatAcc">Testify</h1>
         
         <div class="inputContainer"> 
             <div>Brukernavn: </div>
@@ -39,7 +40,10 @@ function registerView(){
         <button id="regButton" type="submit" onclick="registerAccount();changeView('loginView')">Registrer</button>
         <p id="linkLoginP" onclick="changeView('loginView')">Har du allerede en bruker? Logg inn her!</p>
         <p class="temp-class" onclick="changeView('mainView')">Tilbake</p>
+        
     </div>
+    </div>
+    <div id="testbackgroundF"></div>
     `;
 }
 
