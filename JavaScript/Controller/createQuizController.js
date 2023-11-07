@@ -63,7 +63,7 @@ function newQuestions() {
               <option value="${model.data.colors[2]}">Gul</option>
               <option value="${model.data.colors[3]}">Oransje</option>
           </select>
-          <button class="addQuestionButton"onclick="clearQuestions()">Legg til spørsmål</button>
+          <button class="addQuestionButton"onclick="addQuestions()">Legg til spørsmål</button>
       </div>
       <!-- hsnush -->
       `;
@@ -74,7 +74,7 @@ function clearThis(target) {
     document.getElementById(target).innerHTML = "";
 }
 
-function clearQuestions() {
+function addQuestions() {
     const newQuestion = {
         theQuestion: "",
         questionImage: "",
@@ -100,7 +100,7 @@ function clearQuestions() {
 */
 function submit() {
     newQuiz.id = generateUniqueId();
-    newQuiz.creator = getUsername();
+    newQuiz.creator = currentUser().username;
     newQuiz.date = getCurrentDate();
     model.data.allQuizes.push(newQuiz);
     model.app.currentQuizId = newQuiz.id;
