@@ -41,6 +41,10 @@
     flex-direction: column;
 }
 
+.smallQuizContainer{
+    font-size: 14px;
+}
+
 .annetQuizList{
     display: flex;
     justify-content: center;

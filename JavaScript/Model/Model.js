@@ -437,11 +437,13 @@ const model = {
                 name: "Light",
                 textColor: "#202020",
                 backgroundColor: "#ffffff",
+                containerColors: "",
             },
             {
                 name: "Dark",
                 textColor: "#ffffff",
                 backgroundColor: "#181818",
+                containerColors: "",
             },
         ],
 
