@@ -1,5 +1,28 @@
-function profileView(){
+function profileView() {
     app.innerHTML = /*HTML*/ `
+    <nav id="nav-bar">
+    <div id="nav-title-content">
+        <div id="nav-title"onclick="changeView('mainView')">Testify</div>
+    </div>
+    <div id="nav-profile-content">
+        <div id="nav-profile-text"onclick="changeView('myProfileView')">${
+            currentUser().username
+        }</div>
+        <img id="nav-profile-picture" onclick="changeView('myProfileView')" src="${
+            currentUser().image
+        }">
+
+        <div style="margin-right:5px">${
+            model.app.isDarkMode ? "Light mode" : "Dark mode"
+        }</div>
+    <label id="mainViewsclass="class="switch">
+    <input id="darkModeCheckBox" onclick="toggleDarkMode()" type="checkbox" value="${
+        model.app.isDarkMode
+    }">
+    <span class="slider round"></span>
+    </label>
+    </div>
+</nav>
     <div id="mainContainer">
         <div id="headerContainer">
             <h1>Profile page</h1>
@@ -60,7 +83,7 @@ function profileView(){
 }
 
 //Den henter ikke ID forresten. Bruker bare indeks som er litt mer dumt. Bruker denne kun for å se noen få brukere på profilen
-function forcedLogin(){
+function forcedLogin() {
     usersLength = model.data.users.length;
     model.app.userID = model.data.users[getRandomNumber(usersLength)].id;
     updateView();
@@ -68,4 +91,4 @@ function forcedLogin(){
 
 function getRandomNumber(max) {
     return Math.floor(Math.random() * max);
-};
+}

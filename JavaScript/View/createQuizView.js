@@ -1,5 +1,28 @@
 function createQuizView() {
     app.innerHTML = /*HTML*/ `
+    <nav id="nav-bar">
+    <div id="nav-title-content">
+        <div id="nav-title"onclick="changeView('mainView')">Testify</div>
+    </div>
+    <div id="nav-profile-content">
+        <div id="nav-profile-text"onclick="changeView('myProfileView')">${
+            currentUser().username
+        }</div>
+        <img id="nav-profile-picture" onclick="changeView('myProfileView')" src="${
+            currentUser().image
+        }">
+
+        <div style="margin-right:5px">${
+            model.app.isDarkMode ? "Light mode" : "Dark mode"
+        }</div>
+    <label id="mainViewsclass="class="switch">
+    <input id="darkModeCheckBox" onclick="toggleDarkMode()" type="checkbox" value="${
+        model.app.isDarkMode
+    }">
+    <span class="slider round"></span>
+    </label>
+    </div>
+</nav>
   <div id="createYourOwnQuizContainer">
         <h1 class="gameQuizContainer"> Lag din egen Quiz!</h1>
        <div> <input id="quizTitle" type="text" placeholder="Quiz Navn" oninput="(newQuiz.title =

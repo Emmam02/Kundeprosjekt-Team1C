@@ -1,38 +1,43 @@
 "use strict";
 //Start
 
-function getLoggedInUser(){
-    return model.data.users.find((user) => user.id === model.app.userID)
+function getLoggedInUser() {
+    return model.data.users.find((user) => user.id === model.app.userID);
 }
 
-
-
-function currentUser(){
+function currentUser() {
     let theUser;
     let fakeUser = model.data.fakeUser;
     if (model.app.userID == null) {
         theUser = fakeUser;
-    }else{
+    } else {
         theUser = getLoggedInUser();
     }
     return theUser;
 }
 
-
-function mainView(){
-    app.innerHTML = /*HTML*/`
+function mainView() {
+    app.innerHTML = /*HTML*/ `
     <div id="mainView">
         <nav id="nav-bar">
             <div id="nav-title-content">
                 <div id="nav-title"onclick="changeView('mainView')">Testify</div>
             </div>
             <div id="nav-profile-content">
-                <div id="nav-profile-text"onclick="changeView('myProfileView')">${currentUser().username}</div>
-                <img id="nav-profile-picture" onclick="changeView('myProfileView')" src="${currentUser().image}">
+                <div id="nav-profile-text"onclick="changeView('myProfileView')">${
+                    currentUser().username
+                }</div>
+                <img id="nav-profile-picture" onclick="changeView('myProfileView')" src="${
+                    currentUser().image
+                }">
 
-                <div style="margin-right:5px">${model.app.isDarkMode ? "Light mode" : "Dark mode"}</div>
+                <div style="margin-right:5px">${
+                    model.app.isDarkMode ? "Light mode" : "Dark mode"
+                }</div>
             <label id="mainViewsclass="class="switch">
-            <input id="darkModeCheckBox" onclick="toggleDarkMode()" type="checkbox" value="${model.app.isDarkMode}">
+            <input id="darkModeCheckBox" onclick="toggleDarkMode()" type="checkbox" value="${
+                model.app.isDarkMode
+            }">
             <span class="slider round"></span>
             </label>
             </div>
@@ -44,12 +49,24 @@ function mainView(){
 
         <span>
         <div id="themeContainer">
-            <div class="themeDisplay link-view" onclick="changeViewByCategory(model.data.allCategories[0].name)">${model.data.allCategories[0].name}</div>
-            <div class="themeDisplay link-view" onclick="changeViewByCategory(model.data.allCategories[1].name)">${model.data.allCategories[1].name}</div>
-            <div class="themeDisplay link-view" onclick="changeViewByCategory(model.data.allCategories[2].name)">${model.data.allCategories[2].name}</div>
-            <div class="themeDisplay link-view" onclick="changeViewByCategory(model.data.allCategories[3].name)">${model.data.allCategories[3].name}</div>
-            <div class="themeDisplay link-view" onclick="changeViewByCategory(model.data.allCategories[4].name)">${model.data.allCategories[4].name}</div>
-            <div class="themeDisplay link-view" onclick="changeViewByCategory(model.data.allCategories[5].name)"><span class="innerCatText">${model.data.allCategories[5].name}</span></div>
+            <div class="themeDisplay link-view" onclick="changeViewByCategory(model.data.allCategories[0].name)">${
+                model.data.allCategories[0].name
+            }</div>
+            <div class="themeDisplay link-view" onclick="changeViewByCategory(model.data.allCategories[1].name)">${
+                model.data.allCategories[1].name
+            }</div>
+            <div class="themeDisplay link-view" onclick="changeViewByCategory(model.data.allCategories[2].name)">${
+                model.data.allCategories[2].name
+            }</div>
+            <div class="themeDisplay link-view" onclick="changeViewByCategory(model.data.allCategories[3].name)">${
+                model.data.allCategories[3].name
+            }</div>
+            <div class="themeDisplay link-view" onclick="changeViewByCategory(model.data.allCategories[4].name)">${
+                model.data.allCategories[4].name
+            }</div>
+            <div class="themeDisplay link-view" onclick="changeViewByCategory(model.data.allCategories[5].name)"><span class="innerCatText">${
+                model.data.allCategories[5].name
+            }</span></div>
         </div>
 
         <div id="quiz-box-position">
