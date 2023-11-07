@@ -14,13 +14,13 @@ function errorView(){
         <li>Linken som ble lagt inn fungerer ikke.</li>
         <li>Noen gikk over streken og lagde en side for noe som egentlig ikke er nødvendig. <-- Gi skylden til The Snake</li>
     </ul>
-    </div>
     <h3>Om du ønsker mer detaljert informasjon om hvor det gikk feil:<h3>
     <ol>
     <li>Gå til console (hold ctrl+shift+i).</li>
     <li>Du vil nå få en ny boks til høyre.</li>
     <li>Klikk på console.</li>
     </ol>
+    </div>
     `;
 }
 

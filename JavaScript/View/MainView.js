@@ -5,6 +5,8 @@ function getLoggedInUser(){
     return model.data.users.find((user) => user.id === model.app.userID)
 }
 
+
+
 function currentUser(){
     let theUser;
     let fakeUser = model.data.fakeUser;
@@ -16,18 +18,24 @@ function currentUser(){
     return theUser;
 }
 
+
 function mainView(){
     app.innerHTML = /*HTML*/`
     <div id="mainView">
         <nav id="nav-bar">
             <div id="nav-title-content">
-                <div id="nav-title">Testify - Hovedmeny</div>
+                <div id="nav-title">Testify</div>
             </div>
             <div id="nav-profile-content">
                 <div id="nav-profile-text">${currentUser().username}</div>
                 <img id="nav-profile-picture" src="${currentUser().image}">
-            <div>
-            <div id="drop-down-menu"><div>
+
+                <div style="margin-right:5px">${model.app.isDarkMode ? "Light mode" : "Dark mode"}</div>
+            <label id="mainViewsclass="class="switch">
+            <input id="darkModeCheckBox" onclick="toggleDarkMode()" type="checkbox" value="${model.app.isDarkMode}">
+            <span class="slider round"></span>
+            </label>
+            </div>
         </nav>
 
         <div id="search-bar">

@@ -21,6 +21,7 @@ function logIn(){
     checkPassword()
     if(canLogIn){
        //model.app.currentView = "mainView"
+       model.app.userID= user.id
        changeView('mainView')
        console.log("logget inn")
     }
