@@ -74,15 +74,11 @@ function createQuizView() {
                     <option value="${model.data.colors[2]}">Gul</option>
                     <option value="${model.data.colors[3]}">Oransje</option>
                 </select>
-                <button class="addQuestionButton"onclick="clearQuestions()">Legg til spørsmål</button>
+                <button class="addQuestionButton"onclick="addQuestions()">Legg til spørsmål</button>
             </div>
             
         </div>
         
-        
-        
-        
-
     <div id="resultsContainer">
                     <h2>Quiz slutt-resultater</h2>
         <div id="resultRed">Resultat Rød :
@@ -122,10 +118,11 @@ function createQuizView() {
         
         <div id="togglePrivate" class="private"> Privat/Offentlig</div>
         <div class="lastTolastButtons">
-        <div class="tempClass" onclick="changeView('quizView')">Forhåndsvis Quiz</div>
+        <div class="tempClass" onclick="changeView('quizView')">Forhåndsvis hvordan en Quiz vil se ut</div>
         <div class="tempClass" onclick="changeView('mainView')">Tilbake</div>
         </div>
     <button class="submitButton" onclick="submit()" type="submit">Godkjenn</button>
     </div>
+                
     `;
 }
