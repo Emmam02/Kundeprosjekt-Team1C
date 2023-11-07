@@ -8,13 +8,13 @@ const model = {
     app: {
         currentView: "mainView",
         language: "no",
-        isDarkMode:true,
+        isDarkMode: false,
         modeID: 0,
         userID: null,
         username: "",
         profilePic: "",
         currentQuizId: 0,
-        currentTheme:"",
+        currentTheme: "",
     },
     input: {
         createAccount: {
@@ -103,7 +103,6 @@ const model = {
         },
     },
     data: {
-        
         newestQuiz: [
             //getQuizByDate();
         ],
@@ -113,7 +112,7 @@ const model = {
         highestRatedQuiz: [
             //getQuizByRating();
         ],
-        quizbyCategories:[
+        quizbyCategories: [
             //getQuizByCategory();
         ],
 
@@ -445,11 +444,11 @@ const model = {
             },
         ],
 
-        fakeUser:{
+        fakeUser: {
             id: null,
-            username:"Anonym",
+            username: "Anonym",
             password: "",
-            image:"Images/DefaultProfile.png",
+            image: "Images/DefaultProfile.png",
             name: "Anonym",
             age: "",
             mail: "",
@@ -466,7 +465,7 @@ const model = {
                 age: "",
                 image: "https://arkiv.p3.no/rd/files/2011/03/p%C3%A5l-bang-hansen.jpg",
                 //selfMadeQuizes? En array over hva brukeren har lager eller så kan vi hente data ved hjelp av brukernavnet og legge det inn
-                answeredQuizes: [1,69, 420,], //Liste over hva slags quizer de har svart på - referanser til quizzer med ID
+                answeredQuizes: [1, 69, 420], //Liste over hva slags quizer de har svart på - referanser til quizzer med ID
             },
             {
                 id: 1,
@@ -483,23 +482,23 @@ const model = {
                 id: 3,
                 isDarkMode: false,
                 username: "Ompalompa",
-                password:"ompa",
+                password: "ompa",
                 name: "Ompalompa",
-                age:"",
-                mail:"",
-                image:"https://pbs.twimg.com/media/CQbgg7CW8AEgnwR?format=jpg&name=small",
+                age: "",
+                mail: "",
+                image: "https://pbs.twimg.com/media/CQbgg7CW8AEgnwR?format=jpg&name=small",
                 answeredQuizes: [
                     {
-                        id:0,
-                        quizTitle:"Hvilken hund er du?",
-                        result:"",
-                    }
+                        id: 0,
+                        quizTitle: "Hvilken hund er du?",
+                        result: "",
+                    },
                 ],
-                createdQuizes:[
+                createdQuizes: [
                     {
-                        id:0,
-                        quizTitle:"Hvilken hund er du?",
-                    }
+                        id: 0,
+                        quizTitle: "Hvilken hund er du?",
+                    },
                 ],
             },
             {
@@ -531,7 +530,7 @@ const model = {
                         result: "1",
                     },
                 ],
-                createdQuizes:[
+                createdQuizes: [
                     //Liste over quizer brukeren har laget
                 ],
             },

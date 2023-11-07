@@ -25,29 +25,26 @@ på en quiz, med start knapp for å begynne quizen. ↓
 */
 function quizView() {
     app.innerHTML = /*HTML*/ `
-  <nav id="nav-bar">
-  <div id="nav-title-content">
-      <div id="nav-title"onclick="changeView('mainView')">Testify</div>
-  </div>
-  <div id="nav-profile-content">
-      <div id="nav-profile-text"onclick="changeView('myProfileView')">${
-          currentUser().username
-      }</div>
-      <img id="nav-profile-picture" onclick="changeView('myProfileView')" src="${
-          currentUser().image
-      }">
+    <nav id="nav-bar">
+    <div id="nav-title-content">
+        <div id="nav-title"onclick="changeView('mainView')">Testify</div>
+    </div>
+    <div id="nav-profile-content">
+        <div id="nav-profile-text"onclick="changeView('myProfileView')">${
+            currentUser().username
+        }</div>
+        <img id="nav-profile-picture" onclick="changeView('myProfileView')" src="${
+            currentUser().image
+        }">
 
-      <div style="margin-right:5px">${
-          model.app.isDarkMode ? "Light mode" : "Dark mode"
-      }</div>
-  <label id="mainViewsclass="class="switch">
-  <input id="darkModeCheckBox" onclick="toggleDarkMode()" type="checkbox" value="${
-      model.app.isDarkMode
-  }">
-  <span class="slider round"></span>
-  </label>
-  </div>
-</nav>
+        <div style="margin-right:5px"id="toggleMode">Dark/Light Mode
+        </div>
+        <label class="switch">
+        <input id="toggleMode" onclick="toggleMode()" type="checkbox">
+        <span class="slider round"></span>
+        </label>
+    </div>
+    </nav>
     <div class="quizContainer">
       <h1>${getQuiz().title}</h1>
       <img src="${getQuiz().image}" class="mainImage" alt="image">

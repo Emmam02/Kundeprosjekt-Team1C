@@ -31,11 +31,11 @@ function mainView() {
                     currentUser().image
                 }">
 
-                <div style="margin-right:5px">${
+                <div style="margin-right:5px" onclick="toggleMode()">${
                     model.app.isDarkMode ? "Light mode" : "Dark mode"
                 }</div>
             <label id="mainViewsclass="class="switch">
-            <input id="darkModeCheckBox" onclick="toggleDarkMode()" type="checkbox" value="${
+            <input id="darkModeCheckBox" type="checkbox" value="${
                 model.app.isDarkMode
             }">
             <span class="slider round"></span>

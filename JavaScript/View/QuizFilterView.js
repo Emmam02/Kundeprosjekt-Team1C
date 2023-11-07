@@ -15,17 +15,14 @@ function quizFilterView() {
             currentUser().image
         }">
 
-        <div style="margin-right:5px">${
-            model.app.isDarkMode ? "Light mode" : "Dark mode"
-        }</div>
-    <label id="mainViewsclass="class="switch">
-    <input id="darkModeCheckBox" onclick="toggleDarkMode()" type="checkbox" value="${
-        model.app.isDarkMode
-    }">
-    <span class="slider round"></span>
-    </label>
+        <div style="margin-right:5px"id="toggleMode">Dark/Light Mode
+        </div>
+        <label class="switch">
+        <input id="toggleMode" onclick="toggleMode()" type="checkbox">
+        <span class="slider round"></span>
+        </label>
     </div>
-</nav>
+    </nav>
     <div id="quizFilterSite">
         <div>Hei, denne siden er tom. :></div>
         <button class="link-view" onclick="changeView('mainView')">Tilbake</button>

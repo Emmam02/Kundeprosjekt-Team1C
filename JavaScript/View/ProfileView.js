@@ -12,17 +12,14 @@ function profileView() {
             currentUser().image
         }">
 
-        <div style="margin-right:5px">${
-            model.app.isDarkMode ? "Light mode" : "Dark mode"
-        }</div>
-    <label id="mainViewsclass="class="switch">
-    <input id="darkModeCheckBox" onclick="toggleDarkMode()" type="checkbox" value="${
-        model.app.isDarkMode
-    }">
-    <span class="slider round"></span>
-    </label>
+        <div style="margin-right:5px"id="toggleMode">Dark/Light Mode
+        </div>
+        <label class="switch">
+        <input id="toggleMode" onclick="toggleMode()" type="checkbox">
+        <span class="slider round"></span>
+        </label>
     </div>
-</nav>
+    </nav>
     <div id="mainContainer">
         <div id="headerContainer">
             <h1>Profile page</h1>
