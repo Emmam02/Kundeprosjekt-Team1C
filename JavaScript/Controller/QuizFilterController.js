@@ -11,13 +11,17 @@ function getQuizByCategories(){
         if (allQuizes[i].theme === currentTheme) {
             let themedQuiz = [...allQuizes][i];
             currentQuizCatArray.push(themedQuiz);
-        } else {
-            console.log('lmao skipping');
         }
-        i++;
-        console.log('Running loop: ' + i);
+        //i++;
     }
-    console.log('Loop done!');
+}
+
+function getNewQuizes(){
+
+}
+
+function getPopularQuizes(){
+
 }
 
 

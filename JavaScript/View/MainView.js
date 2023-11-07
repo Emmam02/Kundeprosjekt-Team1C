@@ -41,7 +41,7 @@ function mainView(){
             <div class="themeDisplay link-view" onclick="changeViewByCategory(model.data.allCategories[2].name)">${model.data.allCategories[2].name}</div>
             <div class="themeDisplay link-view" onclick="changeViewByCategory(model.data.allCategories[3].name)">${model.data.allCategories[3].name}</div>
             <div class="themeDisplay link-view" onclick="changeViewByCategory(model.data.allCategories[4].name)">${model.data.allCategories[4].name}</div>
-            <div class="themeDisplay link-view" onclick="changeViewByCategory(model.data.allCategories[5].name)">${model.data.allCategories[5].name}</div>
+            <div class="themeDisplay link-view" onclick="changeViewByCategory(model.data.allCategories[5].name)"><span class="innerCatText">${model.data.allCategories[5].name}</span></div>
         </div>
 
         <div id="quiz-box-position">

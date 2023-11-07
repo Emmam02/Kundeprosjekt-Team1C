@@ -13,11 +13,11 @@ function quizFilterView(){
             <div id="theQuiz-container">
                 <div id="newest-Quiz-container">
                     <h3>Nyeste quizer</h3>
-                    <div id="newest-Quiz"></div>
+                    <div id="newest-Quiz">${getNewQuizes()}</div>
                 </div>
                 <div id="popular-Quiz-container">
                     <h3>Mest populære quizer</h3>
-                    <div id="popular-Quiz"></div>
+                    <div id="popular-Quiz">${getPopularQuizes()}</div>
                 </div>
             </div>
             <div id="">
