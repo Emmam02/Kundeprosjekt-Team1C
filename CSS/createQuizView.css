@@ -71,7 +71,7 @@ input:checked + .slider:before {
     justify-content: center;
     align-items: center;
     font-family: "Merriweather", serif;
-    background-color: #e3dec4;
+    background-color: #e8d6b3;
     height: 100%;
 }
 
