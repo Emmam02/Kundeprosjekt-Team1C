@@ -1,8 +1,9 @@
 #generalInfoContainer{
 border: soild gray;
+border-width: 50%;
 margin-left: 10px;
-
 font-size: large;
+
 
 }
 

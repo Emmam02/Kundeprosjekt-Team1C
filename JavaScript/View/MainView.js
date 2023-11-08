@@ -20,6 +20,9 @@ function mainView() {
     app.innerHTML = /*HTML*/ `
     <div id="mainView">
         <nav id="nav-bar">
+
+            <div id="loginNavButton" onclick="changeView('loginView')">Logg inn</div>
+
             <div id="nav-title-content">
                 <div id="nav-title"onclick="changeView('mainView')">Testify</div>
             </div>

@@ -6,30 +6,30 @@
 
 /*MainView*/
 #mainView {
-  overflow: hidden;
-  font-family: "Lexend";
-  background-color: #f8f8ff;
+    overflow: hidden;
+    font-family: "Lexend";
+    background-color: var(--backgroundB);
 }
 
 /*Nav*/
 #nav-bar {
-  color: var(--textColorA);
-  background-color: var(--containerA);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0px 0px 0px 0px;
-  padding: 0px 0px 0px 0px;
-  border: 0;
-  width: 100%;
-  height: 6rem;
-  border-style: solid;
-  border-bottom: black;
-  flex-direction: row;
+    color: var(--textColorA);
+    background-color: var(--containerA);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    border: 0;
+    width: 100%;
+    height: 6rem;
+    border-style: solid;
+    border-bottom: black;
+    flex-direction: row;
 }
 
 #nav-bar:last-child {
-  justify-content: right;
+    justify-content: right;
 }
 
 /*#nav-bar-content {
@@ -40,166 +40,177 @@
 }*/
 
 #nav-title {
-  font-size: 4rem;
-  cursor: pointer;
-  /*font-family: 'Nosifer', sans-serif;*/
+    font-size: 4rem;
+    cursor: pointer;
+    /*font-family: 'Nosifer', sans-serif;*/
+}
+
+#loginNavButton{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    position: absolute;
+    left: 1%;
+    cursor: pointer;
+    border: 24px;
 }
 
 #nav-profile-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  right: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 1%;
 }
 
 #nav-profile-text {
-  color: var(--textColorA);
-  font-size: 20px;
-  cursor: pointer;
+    color: var(--textColorA);
+    font-size: 20px;
+    cursor: pointer;
 }
 
 #nav-profile-picture {
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 60px;
-  width: 60px;
-  margin: 2px 2px 2px 2px;
-  border-radius: 100%;
-  margin-right: 5px;
-  cursor: pointer;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 60px;
+    width: 60px;
+    margin: 2px 2px 2px 2px;
+    border-radius: 100%;
+    margin-right: 5px;
+    cursor: pointer;
 }
 
 #drop-down-menu {
-  color: var(--textColorA);
+    color: var(--textColorA);
 }
 
 /*Search Bar*/
 #search-bar {
-  margin-top: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #search-bar-text {
-  text-align: left;
+    text-align: left;
 }
 
 /*Themes*/
 #themeContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin: 2rem 0rem 2rem 0rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 2rem 0rem 2rem 0rem;
 }
 
 .themeDisplay {
-  color: var(--textColorA);
-  /* background-color: var(--containerA); */
-  display: flex;
-  justify-items: center;
-  align-items: center;
-  font-size: 2rem;
-  text-decoration: underline;
-  /*border-color: aqua;*/
-  /* border-style: solid; */
-  margin: 1rem 1.5rem 1rem 1.5rem;
-  height: 4rem;
-  width: 8rem;
-  font-family: "Roboto", sans-serif;
+    color: var(--textColorA);
+    /* background-color: var(--containerA); */
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    font-size: 2rem;
+    text-decoration: underline;
+    /*border-color: aqua;*/
+    /* border-style: solid; */
+    margin: 1rem 1.5rem 1rem 1.5rem;
+    height: 4rem;
+    width: 8rem;
+    font-family: "Roboto", sans-serif;
 }
 .themeDisplay:hover {
-  font-weight: bolder;
+    font-weight: bolder;
 }
 .innerCatText {
-  color: var(--textColorA);
-  text-align: center;
-  position: relative;
-  align-self: center;
-  height: initial;
-  width: initial;
+    color: var(--textColorA);
+    text-align: center;
+    position: relative;
+    align-self: center;
+    height: initial;
+    width: initial;
 }
 
 #quiz-box-position {
-  display: flex;
-  flex: content;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  margin: 10px 10px 10px 10px;
-  padding: 0 0 0 0;
+    display: flex;
+    flex: content;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin: 10px 10px 10px 10px;
+    padding: 0 0 0 0;
 }
 
 #quiz-by-date {
-  color: var(--textColorA);
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  flex-direction: column;
+    color: var(--textColorA);
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-direction: column;
 }
 
 #quiz-by-popularity {
-  color: var(--textColorA);
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  flex-direction: column;
+    color: var(--textColorA);
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-direction: column;
 }
 
 /*Legger til cursor på linker*/
 .link-view {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 /*Temp*/
 #temp-container {
-  color: var(--textColorA);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    color: var(--textColorA);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 #darkModeSwitch {
-  display: flex;
-  position: fixed;
-  right: 1%;
+    display: flex;
+    position: fixed;
+    right: 1%;
 }
 
 #quizByDateContainer,
 #quizByPopularityContainer {
-  border: 2px solid white;
-  padding: 40px 40px;
-  font-size: x-large;
-  margin: 10px;
-  border-radius: 12px;
-  background-color: #e8d6b3;
-  margin-bottom: 25%;
+    border: 2px solid white;
+    padding: 40px 40px;
+    font-size: x-large;
+    margin: 10px;
+    border-radius: 12px;
+    background-color: var(--containerA);
+    margin-bottom: 25%;
 }
 
 #quizByDateContainer li,
 #quizByPopularityContainer li {
-  padding: 20px;
-  cursor: pointer;
+    padding: 20px;
+    cursor: pointer;
 }
 #quizByDateContainer li:hover,
 #quizByPopularityContainer li:hover,
 #dummyQuizButton:hover,
 #gotoCreateYourOwnQuiz button:hover {
-  font-weight: bold;
+    font-weight: bold;
 }
 #gotoCreateYourOwnQuiz,
 #gotoCreateYourOwnQuiz button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: larger;
-  border: none;
-  text-decoration: none;
-  background: none;
-  cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: larger;
+    border: none;
+    text-decoration: none;
+    background: none;
+    cursor: pointer;
+    color: var(--textColorA);
 }
 
 /*End*/
