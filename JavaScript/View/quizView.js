@@ -3,20 +3,20 @@ let i = 0;
 let currentQuestion = 0;
 
 let userAnswers = {
-    0: 0,
-    1: 0,
-    2: 0,
-    3: 0,
+  0: 0,
+  1: 0,
+  2: 0,
+  3: 0,
 };
 
 function getQuiz() {
-    return model.data.allQuizes.find(
-        (quiz) => quiz.id == model.app.currentQuizId
-    );
+  return model.data.allQuizes.find(
+    (quiz) => quiz.id == model.app.currentQuizId
+  );
 }
 
 function updateQuizID() {
-    return model.app.currentQuizId;
+  return model.app.currentQuizId;
 }
 
 /* 
@@ -24,17 +24,17 @@ Den siden man først kommer til når man trykker
 på en quiz, med start knapp for å begynne quizen. ↓
 */
 function quizView() {
-    app.innerHTML = /*HTML*/ `
+  app.innerHTML = /*HTML*/ `
     <nav id="nav-bar">
     <div id="nav-title-content">
         <div id="nav-title"onclick="changeView('mainView')">Testify</div>
     </div>
     <div id="nav-profile-content">
         <div id="nav-profile-text"onclick="changeView('myProfileView')">${
-            currentUser().username
+          currentUser().username
         }</div>
         <img id="nav-profile-picture" onclick="changeView('myProfileView')" src="${
-            currentUser().image
+          currentUser().image
         }">
 
         <div style="margin-right:5px"id="toggleMode">Dark/Light Mode
@@ -58,11 +58,11 @@ Når man har trykket på start knappen så går man til dette,her
 ser man første spørssmål og svaralternativene som hører til ↓.
  */
 function quizStarted() {
-    app.innerHTML = /*HTML*/ `
+  app.innerHTML = /*HTML*/ `
     <div class="quizContainer">
       <h1>${getQuiz().title}</h1>
       <img src="${
-          getQuiz().questions[currentQuestion].questionImage
+        getQuiz().questions[currentQuestion].questionImage
       }" id="quizImage" alt="image">
       <div class="quizQnAContainer">
         <h2>${getQuizQuestion().theQuestion}</h2>
@@ -81,7 +81,7 @@ function quizStarted() {
 Denne henter spørsmålet som skal vises  ↓. 
  */
 function getQuizQuestion() {
-    return getQuiz().questions[currentQuestion];
+  return getQuiz().questions[currentQuestion];
 }
 
 /*
@@ -89,18 +89,18 @@ Henter svaralternativer og legger til det valgte
 svaret i result = ""; ↓.	 
 */
 function getQuizAnswers() {
-    let result = "";
+  let result = "";
 
-    const answers = getQuizQuestion().answers;
-    for (let i = 0; i < answers.length; i++) {
-        result +=
-            '<div class="quizAnswer" onclick="submitAnswer(this)" color="' +
-            answers[i].color +
-            '">' +
-            answers[i].answerText +
-            "</div>";
-    }
-    return result;
+  const answers = getQuizQuestion().answers;
+  for (let i = 0; i < answers.length; i++) {
+    result +=
+      '<div class="quizAnswer" onclick="submitAnswer(this)" color="' +
+      answers[i].color +
+      '">' +
+      answers[i].answerText +
+      "</div>";
+  }
+  return result;
 }
 
 /*
@@ -111,20 +111,20 @@ Endrer utseende på det svaret man trykket på så det skal være
 godt synlig for brukeren hva de har svart før man går videre ↓.
  */
 function submitAnswer(clickedAnswer) {
-    const color = clickedAnswer.getAttribute("color");
-    userAnswers[color]++;
+  const color = clickedAnswer.getAttribute("color");
+  userAnswers[color]++;
 
-    const allAnswers = document.querySelectorAll(".quizAnswer");
+  const allAnswers = document.querySelectorAll(".quizAnswer");
 
-    for (let i = 0; i < allAnswers.length; i++) {
-        const answer = allAnswers[i];
-        answer.style.backgroundColor = "#faf0e6";
-        answer.style.boxShadow = "0px 0px 0px #888888";
-    }
+  for (let i = 0; i < allAnswers.length; i++) {
+    const answer = allAnswers[i];
+    answer.style.backgroundColor = "#faf0e6";
+    answer.style.boxShadow = "0px 0px 0px #888888";
+  }
 
-    clickedAnswer.style.backgroundColor = "#fdf0d0";
-    clickedAnswer.style.border = "2px solid black";
-    clickedAnswer.style.boxShadow = "6px 4px 4px #888888";
+  clickedAnswer.style.backgroundColor = "#fdf0d0";
+  clickedAnswer.style.border = "2px solid black";
+  clickedAnswer.style.boxShadow = "6px 4px 4px #888888";
 }
 
 /*
@@ -132,12 +132,12 @@ Når man trykker på next vil denne funksjonen kjøre,
 da komme rman til det neste spørsmålet. ↓
  */
 function nextQuestion() {
-    if (currentQuestion < getQuiz().questions.length - 1) {
-        currentQuestion++;
-        quizStarted();
-    } else {
-        handleLastQuestion();
-    }
+  if (currentQuestion < getQuiz().questions.length - 1) {
+    currentQuestion++;
+    quizStarted();
+  } else {
+    handleLastQuestion();
+  }
 }
 
 /*
@@ -145,17 +145,17 @@ Finner hvilket svar(farge) som brukeren har
 valgt flest ganger. ↓
  */
 function findMostSelectedColor() {
-    let mostSelectedColor = 0;
-    let maxCount = userAnswers[0];
+  let mostSelectedColor = 0;
+  let maxCount = userAnswers[0];
 
-    for (let color = 1; color < 4; color++) {
-        if (userAnswers[color] > maxCount) {
-            maxCount = userAnswers[color];
-            mostSelectedColor = color;
-        }
+  for (let color = 1; color < 4; color++) {
+    if (userAnswers[color] > maxCount) {
+      maxCount = userAnswers[color];
+      mostSelectedColor = color;
     }
-    console.log("Most selected color:", mostSelectedColor);
-    return mostSelectedColor;
+  }
+  console.log("Most selected color:", mostSelectedColor);
+  return mostSelectedColor;
 }
 
 /*
@@ -163,17 +163,17 @@ Viser resultatet som ble valgt i forhold til
 hvilket svar(farge) som brukeren valgte flest ganger ↓.
  */
 function handleLastQuestion() {
-    const mostSelectedColor = findMostSelectedColor();
+  const mostSelectedColor = findMostSelectedColor();
 
-    const result = getQuiz().results[mostSelectedColor];
+  const result = getQuiz().results[mostSelectedColor];
 
-    app.innerHTML = /*HTML*/ `
+  app.innerHTML = /*HTML*/ `
     <div class="quizContainerResult">
       <h1>${getQuiz().title}</h1>
       <h6>Laget av: ${getQuiz().creator}, den: ${getQuiz().date}</h6>
       <img src="${result.resultimage}" alt="Result Image">
       <p>${result.result}</p>
-
+<button onclick="changeView('mainView')">Tilbake</button>
       </div>
       <div id="share-buttons">
       <a class="facebook" target="blank"><i class="fab fa-facebook"></i></a>
@@ -187,28 +187,27 @@ function handleLastQuestion() {
       
   `;
 
-    // Dette fungerer, men den viser ikke typ "skjermbilde" av siden
-    // til resultatene som man ønsker å dele, så det må rettes opp i.
-    /*
+  // Dette fungerer, men den viser ikke typ "skjermbilde" av siden
+  // til resultatene som man ønsker å dele, så det må rettes opp i.
+  /*
   Linker til andre some sider hvor man kan share resultatet sitt. ↓
    */
-    const link = encodeURIComponent(window.location.href);
-    const message = encodeURIComponent("Jeg tok denne kule testen!");
-    const title = encodeURIComponent(
-        document.querySelector("title").textContent
-    );
+  const link =
+    "https://www.lifetimepetcover.co.uk/assets/uploads/alexandra_lau_jxEJY7SrJco_unsplash_min.jpg";
+  const message = encodeURIComponent("Jeg tok denne kule testen!");
+  const title = encodeURIComponent(document.querySelector("title").textContent);
 
-    console.log([link, message, title]);
+  console.log([link, message, title]);
 
-    const fb = document.querySelector(".facebook");
-    fb.href = `https://www.facebook.com/share.php?u=${link}&title=${title}`;
+  const fb = document.querySelector(".facebook");
+  fb.href = `https://www.facebook.com/share.php?u=${link}&title=${title}`;
 
-    const twitter = document.querySelector(".twitter");
-    twitter.href = `http://twitter.com/share?&url=${link}&title=${title}`;
+  const twitter = document.querySelector(".twitter");
+  twitter.href = `http://twitter.com/share?&url=${link}&title=${title}`;
 
-    const linkedIn = document.querySelector(".linkedin");
-    linkedIn.href = `https://www.linkedin.com/sharing/share-offsite/?url=${link}&title=${title}`;
+  const linkedIn = document.querySelector(".linkedin");
+  linkedIn.href = `https://www.linkedin.com/sharing/share-offsite/?url=${link}&title=${title}`;
 
-    const reddit = document.querySelector(".reddit");
-    reddit.href = `http://www.reddit.com/submit?url=${link}&title=${title}`;
+  const reddit = document.querySelector(".reddit");
+  reddit.href = `http://www.reddit.com/submit?url=${link}&title=${title}`;
 }
