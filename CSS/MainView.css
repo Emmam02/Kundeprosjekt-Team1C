@@ -1,36 +1,35 @@
 /*Start*/
 
 /*Fonts*/ /*Annen måte å importere fonts på*/
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 /*@import url('https://fonts.googleapis.com/css2?family=Nosifer&display=swap');*/
 
 /*MainView*/
 #mainView {
-    overflow: hidden;
-    font-family:'Lexend';
+  overflow: hidden;
+  font-family: "Lexend";
+  background-color: #f8f8ff;
 }
-
 
 /*Nav*/
 #nav-bar {
-    color: black;
-    background-color:#F8F8FF;
-    display: flex;
-    align-items:center;
-    justify-content: center;
-    margin: 0px 0px 0px 0px;
-    padding: 0px 0px 0px 0px;
-    border: 0;
-    width: 100%;
-    height: 6rem;
-    border-style:solid;
-    border-bottom: black;
-    flex-direction: row;
-    
+  color: black;
+  background-color: #e8d6b3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  border: 0;
+  width: 100%;
+  height: 6rem;
+  border-style: solid;
+  border-bottom: black;
+  flex-direction: row;
 }
 
 #nav-bar:last-child {
-    justify-content: right;
+  justify-content: right;
 }
 
 /*#nav-bar-content {
@@ -41,121 +40,157 @@
 }*/
 
 #nav-title {
-    font-size: 4rem;
-    /*font-family: 'Nosifer', sans-serif;*/
+  font-size: 4rem;
+  /*font-family: 'Nosifer', sans-serif;*/
 }
 
-
-
 #nav-profile-content {
-display: flex;
-justify-content: center;
-align-items: center;
-position: fixed;
-right: 1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  right: 1%;
 }
 
 #nav-profile-text {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 #nav-profile-picture {
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 60px;
-    width: 60px;
-    margin: 2px 2px 2px 2px;
-    border-radius: 100%;
-    margin-right: 5px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 60px;
+  width: 60px;
+  margin: 2px 2px 2px 2px;
+  border-radius: 100%;
+  margin-right: 5px;
 }
 
-#drop-down-menu{
-    color: black;
+#drop-down-menu {
+  color: black;
 }
 
 /*Search Bar*/
 #search-bar {
-    margin-top: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #search-bar-text {
-    text-align: left;
+  text-align: left;
 }
 
 /*Themes*/
 #themeContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin: 2rem 0rem 2rem 0rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 2rem 0rem 2rem 0rem;
 }
 
 .themeDisplay {
-    display: flex;
-    justify-items: center;
-    align-items: center;
-    font-size: 2rem;
-    /*border-color: aqua;*/
-    border-style: solid;
-    margin: 1rem 1.5rem 1rem 1.5rem;
-    height: 4rem;
-    width: 8rem;
-    font-family: 'Roboto', sans-serif;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  font-size: 2rem;
+  /* border-color: aqua; */
+  /* border-style: solid; */
+  margin: 1rem 1.5rem 1rem 1.5rem;
+  height: 4rem;
+  width: 8rem;
+  font-family: "Roboto", sans-serif;
+  text-decoration: underline;
+}
+.themeDisplay:hover {
+  font-size: 40px;
 }
 
-.innerCatText{
-    text-align: center;
-    position:relative;
-    align-self: center;
-    height:initial;
-    width: initial;
+.innerCatText {
+  text-align: center;
+  position: relative;
+  align-self: center;
+  height: initial;
+  width: initial;
 }
 
-#quiz-box-position{
-    display: flex;
-    flex: content;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    margin: 10px 10px 10px 10px;
-    padding: 0 0 0 0;
+#quiz-box-position {
+  display: flex;
+  flex: content;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin: 10px 10px 10px 10px;
+  padding: 0 0 0 0;
 }
 
-#quiz-by-date{
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    flex-direction: column;
+#quiz-by-date {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-direction: column;
 }
 
-#quiz-by-popularity{
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    flex-direction: column;
+#quiz-by-popularity {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-direction: column;
 }
 
 /*Legger til cursor på linker*/
 .link-view {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 /*Temp*/
 #temp-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-#darkModeSwitch{
-    display: flex;
-    position: fixed;
-    right: 1%;
+#darkModeSwitch {
+  display: flex;
+  position: fixed;
+  right: 1%;
+}
+
+#quizByDateContainer,
+#quizByPopularityContainer {
+  border: 2px solid white;
+  padding: 40px 40px;
+  font-size: x-large;
+  margin: 10px;
+  border-radius: 12px;
+  background-color: #e8d6b3;
+  margin-bottom: 25%;
+}
+
+#quizByDateContainer li,
+#quizByPopularityContainer li {
+  padding: 20px;
+  cursor: pointer;
+}
+#quizByDateContainer li:hover,
+#quizByPopularityContainer li:hover,
+#dummyQuizButton:hover,
+#gotoCreateYourOwnQuiz button:hover {
+  font-weight: bold;
+}
+#gotoCreateYourOwnQuiz,
+#gotoCreateYourOwnQuiz button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: larger;
+  border: none;
+  text-decoration: none;
+  background: none;
+  cursor: pointer;
 }
 
 /*End*/

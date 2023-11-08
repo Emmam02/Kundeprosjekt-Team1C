@@ -10,12 +10,12 @@ body {
   background-color: #ffd9b3;
 }
 
-.darkmodeClass{
-  color:#ffffff;
-  background-color:#181818 ;
+.darkmodeClass {
+  color: #ffffff;
+  background-color: #181818;
 }
 
-.lightmodeClass{
+.lightmodeClass {
   color: #202020;
   background-color: #ffffff;
 }
