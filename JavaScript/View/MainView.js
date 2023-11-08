@@ -32,7 +32,7 @@ function mainView() {
                 }">
 
                 <div style="margin-right:5px" onclick="toggleMode()">${
-                    model.app.isDarkMode ? "Light mode" : "Dark mode"
+                    model.app.isDarkMode ? "Dark mode" : "Light mode"
                 }</div>
             <label id="mainViewsclass="class="switch">
             <input id="darkModeCheckBox" type="checkbox" value="${
@@ -70,8 +70,8 @@ function mainView() {
         </div>
 
         <div id="quiz-box-position">
-            <div id="quiz-by-date" class="">Tom<div>
-            <div id="quiz-by-popularity" class="">Tom<div>
+            <div id="quiz-by-date" class="">Tom</div>
+            <div id="quiz-by-popularity" class="">Tom</div>
         </div>
 
         <div id="temp-container">

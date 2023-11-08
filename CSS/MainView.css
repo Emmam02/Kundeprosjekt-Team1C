@@ -13,8 +13,8 @@
 
 /*Nav*/
 #nav-bar {
-    color: black;
-    background-color:#F8F8FF;
+    color: var(--textColorA);
+    background-color: var(--containerA);
     display: flex;
     align-items:center;
     justify-content: center;
@@ -52,11 +52,12 @@
 display: flex;
 justify-content: center;
 align-items: center;
-position: fixed;
+position: absolute;
 right: 1%;
 }
 
 #nav-profile-text {
+    color: var(--textColorA);
     font-size: 20px;
     cursor: pointer;
 }
@@ -74,7 +75,7 @@ right: 1%;
 }
 
 #drop-down-menu{
-    color: black;
+    color: var(--textColorA);
 }
 
 /*Search Bar*/
@@ -99,6 +100,8 @@ right: 1%;
 }
 
 .themeDisplay {
+    color: var(--textColorA);
+    background-color: var(--containerA);
     display: flex;
     justify-items: center;
     align-items: center;
@@ -112,6 +115,7 @@ right: 1%;
 }
 
 .innerCatText{
+    color: var(--textColorA);
     text-align: center;
     position:relative;
     align-self: center;
@@ -130,6 +134,7 @@ right: 1%;
 }
 
 #quiz-by-date{
+    color: var(--textColorA);
     display: flex;
     justify-content: left;
     align-items: center;
@@ -137,6 +142,7 @@ right: 1%;
 }
 
 #quiz-by-popularity{
+    color: var(--textColorA);
     display: flex;
     justify-content: left;
     align-items: center;
@@ -150,6 +156,7 @@ right: 1%;
 
 /*Temp*/
 #temp-container {
+    color: var(--textColorA);
     display: flex;
     flex-direction: column;
     justify-content: center;

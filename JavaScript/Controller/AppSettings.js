@@ -1,16 +1,39 @@
 "use strict";
 //Start
-
-const siteSettings = document.getElementById("siteSettings");
-const profileNavImg = document.getElementById("nav-profile-picture");
-const profileNavUser = document.getElementById("nav-profile-text");
-const backgroundList = [
-    "nav-bar",
-    "mainContainer",
-    "createYourOwnQuizContainer",
-];
+const root = document.querySelector(':root');
+//const siteSettings = document.getElementById("siteSettings");
+//const profileNavImg = document.getElementById("nav-profile-picture");
+//const profileNavUser = document.getElementById("nav-profile-text");
 
 //Loading settings
+
+firstThemeLoad();
+
+function firstThemeLoad() {
+    model.app.isDarkMode == true ? loadDarkMode() : loadLightMode();
+}
+
+function toggleThemeColor(params) {
+
+}
+
+function loadDarkMode(){
+    root.style.setProperty('--textColorA', '#ffffff');
+    root.style.setProperty('--textColorB', '#ffffff');
+    root.style.setProperty('--backgroundA', '#181818');
+    root.style.setProperty('--backgroundB', '#181818');
+    root.style.setProperty('--containerA', '#1e1d1d');
+    root.style.setProperty('--containerB', '#1e1d1d');
+}
+
+function loadLightMode() {
+    root.style.setProperty('--textColorA', '#202020');
+    root.style.setProperty('--textColorB', '#202020');
+    root.style.setProperty('--backgroundA', '#e8d6b3');
+    root.style.setProperty('--backgroundB', '#f8f8ff');
+    root.style.setProperty('--containerA', '#e8d6b3');
+    root.style.setProperty('--containerB', '#f8f8ff');
+}
 
 function loadSettingsApp() {
     loadColorThemeOLD();
@@ -18,7 +41,17 @@ function loadSettingsApp() {
     //loadUsername();
 }
 
-loadColorThemeOLD();
+//--------------------------------------------------------------------------------
+//Old code starts here
+//--------------------------------------------------------------------------------
+
+//loadColorThemeOLD();
+
+function loadSettingsApp() {
+    loadColorThemeOLD();
+    //loadProfilePic();
+    //loadUsername();
+}
 
 function changeColorTheme() {
     if (model.app.isDarkMode == true) {
@@ -59,19 +92,16 @@ function loadColorTheme() {
 
 function toggleMode() {
     let toggleMode = document.getElementById("toggleMode");
-    loadColorThemeOLD();
     if (model.app.isDarkMode == false) {
+        loadLightMode();
         model.app.isDarkMode = true;
-        toggleMode.innerText = `Dark Mode`;
-    } else if (model.app.isDarkMode == true) {
         toggleMode.innerText = `Light Mode`;
+    } else if (model.app.isDarkMode == true) {
+        loadDarkMode();
+        toggleMode.innerText = `Dark Mode`;
         model.app.isDarkMode = false;
     }
 }
-
-//--------------------------------------------------------------------------------
-//Old code starts here
-//--------------------------------------------------------------------------------
 
 function loadColorThemeOLD() {
     if (model.app.isDarkMode == true) {
