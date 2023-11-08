@@ -66,7 +66,7 @@ function profileView() {
         </div>
     
         <div id="recentQuizesContainer"><h2>Nylige fullførte quizer:</h2>
-        <li>"Hvilken hund er jeg?"</li>
+        <div onclick="quizView()"><li>"Hvilken hund er jeg?"</li></div>
         <br>
         <li>"Hvilken wienerbakst er jeg??"</li>
         <br>
