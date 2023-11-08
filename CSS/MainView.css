@@ -98,19 +98,22 @@
 
 .themeDisplay {
   color: var(--textColorA);
-  background-color: var(--containerA);
+  /* background-color: var(--containerA); */
   display: flex;
   justify-items: center;
   align-items: center;
   font-size: 2rem;
+  text-decoration: underline;
   /*border-color: aqua;*/
-  border-style: solid;
+  /* border-style: solid; */
   margin: 1rem 1.5rem 1rem 1.5rem;
   height: 4rem;
   width: 8rem;
   font-family: "Roboto", sans-serif;
 }
-
+.themeDisplay:hover {
+  font-weight: bolder;
+}
 .innerCatText {
   color: var(--textColorA);
   text-align: center;

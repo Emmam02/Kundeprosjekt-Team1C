@@ -70,7 +70,8 @@ function mainView() {
         </div>
         
         <div id="gotoCreateYourOwnQuiz">
-        <button>Lag en egen quiz her!</button>
+        <button onclick="changeView('createQuizView')">
+        Lag din egen quiz her!</button>
         </div>
 
         <div id="quiz-box-position">
