@@ -464,7 +464,7 @@ const model = {
                 password: "Pålergammel", //<-- Unhashed 10/10 passord
                 name: "Per Kautokeino", //Deres navn, om ikke vi gjør firstName LastName
                 mail: "kautoper23765@gmail.com",
-                age: 31,
+                age: "31",
                 image: "https://arkiv.p3.no/rd/files/2011/03/p%C3%A5l-bang-hansen.jpg",
                 //selfMadeQuizes? En array over hva brukeren har lager eller så kan vi hente data ved hjelp av brukernavnet og legge det inn
                 answeredQuizes: [1, 69, 420], //Liste over hva slags quizer de har svart på - referanser til quizzer med ID
@@ -475,7 +475,7 @@ const model = {
                 username: "Jens", //Brukernavnet
                 password: "JensNATO", //<-- Unhashed 10/10 passord
                 name: "Jens Stoltenberg", //Deres navn, om ikke vi gjør firstName LastName
-                age: 46,
+                age: "46",
                 mail: "natomanjens420@hotmail.com",
                 image: "https://akamai.vgc.no/v2/images/a2da6147-74b3-485b-8e2b-7e8d7995a3a9?fit=crop&format=auto&h=667&w=1000&s=e26bc6be00a11258475a44b8477859bf67eb4f51", //<-- skiftet språk her
                 answeredQuizes: [1, 69, 420],
@@ -486,7 +486,7 @@ const model = {
                 username: "Ompalompa",
                 password: "ompa",
                 name: "Ompalompa",
-                age: 500,
+                age: "500",
                 mail: "livelyompa39@gmail.com",
                 image: "https://pbs.twimg.com/media/CQbgg7CW8AEgnwR?format=jpg&name=small",
                 answeredQuizes: [
@@ -509,7 +509,7 @@ const model = {
                 username: "Per", //Brukernavnet
                 password: "Perlikervann", //<-- Unhashed 10/10 passord
                 name: "Per Poll", //Deres navn, om ikke vi gjør firstName LastName
-                age: 29,
+                age: "29",
                 mail: "pollvann74@gmail.com",
                 image: "https://media.snl.no/media/236173/standard_compressed_Per_Jansen_.jpeg", //<-- skiftet språk her
                 answeredQuizes: [

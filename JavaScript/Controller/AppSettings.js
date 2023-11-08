@@ -93,10 +93,12 @@ function loadColorTheme() {
 function toggleMode() {
     let toggleMode = document.getElementById("toggleMode");
     if (model.app.isDarkMode == false) {
+        currentUser().themeMode = false;
         loadLightMode();
         model.app.isDarkMode = true;
         toggleMode.innerText = `Light Mode`;
     } else if (model.app.isDarkMode == true) {
+        currentUser().themeMode = true;
         loadDarkMode();
         toggleMode.innerText = `Dark Mode`;
         model.app.isDarkMode = false;
