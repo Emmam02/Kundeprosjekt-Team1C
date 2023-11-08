@@ -1,32 +1,31 @@
 /*Start*/
 
 /*Fonts*/ /*Annen måte å importere fonts på*/
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 /*@import url('https://fonts.googleapis.com/css2?family=Nosifer&display=swap');*/
 
 /*MainView*/
 #mainView {
     overflow: hidden;
-    font-family:'Lexend';
+    font-family: "Lexend";
+    background-color: var(--backgroundB);
 }
-
 
 /*Nav*/
 #nav-bar {
     color: var(--textColorA);
     background-color: var(--containerA);
     display: flex;
-    align-items:center;
+    align-items: center;
     justify-content: center;
     margin: 0px 0px 0px 0px;
     padding: 0px 0px 0px 0px;
     border: 0;
     width: 100%;
     height: 6rem;
-    border-style:solid;
+    border-style: solid;
     border-bottom: black;
     flex-direction: row;
-    
 }
 
 #nav-bar:last-child {
@@ -82,7 +81,7 @@
     cursor: pointer;
 }
 
-#drop-down-menu{
+#drop-down-menu {
     color: var(--textColorA);
 }
 
@@ -109,29 +108,32 @@
 
 .themeDisplay {
     color: var(--textColorA);
-    background-color: var(--containerA);
+    /* background-color: var(--containerA); */
     display: flex;
     justify-items: center;
     align-items: center;
     font-size: 2rem;
+    text-decoration: underline;
     /*border-color: aqua;*/
-    border-style: solid;
+    /* border-style: solid; */
     margin: 1rem 1.5rem 1rem 1.5rem;
     height: 4rem;
     width: 8rem;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
 }
-
-.innerCatText{
+.themeDisplay:hover {
+    font-weight: bolder;
+}
+.innerCatText {
     color: var(--textColorA);
     text-align: center;
-    position:relative;
+    position: relative;
     align-self: center;
-    height:initial;
+    height: initial;
     width: initial;
 }
 
-#quiz-box-position{
+#quiz-box-position {
     display: flex;
     flex: content;
     align-items: center;
@@ -141,7 +143,7 @@
     padding: 0 0 0 0;
 }
 
-#quiz-by-date{
+#quiz-by-date {
     color: var(--textColorA);
     display: flex;
     justify-content: left;
@@ -149,7 +151,7 @@
     flex-direction: column;
 }
 
-#quiz-by-popularity{
+#quiz-by-popularity {
     color: var(--textColorA);
     display: flex;
     justify-content: left;
@@ -170,10 +172,45 @@
     justify-content: center;
     align-items: center;
 }
-#darkModeSwitch{
+#darkModeSwitch {
     display: flex;
     position: fixed;
     right: 1%;
+}
+
+#quizByDateContainer,
+#quizByPopularityContainer {
+    border: 2px solid white;
+    padding: 40px 40px;
+    font-size: x-large;
+    margin: 10px;
+    border-radius: 12px;
+    background-color: var(--containerA);
+    margin-bottom: 25%;
+}
+
+#quizByDateContainer li,
+#quizByPopularityContainer li {
+    padding: 20px;
+    cursor: pointer;
+}
+#quizByDateContainer li:hover,
+#quizByPopularityContainer li:hover,
+#dummyQuizButton:hover,
+#gotoCreateYourOwnQuiz button:hover {
+    font-weight: bold;
+}
+#gotoCreateYourOwnQuiz,
+#gotoCreateYourOwnQuiz button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: larger;
+    border: none;
+    text-decoration: none;
+    background: none;
+    cursor: pointer;
+    color: var(--textColorA);
 }
 
 /*End*/

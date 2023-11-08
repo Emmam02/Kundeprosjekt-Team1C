@@ -44,36 +44,33 @@ function profileView() {
         -->
    
         <div id="generalInfoContainer">
-            <li>${currentUser().image}</li>
-            <br>
-            <p></p>
-            <li>${currentUser().age}</li>
-            <br>
+            
             <p></p>
             <!-- 
             <li>users.answeredQuizes</li> 
             Anbefaler å lage listen på en annen måte. Fjernet også dette midlertidig ettersom den forårsaker feil for øyeblikket.
             -->
+            <li>${currentUser().age}
             <br>
-            <p></p>
-            <li>Bosted</li>
+            <p>
+            <li>Bosted: Larvik</li>
+            <br>
+            <li>Antall quizer gjennomført: 3</li>
             <p></p>
             <br>
-            <li>Antall quizer gjennomført:</li>
-            <p></p>
-            <br>
-            <li>Antall quizer laget:</li>
+            <li>Antall quizer laget: 1</li>
         </div>
     
     
         <div id=profileButtonsContainer>
-        <button id="myQuizesButton" onclick="changeView('myQuizView')">My Quizes</button>
+        <button id="myQuizesButton" onclick="changeView('myQuizView')">Mine quizer</button>
         <br>
-        <button id="myResultsButton" onclick="changeView('myResultsView')">My results</button>
+        <button id="myResultsButton" onclick="changeView('myResultsView')">Mine resultater</button>
+        </div>
     </div>
     <br>
 
-    <button id="backToMainButton" onclick="changeView('mainView')">Click here to return to main menu</button>
+    <button id="backToMainButton" onclick="changeView('mainView')">Klikk her for å gå tilbake til hovedmenyen</button>
 
     </div>
     `;
