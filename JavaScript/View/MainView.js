@@ -2,22 +2,22 @@
 //Start
 
 function getLoggedInUser() {
-  return model.data.users.find((user) => user.id === model.app.userID);
+    return model.data.users.find((user) => user.id === model.app.userID);
 }
 
 function currentUser() {
-  let theUser;
-  let fakeUser = model.data.fakeUser;
-  if (model.app.userID == null) {
-    theUser = fakeUser;
-  } else {
-    theUser = getLoggedInUser();
-  }
-  return theUser;
+    let theUser;
+    let fakeUser = model.data.fakeUser;
+    if (model.app.userID == null) {
+        theUser = fakeUser;
+    } else {
+        theUser = getLoggedInUser();
+    }
+    return theUser;
 }
 
 function mainView() {
-  app.innerHTML = /*HTML*/ `
+    app.innerHTML = /*HTML*/ `
     <div id="mainView">
         <nav id="nav-bar">
             <div id="nav-title-content">
@@ -25,21 +25,18 @@ function mainView() {
             </div>
             <div id="nav-profile-content">
                 <div id="nav-profile-text"onclick="changeView('myProfileView')">${
-                  currentUser().username
+                    currentUser().username
                 }</div>
                 <img id="nav-profile-picture" onclick="changeView('myProfileView')" src="${
-                  currentUser().image
+                    currentUser().image
                 }">
 
-                <div style="margin-right:5px" onclick="toggleMode()">${
-                  model.app.isDarkMode ? "Dark mode" : "Light mode"
-                }</div>
-            <label id="mainViewsclass="class="switch">
-            <input id="darkModeCheckBox" type="checkbox" value="${
-              model.app.isDarkMode
-            }">
-            <span class="slider round"></span>
-            </label>
+                <div style="margin-right:5px"id="toggleMode">Dark/Light Mode
+                </div>
+                <label class="switch">
+                <input id="toggleMode" onclick="toggleMode()" type="checkbox">
+                <span class="slider round"></span>
+                </label>
             </div>
         </nav>
 
@@ -50,22 +47,22 @@ function mainView() {
         <span>
         <div id="themeContainer">
             <div class="themeDisplay link-view" onclick="changeViewByCategory(model.data.allCategories[0].name)">${
-              model.data.allCategories[0].name
+                model.data.allCategories[0].name
             }</div>
             <div class="themeDisplay link-view" onclick="changeViewByCategory(model.data.allCategories[1].name)">${
-              model.data.allCategories[1].name
+                model.data.allCategories[1].name
             }</div>
             <div class="themeDisplay link-view" onclick="changeViewByCategory(model.data.allCategories[2].name)">${
-              model.data.allCategories[2].name
+                model.data.allCategories[2].name
             }</div>
             <div class="themeDisplay link-view" onclick="changeViewByCategory(model.data.allCategories[3].name)">${
-              model.data.allCategories[3].name
+                model.data.allCategories[3].name
             }</div>
             <div class="themeDisplay link-view" onclick="changeViewByCategory(model.data.allCategories[4].name)">${
-              model.data.allCategories[4].name
+                model.data.allCategories[4].name
             }</div>
             <div class="themeDisplay link-view" onclick="changeViewByCategory(model.data.allCategories[5].name)"><span class="innerCatText">${
-              model.data.allCategories[5].name
+                model.data.allCategories[5].name
             }</span></div>
         </div>
         
