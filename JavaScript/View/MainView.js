@@ -20,9 +20,7 @@ function mainView() {
     app.innerHTML = /*HTML*/ `
     <div id="mainView">
         <nav id="nav-bar">
-
-            <div id="loginNavButton" onclick="changeView('loginView')">Logg inn</div>
-
+            ${loginButtonHTML()}
             <div id="nav-title-content">
                 <div id="nav-title"onclick="changeView('mainView')">Testify</div>
             </div>
@@ -118,6 +116,21 @@ function mainView() {
     </div>
     
     `;
+}
+
+function loginButtonHTML(){
+    let loginButton;
+    if (model.app.userID == null) {
+        loginButton = /*HTML*/`
+            <div id="loginNavButton" onclick="changeView('loginView')">Logg inn</div>
+        `;
+
+    }else{
+        loginButton = /*HTML*/`
+            <div id="loginNavButton" onclick="changeView('loginView')">Logg ut</div>
+        `;
+    }
+    return loginButton;
 }
 
 //End
