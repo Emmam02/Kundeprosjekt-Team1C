@@ -65,6 +65,17 @@ function profileView() {
             <li>Antall quizer laget: 1</li>
         </div>
     
+        <div id="recentQuizesContainer"><h2>Nylige fullførte quizer:</h2>
+        <li>"Hvilken hund er jeg?"</li>
+        <br>
+        <li>"Hvilken wienerbakst er jeg??"</li>
+        <br>
+        <li>"Hvor i verden smaker gress best?"</li>
+        <br>
+        <li>"Hvordan burde jeg bruke et trekkspill?"</li>
+        <br>
+        <li>"Hvilken garntype er jeg?"</li>
+        </div>
     
         <div id=profileButtonsContainer>
         <button id="myQuizesButton" onclick="changeView('myQuizView')">Mine quizer</button>
