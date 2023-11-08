@@ -13,6 +13,7 @@ font-size: large;
 
 }
 
+/*
 #testbackgroundF{
     position: fixed;
     z-index: -1;
@@ -21,17 +22,18 @@ font-size: large;
     overflow: hidden;
     background-color: #e8d6b3;
 }
+*/
 
 #mainContainer{
     border: solid gray;
     margin: 50px;
     height: 1000px;
-    background-color:#e8d6b3;
+    background-color:var(--backgroundA);
 }
 
 #profilePic{
     border: solid gray;
-    border-radius: 50%;
+    border-radius: 100%;
     width: 200px;
     height: 200px;
     margin-left: 10px;
@@ -39,6 +41,19 @@ font-size: large;
     justify-content: center;
     background-size: cover;
     margin-bottom: 20px;
+}
+
+#profilePic img{
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: solid gray;
+    border-radius: 100%;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    justify-content: center;
+    background-size: cover;;
 }
 
 #profileButtonsContainer{

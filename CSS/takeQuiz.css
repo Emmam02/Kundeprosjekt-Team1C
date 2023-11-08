@@ -12,12 +12,12 @@
   margin-right: 25%;
   margin-top: 5%;
   margin-bottom: 5%;
-  background-color: #f8f8ff;
+  background-color: var(--containerA);
   width: 1000px;
   height: 800px;
   text-align: center;
   border-radius: 7px;
-  color: black;
+  color: var(--textColorA);
   padding: 40px;
 }
 .quizContainer h1 {

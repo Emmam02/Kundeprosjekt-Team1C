@@ -13,8 +13,8 @@
 
 /*Nav*/
 #nav-bar {
-  color: black;
-  background-color: #e8d6b3;
+  color: var(--textColorA);
+  background-color: var(--containerA);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -41,6 +41,7 @@
 
 #nav-title {
   font-size: 4rem;
+  cursor: pointer;
   /*font-family: 'Nosifer', sans-serif;*/
 }
 
@@ -48,12 +49,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
+  position: absolute;
   right: 1%;
 }
 
 #nav-profile-text {
+  color: var(--textColorA);
   font-size: 20px;
+  cursor: pointer;
 }
 
 #nav-profile-picture {
@@ -65,10 +68,11 @@
   margin: 2px 2px 2px 2px;
   border-radius: 100%;
   margin-right: 5px;
+  cursor: pointer;
 }
 
 #drop-down-menu {
-  color: black;
+  color: var(--textColorA);
 }
 
 /*Search Bar*/
@@ -93,23 +97,22 @@
 }
 
 .themeDisplay {
+  color: var(--textColorA);
+  background-color: var(--containerA);
   display: flex;
   justify-items: center;
   align-items: center;
   font-size: 2rem;
-  /* border-color: aqua; */
-  /* border-style: solid; */
+  /*border-color: aqua;*/
+  border-style: solid;
   margin: 1rem 1.5rem 1rem 1.5rem;
   height: 4rem;
   width: 8rem;
   font-family: "Roboto", sans-serif;
-  text-decoration: underline;
-}
-.themeDisplay:hover {
-  font-size: 40px;
 }
 
 .innerCatText {
+  color: var(--textColorA);
   text-align: center;
   position: relative;
   align-self: center;
@@ -128,6 +131,7 @@
 }
 
 #quiz-by-date {
+  color: var(--textColorA);
   display: flex;
   justify-content: left;
   align-items: center;
@@ -135,6 +139,7 @@
 }
 
 #quiz-by-popularity {
+  color: var(--textColorA);
   display: flex;
   justify-content: left;
   align-items: center;
@@ -148,6 +153,7 @@
 
 /*Temp*/
 #temp-container {
+  color: var(--textColorA);
   display: flex;
   flex-direction: column;
   justify-content: center;

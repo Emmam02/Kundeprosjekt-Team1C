@@ -1,5 +1,25 @@
 function createQuizView() {
     app.innerHTML = /*HTML*/ `
+    <nav id="nav-bar">
+    <div id="nav-title-content">
+        <div id="nav-title"onclick="changeView('mainView')">Testify</div>
+    </div>
+    <div id="nav-profile-content">
+        <div id="nav-profile-text"onclick="changeView('myProfileView')">${
+            currentUser().username
+        }</div>
+        <img id="nav-profile-picture" onclick="changeView('myProfileView')" src="${
+            currentUser().image
+        }">
+
+        <div style="margin-right:5px"id="toggleMode">Dark/Light Mode
+        </div>
+        <label class="switch">
+        <input id="toggleMode" onclick="toggleMode()" type="checkbox">
+        <span class="slider round"></span>
+        </label>
+    </div>
+</nav>
   <div id="createYourOwnQuizContainer">
         <h1 class="gameQuizContainer"> Lag din egen Quiz!</h1>
        <div> <input id="quizTitle" type="text" placeholder="Quiz Navn" oninput="(newQuiz.title =
@@ -36,7 +56,9 @@ function createQuizView() {
                 this.value)"></input>
                 <select onchange="(newQuiz.questions[0].answers[0].color =
                     this.value)">
-                    <option value="${model.data.colors[0]}">Rød</option>
+                    <option  selected value="${
+                        model.data.colors[0]
+                    }">Rød</option>
                     <option value="${model.data.colors[1]}">Blå</option>
                     <option value="${model.data.colors[2]}">Gul</option>
                     <option value="${model.data.colors[3]}">Oransje</option>
@@ -48,7 +70,9 @@ function createQuizView() {
                 <select onchange="(newQuiz.questions[0].answers[1].color =
                     this.value)">
                     <option value="${model.data.colors[0]}">Rød</option>
-                    <option value="${model.data.colors[1]}">Blå</option>
+                    <option selected value="${
+                        model.data.colors[1]
+                    }">Blå</option>
                     <option value="${model.data.colors[2]}">Gul</option>
                     <option value="${model.data.colors[3]}">Oransje</option>
                 </select>
@@ -60,7 +84,9 @@ function createQuizView() {
                     this.value)">
                     <option value="${model.data.colors[0]}">Rød</option>
                     <option value="${model.data.colors[1]}">Blå</option>
-                    <option value="${model.data.colors[2]}">Gul</option>
+                    <option selected value="${
+                        model.data.colors[2]
+                    }">Gul</option>
                     <option value="${model.data.colors[3]}">Oransje</option>
                 </select>
             </div>
@@ -72,7 +98,9 @@ function createQuizView() {
                     <option value="${model.data.colors[0]}">Rød</option>
                     <option value="${model.data.colors[1]}">Blå</option>
                     <option value="${model.data.colors[2]}">Gul</option>
-                    <option value="${model.data.colors[3]}">Oransje</option>
+                    <option selected value="${
+                        model.data.colors[3]
+                    }">Oransje</option>
                 </select>
                 <button class="addQuestionButton"onclick="addQuestions()">Legg til spørsmål</button>
             </div>

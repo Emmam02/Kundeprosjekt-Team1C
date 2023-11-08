@@ -21,17 +21,21 @@ function mainView() {
     <div id="mainView">
         <nav id="nav-bar">
             <div id="nav-title-content">
-                <div id="nav-title">Testify</div>
+                <div id="nav-title"onclick="changeView('mainView')">Testify</div>
             </div>
             <div id="nav-profile-content">
-                <div id="nav-profile-text">${currentUser().username}</div>
-                <img id="nav-profile-picture" src="${currentUser().image}">
+                <div id="nav-profile-text"onclick="changeView('myProfileView')">${
+                  currentUser().username
+                }</div>
+                <img id="nav-profile-picture" onclick="changeView('myProfileView')" src="${
+                  currentUser().image
+                }">
 
-                <div style="margin-right:5px">${
-                  model.app.isDarkMode ? "Light mode" : "Dark mode"
+                <div style="margin-right:5px" onclick="toggleMode()">${
+                  model.app.isDarkMode ? "Dark mode" : "Light mode"
                 }</div>
             <label id="mainViewsclass="class="switch">
-            <input id="darkModeCheckBox" onclick="toggleDarkMode()" type="checkbox" value="${
+            <input id="darkModeCheckBox" type="checkbox" value="${
               model.app.isDarkMode
             }">
             <span class="slider round"></span>

@@ -6,22 +6,21 @@
     height: 100%;
     width: 100%;
     overflow: hidden;
-    background-color: #e8d6b3;
+    background-color: var(--backgroundA);
 }
 #registerView{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #e8d6b3;
+    background-color: var(--backgroundA);
 }
-
 
 #registerBox{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #F8F8FF;
+    background-color: var(--containerA);
     height: 45rem;
     width: 35rem;
     border-radius: 40px;
