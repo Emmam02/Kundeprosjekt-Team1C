@@ -30,7 +30,6 @@ font-size: large;
 }
 
 #profilePic{
-    border: solid gray;
     border-radius: 100%;
     width: 200px;
     height: 200px;
@@ -39,19 +38,22 @@ font-size: large;
     justify-content: center;
     background-size: cover;
     margin-bottom: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 #profilePic img{
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    border: solid gray;
+    border: solid grey;
     border-radius: 100%;
     width: 200px;
     height: 200px;
     text-align: center;
     justify-content: center;
-    background-size: cover;;
+    background-size: cover;
 }
 
 #profileButtonsContainer{
