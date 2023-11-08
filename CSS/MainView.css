@@ -46,14 +46,22 @@
     /*font-family: 'Nosifer', sans-serif;*/
 }
 
-
+#loginNavButton{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    position: absolute;
+    left: 1%;
+    cursor: pointer;
+    border: 24px;
+}
 
 #nav-profile-content {
-display: flex;
-justify-content: center;
-align-items: center;
-position: absolute;
-right: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 1%;
 }
 
 #nav-profile-text {

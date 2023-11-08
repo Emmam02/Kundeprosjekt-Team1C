@@ -38,6 +38,7 @@ root.style.setProperty('--my-color', 'blue');
 
 
 body {
+    font-family:'Lexend';
     margin: 0;
     padding: 0;
 }
