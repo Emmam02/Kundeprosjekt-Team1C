@@ -50,12 +50,16 @@ function profileView() {
             <li>users.answeredQuizes</li> 
             Anbefaler å lage listen på en annen måte. Fjernet også dette midlertidig ettersom den forårsaker feil for øyeblikket.
             -->
-            <li>${currentUser().age}
+            <li>Alder: ${currentUser().age}
             <br>
             <p>
             <li>Bosted: Larvik</li>
             <br>
-            <li>Antall quizer gjennomført: 3</li>
+        
+            <li>${currentUser().mail}
+            <br>
+            <p>
+            <li>Antall fullførte quizer: 3</li>
             <p></p>
             <br>
             <li>Antall quizer laget: 1</li>
