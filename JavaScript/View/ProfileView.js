@@ -72,7 +72,7 @@ function profileView() {
         <br>
         <li>"Hvor i verden smaker gress best?"</li>
         <br>
-        <li>"Hvordan burde jeg bruke et trekkspill?"</li>
+        <li>"Hvilket trekkspill passer meg?"</li>
         <br>
         <li>"Hvilken garntype er jeg?"</li>
         </div>
