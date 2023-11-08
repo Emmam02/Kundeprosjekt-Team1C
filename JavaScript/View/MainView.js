@@ -31,15 +31,12 @@ function mainView() {
                     currentUser().image
                 }">
 
-                <div style="margin-right:5px" onclick="toggleMode()">${
-                    model.app.isDarkMode ? "Dark mode" : "Light mode"
-                }</div>
-            <label id="mainViewsclass="class="switch">
-            <input id="darkModeCheckBox" type="checkbox" value="${
-                model.app.isDarkMode
-            }">
-            <span class="slider round"></span>
-            </label>
+                <div style="margin-right:5px"id="toggleMode">Dark/Light Mode
+                </div>
+                <label class="switch">
+                <input id="toggleMode" onclick="toggleMode()" type="checkbox">
+                <span class="slider round"></span>
+                </label>
             </div>
         </nav>
 
@@ -68,13 +65,40 @@ function mainView() {
                 model.data.allCategories[5].name
             }</span></div>
         </div>
-
-        <div id="quiz-box-position">
-            <div id="quiz-by-date" class="">Tom</div>
-            <div id="quiz-by-popularity" class="">Tom</div>
+        
+        <div id="gotoCreateYourOwnQuiz">
+        <button onclick="changeView('createQuizView')">
+        Lag din egen quiz her!</button>
         </div>
 
-        <div id="temp-container">
+        <div id="quiz-box-position">
+            <div id="quiz-by-date" class="">
+            <h2>Nyeste Quizer</h2>
+            <div id="quizByDateContainer">
+            <ol>
+            <li>Hvor mange tær har jeg?</li>
+            <li>Hvilken superhelt er pappa?</li>
+            <li>Hvilken farge ku er jeg?</li>
+            <li>Hvilket land passer meg?</li>
+            <li>Kan jeg bli bilmekaniker?</li>
+            </ol>
+            </div>
+            </div>
+            <div>
+            <div id="quiz-by-popularity" class="">
+            <h2>Populære quizer</h2>
+            <div id="quizByPopularityContainer">
+            <ol>
+            <li onclick="changeView('quizView')">Hvilken hund er du?</li>
+            <li>Hvilken jobb passer meg?</li>
+            <li>Hvilken wienerbakst er jeg?</li>
+            <li>Hvem er jeg i flåklypa?</li>
+            <li>Hvor gammel er sjela mi?</li>
+            </ol>
+            </div>
+            </div>
+            
+        <!--<div id="temp-container">
             <h1>Nettstedet er under oppbygging</h1>
             <p style="color: #ca4848;">Vennligst bruk linkene under.</p>
             <p class="link-view" onclick="changeView('loginView')">LoginView</p>
@@ -84,8 +108,12 @@ function mainView() {
             <p class="link-view" onclick="changeView('quizView')">QuizView</p>
             <p class="link-view" onclick="changeView('quizFilterView')">QuizFilterView</p>
             <p class="link-view" onclick="changeView('errorView')">ErrorView</p>
-        </div>
+        </div>-->
+        
+        
+        
     </div>
+    
     `;
 }
 

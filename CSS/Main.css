@@ -1,21 +1,18 @@
 /*Start*/
 
 :root {
+  --textColorA: #202020;
+  --textColorB: #202020;
+  --backgroundA: #e8d6b3;
+  --backgroundB: #f8f8ff;
 
-    --textColorA:#202020;
-    --textColorB:#202020;
-    --backgroundA:#e8d6b3;
-    --backgroundB:#f8f8ff;
+  --containerA: #e8d6b3;
+  --containerB: #f8f8ff;
 
-    --containerA:#e8d6b3;
-    --containerB:#f8f8ff;
-
-    --mainColor: #ffd9b3;
-    --secondaryColor: #181818;
-    --containerColor: # ;
+  --mainColor: #ffd9b3;
+  --secondaryColor: #181818;
+  --containerColor: #;
 }
-
-
 
 /*
 
@@ -35,8 +32,6 @@ const root = document.querySelector(':root');
 root.style.setProperty('--my-color', 'blue');
 */
 
-
-
 body {
     margin: 0;
     padding: 0;
@@ -44,18 +39,18 @@ body {
 }
 
 #siteSettings {
-    color: var(--textColorA);
-    background-color: var(--backgroundB);
+  color: var(--textColorA);
+  background-color: var(--backgroundB);
 }
 
 .darkmodeClass {
-    color: var(--textColorB);
-    background-color: var(--backgroundA);
+  color: var(--textColorB);
+  background-color: var(--backgroundA);
 }
 
 .lightmodeClass {
-    color: var(--textColorA);
-    background-color: var(--backgroundA);
+  color: var(--textColorA);
+  background-color: var(--backgroundA);
 }
 
 /*
