@@ -25,7 +25,7 @@ function profileView() {
             <h1>Profile page</h1>
         </div>
 
-        <button onclick="forcedLogin()">Midlertidig bruker</button>
+        <!-- <button onclick="forcedLogin()">Midlertidig bruker</button> -->
 
         <div id="userName"><h1>${currentUser().username}</h1></div>
         <div id="profilePic"><img src="${currentUser().image}"></div>

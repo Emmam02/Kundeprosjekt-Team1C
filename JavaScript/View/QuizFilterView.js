@@ -41,10 +41,10 @@ function quizFilterView() {
                             <h3>Er dette egentlig et dyr?</h3>
                         </div>
                         <div class="smallQuizContainer">
-                            <h3>Hvilken panda er jeg?</h3>
+                            <h3>Hvilken hamster er jeg?</h3>
                         </div>
                         <div class="smallQuizContainer">
-                            <h3>Hvilken panda er jeg?</h3>
+                            <h3>Hvilken katt er jeg?</h3>
                         </div>
                     </div>
                 </div>
