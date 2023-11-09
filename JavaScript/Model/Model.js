@@ -515,19 +515,19 @@ const model = {
                 answeredQuizes: [
                     {
                         id: 1,
-                        quizTitle: "",
+                        quizTitle: "Hvilken wienerbakst er jeg?",
                         description: "",
                         result: "2",
                     },
                     {
                         id: 69,
-                        quizTitle: "",
+                        quizTitle: "Hvor gammel er sjelen min?",
                         description: "",
                         result: "3",
                     },
                     {
                         id: 0,
-                        quizTitle: "",
+                        quizTitle: "Hvorfor lukter jeg tåfis?",
                         description: "",
                         result: "1",
                     },

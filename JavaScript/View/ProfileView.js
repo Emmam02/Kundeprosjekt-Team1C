@@ -50,17 +50,32 @@ function profileView() {
             <li>users.answeredQuizes</li> 
             Anbefaler å lage listen på en annen måte. Fjernet også dette midlertidig ettersom den forårsaker feil for øyeblikket.
             -->
-            <li>${currentUser().age}
+            <li>Alder: ${currentUser().age}
             <br>
             <p>
             <li>Bosted: Larvik</li>
             <br>
-            <li>Antall quizer gjennomført: 3</li>
+        
+            <li>${currentUser().mail}
+            <br>
+            <p>
+            <li>Antall fullførte quizer: 3</li>
             <p></p>
             <br>
             <li>Antall quizer laget: 1</li>
         </div>
     
+        <div id="recentQuizesContainer"><h2>Nylige fullførte quizer:</h2>
+        <div onclick="quizView()"><li>"Hvilken hund er jeg?"</li></div>
+        <br>
+        <li>"Hvilken wienerbakst er jeg??"</li>
+        <br>
+        <li>"Hvor i verden smaker gress best?"</li>
+        <br>
+        <li>"Hvilket trekkspill passer meg?"</li>
+        <br>
+        <li>"Hvilken garntype er jeg?"</li>
+        </div>
     
         <div id=profileButtonsContainer>
         <button id="myQuizesButton" onclick="changeView('myQuizView')">Mine quizer</button>
