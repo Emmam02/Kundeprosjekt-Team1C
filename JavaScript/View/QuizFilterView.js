@@ -52,28 +52,28 @@ function quizFilterView() {
                 <div id="popular-Quiz-container" class="">
                     <h3>Mest populære quizer</h3>
                     <div id="popular-Quiz">
-                        <div class="smallQuizContainer">
+                        <div onclick="changeview('quizView')" class="smallQuizContainer">
                             <h3>Hvilken hund er jeg?</h3>
-                            <p>Dyr</p>
                         </div>
                         <div class="smallQuizContainer">
                             <h3>Er dette dyret farlig?</h3>
-                            <p>Dyr</p>
                         </div>
                         <div class="smallQuizContainer">
-                            <h3></h3>
+                            <h3>Hvilke fugler er dette?</h3>
                         </div>
                         <div class="smallQuizContainer">
-                        
+                            <h3>Hvor mye kan du om dyr?</h3>
                         </div>
                         <div class="smallQuizContainer">
-                        
+                            <h3>Hva slags katt er du?</h3>
                         </div>
                     </div>
                 </div>
             </div>
             <div id="">
-                <img id="" src="">
+                <div id="">
+                    <img id="" src="">
+                </div>
                 <input id="" placeholder="Søk i ${
                     model.app.currentTheme
                 }-quizer...">
@@ -81,6 +81,7 @@ function quizFilterView() {
         </div>
     </div>
     `;
+    //${model.data.allCategories[1].image}
 }
 
 //${getNewQuizes()}

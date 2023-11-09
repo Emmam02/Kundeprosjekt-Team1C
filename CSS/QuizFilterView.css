@@ -41,6 +41,17 @@
     flex-direction: column;
 }
 
+#currentImgQuiz{
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100px;
+    width: 100px;
+    margin: 2px 2px 2px 2px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
 .smallQuizContainer{
     font-size: 14px;
 }

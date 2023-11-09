@@ -1,6 +1,13 @@
 "use strict";
 //Start
 
+function logOut(){
+    model.app.userID = null;
+    updateView();
+    //changeView('loginView');
+}
+
+
 //--------------------------------------------------------------------------------
 //Old code starts here
 //--------------------------------------------------------------------------------

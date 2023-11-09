@@ -127,7 +127,7 @@ function loginButtonHTML(){
 
     }else{
         loginButton = /*HTML*/`
-            <div id="loginNavButton" onclick="changeView('loginView')">Logg ut</div>
+            <div id="loginNavButton" onclick="logOut()">Logg ut</div>
         `;
     }
     return loginButton;
