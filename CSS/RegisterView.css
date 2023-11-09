@@ -8,6 +8,17 @@
     overflow: hidden;
     background-color: var(--backgroundA);
 }
+
+#testbackgroundG{
+    position: fixed;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--backgroundB);
+}
+
+
 #registerView{
     display: flex;
     justify-content: center;
@@ -20,7 +31,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--containerA);
+    background-color: var(--containerB);
     height: 45rem;
     width: 35rem;
     border-radius: 40px;

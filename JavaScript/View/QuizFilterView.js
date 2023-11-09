@@ -24,7 +24,6 @@ function quizFilterView() {
     </div>
     </nav>
     <div id="quizFilterSite">
-        <div>Hei, denne siden er tom. :></div>
         <button class="link-view" onclick="changeView('mainView')">Tilbake</button>
         <h1>${model.app.currentTheme}-quizer</h1>
         <div id="extra-container">
